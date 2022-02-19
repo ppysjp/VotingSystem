@@ -9,7 +9,7 @@ namespace VotingSystem.Tests
     public class CounterTests
     {
         public const string CounterName = "Counter Name";
-        public Counter _counter = new Counter() { Name = CounterName };
+        public Counter _counter = new Counter() { Name = CounterName, Count = 5};
 
         [Fact]
         public void HasName() 
