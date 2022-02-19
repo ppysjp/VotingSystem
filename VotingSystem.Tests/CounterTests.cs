@@ -39,9 +39,9 @@ namespace VotingSystem.Tests
         {
         }
 
-        internal int GetCounterStatistics()
+        internal Counter GetCounterStatistics()
         {
-            return 2; 
+            return this; 
         }
     }
 }
