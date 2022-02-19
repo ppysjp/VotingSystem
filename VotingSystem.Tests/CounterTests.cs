@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Xunit;
-using static Xunit.Assert;
+using static Xunit.Assert; 
 
 namespace VotingSystem.Tests
 {
@@ -14,24 +14,20 @@ namespace VotingSystem.Tests
         [Fact]
         public void HasName() 
         {
-            Assert.Equal(CounterName, _counter.Name);
+            Equal(CounterName, _counter.Name);
         }
 
         [Fact]
         public void GetCounterStatistics_IncludesCounterName() 
         { 
             var statistics = _counter.GetStatistics();
-            Assert.Equal(CounterName, statistics.Name);
+            Equal(CounterName, statistics.Name);
         }
     }
 
     public class Counter
     {
         public string Name { get; set; }
-
-        public Counter()
-        {
-        }
 
         internal Counter GetStatistics()
         {
