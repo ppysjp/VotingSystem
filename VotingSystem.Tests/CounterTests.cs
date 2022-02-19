@@ -23,11 +23,20 @@ namespace VotingSystem.Tests
             var statistics = _counter.GetStatistics();
             Equal(CounterName, statistics.Name);
         }
+
+        [Fact]
+        public void GetCounterStatistics_IncludesCounterCount() 
+        { 
+            var statistics = _counter.GetStatistics();
+            Equal(5, statistics.Count);
+        }
+ 
     }
 
     public class Counter
     {
         public string Name { get; set; }
+        public int Count { get; set; }
 
         internal Counter GetStatistics()
         {
