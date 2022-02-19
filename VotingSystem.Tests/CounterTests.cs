@@ -30,6 +30,13 @@ namespace VotingSystem.Tests
             var statistics = _counter.GetStatistics();
             Equal(5, statistics.Count);
         }
+
+        [Fact]
+        public void GetStatistics_ShowsPercentageBasedOnTotalCount() 
+        { 
+            var statistics = _counter.GetStatistics(10);
+            Equal(5, statistics.Count);
+        }
  
     }
 
@@ -38,7 +45,7 @@ namespace VotingSystem.Tests
         public string Name { get; set; }
         public int Count { get; set; }
 
-        internal Counter GetStatistics()
+        internal Counter GetStatistics(int totalCount)
         {
             return this; 
         }
