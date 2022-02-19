@@ -25,7 +25,7 @@ namespace VotingSystem.Tests
             var counter = new Counter();
             counter.Name = name;
 
-            var statistics = counter.GetCounterStatistics();
+            var statistics = counter.GetStatistics();
 
             Assert.Equal(name, statistics.Name);
         }
