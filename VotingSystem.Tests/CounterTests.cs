@@ -8,26 +8,20 @@ namespace VotingSystem.Tests
 {
     public class CounterTests
     {
+        public const string CounterName = "Counter Name";
+        public Counter _counter = new Counter() { Name = CounterName };
+
         [Fact]
         public void HasName() 
         {
-            var name = "Counter Name"; 
-            var counter = new Counter();
-            counter.Name = name;
-
-            Assert.Equal(name, counter.Name);
+            Assert.Equal(CounterName, _counter.Name);
         }
 
         [Fact]
         public void GetCounterStatistics_IncludesCounterName() 
         { 
-            var name = "Counter Name"; 
-            var counter = new Counter();
-            counter.Name = name;
-
-            var statistics = counter.GetStatistics();
-
-            Assert.Equal(name, statistics.Name);
+            var statistics = _counter.GetStatistics();
+            Assert.Equal(CounterName, statistics.Name);
         }
     }
 
@@ -39,7 +33,7 @@ namespace VotingSystem.Tests
         {
         }
 
-        internal Counter GetCounterStatistics()
+        internal Counter GetStatistics()
         {
             return this; 
         }
