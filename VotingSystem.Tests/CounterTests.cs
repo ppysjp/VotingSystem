@@ -17,6 +17,11 @@ namespace VotingSystem.Tests
 
             Assert.Equal(name, counter.Name);
         }
+
+        [Fact]
+        public void GetCounterStatistics_IncludesCounterName() 
+        { 
+        }
     }
 
     public class Counter
