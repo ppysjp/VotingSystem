@@ -21,6 +21,12 @@ namespace VotingSystem.Tests
         [Fact]
         public void GetCounterStatistics_IncludesCounterName() 
         { 
+            var name = "Counter Name"; 
+            var counter = new Counter();
+            counter.Name = name;
+
+            var statistics = counter.GetCounterStatistics();
+
         }
     }
 
@@ -32,5 +38,9 @@ namespace VotingSystem.Tests
         {
         }
 
+        internal object GetCounterStatistics()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
