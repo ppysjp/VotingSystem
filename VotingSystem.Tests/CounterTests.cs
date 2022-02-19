@@ -8,5 +8,24 @@ namespace VotingSystem.Tests
 {
     public class CounterTests
     {
+        [Fact]
+        public void HasName() 
+        {
+            var name = "Counter Name"; 
+            var counter = new Counter();
+            counter.Name = name;
+
+            Assert.Equal(name, counter.Name);
+        }
+    }
+
+    public class Counter
+    {
+        public string Name { get; set; }
+
+        public Counter()
+        {
+        }
+
     }
 }
