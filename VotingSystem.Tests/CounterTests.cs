@@ -27,6 +27,7 @@ namespace VotingSystem.Tests
 
             var statistics = counter.GetCounterStatistics();
 
+            Assert.Equal(name, statistics.Name);
         }
     }
 
@@ -38,9 +39,9 @@ namespace VotingSystem.Tests
         {
         }
 
-        internal object GetCounterStatistics()
+        internal int GetCounterStatistics()
         {
-            throw new NotImplementedException();
+            return 2; 
         }
     }
 }
