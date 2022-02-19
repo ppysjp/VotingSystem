@@ -20,14 +20,14 @@ namespace VotingSystem.Tests
         [Fact]
         public void GetCounterStatistics_IncludesCounterName() 
         { 
-            var statistics = _counter.GetStatistics();
+            var statistics = _counter.GetStatistics(5);
             Equal(CounterName, statistics.Name);
         }
 
         [Fact]
         public void GetCounterStatistics_IncludesCounterCount() 
         { 
-            var statistics = _counter.GetStatistics();
+            var statistics = _counter.GetStatistics(5);
             Equal(5, statistics.Count);
         }
 
