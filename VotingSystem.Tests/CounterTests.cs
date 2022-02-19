@@ -48,6 +48,7 @@ namespace VotingSystem.Tests
 
         internal Counter GetStatistics(int totalCount)
         {
+            Percentage = 50;
             return this; 
         }
     }
