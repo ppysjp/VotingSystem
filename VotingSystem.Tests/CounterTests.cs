@@ -31,11 +31,13 @@ namespace VotingSystem.Tests
             Equal(5, statistics.Count);
         }
 
-        [Fact]
-        public void GetStatistics_ShowsPercentageBasedOnTotalCount() 
-        { 
-            var statistics = _counter.GetStatistics(10);
-            Equal(50, statistics.Percentage);
+        [Theory]
+        [InlineData(5, 10, 50)]
+        public void GetStatistics_ShowsPercentageBasedOnTotalCount(int count, int total, int expected) 
+        {
+            _counter.Count = count; 
+            var statistics = _counter.GetStatistics(total);
+            Equal(expected, statistics.Percentage);
         }
  
     }
