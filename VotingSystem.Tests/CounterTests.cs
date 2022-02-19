@@ -35,7 +35,7 @@ namespace VotingSystem.Tests
         public void GetStatistics_ShowsPercentageBasedOnTotalCount() 
         { 
             var statistics = _counter.GetStatistics(10);
-            Equal(5, statistics.Count);
+            Equal(50, statistics.Percentage);
         }
  
     }
@@ -44,6 +44,7 @@ namespace VotingSystem.Tests
     {
         public string Name { get; set; }
         public int Count { get; set; }
+        public double Percentage { get; set; }
 
         internal Counter GetStatistics(int totalCount)
         {
