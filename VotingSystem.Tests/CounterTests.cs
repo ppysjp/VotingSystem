@@ -33,7 +33,8 @@ namespace VotingSystem.Tests
 
         [Theory]
         [InlineData(5, 10, 50)]
-        public void GetStatistics_ShowsPercentageBasedOnTotalCount(int count, int total, int expected) 
+        [InlineData(1, 3, 33.33)]
+        public void GetStatistics_ShowsPercentageBasedOnTotalCount(int count, int total, double expected) 
         {
             _counter.Count = count; 
             var statistics = _counter.GetStatistics(total);
