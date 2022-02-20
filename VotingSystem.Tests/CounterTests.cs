@@ -51,7 +51,7 @@ namespace VotingSystem.Tests
 
         internal Counter GetStatistics(int totalCount)
         {
-            Percentage = 50;
+            Percentage = Math.Round(Count * 100.0 / totalCount, 2);
             return this; 
         }
     }
