@@ -51,6 +51,10 @@ namespace VotingSystem.Tests
             var counter3 = new Counter { Count = 1, Percentage = 33.33 };
 
             new CounterManager().ResolveExcess();
+
+            Assert.Equal(33.33, counter1.Percentage);
+            Assert.Equal(33.33, counter2.Percentage);
+            Assert.Equal(33.33, counter3.Percentage);
         }
 
             }
@@ -59,7 +63,7 @@ namespace VotingSystem.Tests
     { 
         public void ResolveExcess()
         {
-            throw new NotImplementedException();
+
         }
 
     }
