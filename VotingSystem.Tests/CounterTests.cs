@@ -34,7 +34,8 @@ namespace VotingSystem.Tests
         [Theory]
         [InlineData(5, 10, 50)]
         [InlineData(1, 3, 33.33)]
-        public void GetStatistics_ShowsPercentageBasedOnTotalCount(int count, int total, double expected) 
+        [InlineData(2, 3, 66.67)]
+        public void GetStatistics_ShowsPercentageUpToTwoDecimalsBasedOnTotalCount(int count, int total, double expected) 
         {
             _counter.Count = count; 
             var statistics = _counter.GetStatistics(total);
