@@ -59,13 +59,26 @@ namespace VotingSystem.Tests
             Assert.Equal(33.33, counter3.Percentage);
         }
 
-            }
+        [Fact]
+        public void ResolveExcess_AddsExcessToHighestCounter() 
+        { 
+            var counter1 = new Counter { Count = 2, Percentage = 66.66 };
+            var counter2 = new Counter { Count = 1, Percentage = 33.33 };
+
+            var counters = new List<Counter> { counter1, counter2};
+            new CounterManager().ResolveExcess(counters);
+
+            Equal(66.67, counter1.Percentage);
+            Equal(33.33, counter1.Percentage);
+        }
+
+     }
 
     public class CounterManager 
     { 
-        public void ResolveExcess()
+        public void ResolveExcess(List<Counter> counters)
         {
-
+            
         }
 
     }
