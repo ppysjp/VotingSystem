@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using Xunit;
 using static Xunit.Assert; 
@@ -69,7 +70,7 @@ namespace VotingSystem.Tests
             new CounterManager().ResolveExcess(counters);
 
             Equal(66.67, counter1.Percentage);
-            Equal(33.33, counter1.Percentage);
+            Equal(33.33, counter2.Percentage);
         }
 
      }
@@ -78,7 +79,14 @@ namespace VotingSystem.Tests
     { 
         public void ResolveExcess(List<Counter> counters)
         {
-            
+            var highestPercentage = counters.Max(x => x.Percentage);
+            foreach (var counter in counters)
+            {
+                if (counter.Percentage == highestPercentage)
+                {
+                    counter.Percentage += 0.01;
+                }
+            }
         }
 
     }
