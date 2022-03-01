@@ -40,7 +40,6 @@ namespace VotingSystem.Tests
             var statistics = _counter.GetStatistics(total);
             Equal(expected, statistics.Percentage);
         }
- 
     }
 
     public class Counter
