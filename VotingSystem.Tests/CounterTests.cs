@@ -41,6 +41,27 @@ namespace VotingSystem.Tests
             var statistics = _counter.GetStatistics(total);
             Equal(expected, statistics.Percentage);
         }
+
+
+        [Fact]
+        public void ResolveExcess_DoesntAddExcesswhenAllCountersAreEqual() 
+        { 
+            var counter1 = new Counter { Count = 1, Percentage = 33.33 };
+            var counter2 = new Counter { Count = 1, Percentage = 33.33 };
+            var counter3 = new Counter { Count = 1, Percentage = 33.33 };
+
+            new CounterManager().ResolveExcess();
+        }
+
+            }
+
+    public class CounterManager 
+    { 
+        public void ResolveExcess()
+        {
+            throw new NotImplementedException();
+        }
+
     }
 
     public class Counter
