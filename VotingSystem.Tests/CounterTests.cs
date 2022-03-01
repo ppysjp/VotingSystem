@@ -50,7 +50,9 @@ namespace VotingSystem.Tests
             var counter2 = new Counter { Count = 1, Percentage = 33.33 };
             var counter3 = new Counter { Count = 1, Percentage = 33.33 };
 
-            new CounterManager().ResolveExcess();
+            var counters = new List<Counter> { counter1, counter2, counter3 };
+
+            new CounterManager().ResolveExcess(counters);
 
             Assert.Equal(33.33, counter1.Percentage);
             Assert.Equal(33.33, counter2.Percentage);
