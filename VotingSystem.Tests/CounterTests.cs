@@ -128,12 +128,11 @@ namespace VotingSystem.Tests
             else if (highestCounters.Count < counters.Count)
             {
                 var lowestPercentage = counters.Min(x => x.Percentage);
-                counters.First(x => x.Percentage == lowestPercentage).Percentage += excess;
+                var lowestCounter = counters.First(x => x.Percentage == lowestPercentage);
             }
         }
 
         public static double RoundUp(double num) => Math.Round(num, 2);
-
 
     }
 
