@@ -31,9 +31,9 @@ namespace VotingSystem.Tests
         }
 
         [Fact]
-        public void Create_CreatesCounterForEachProvidedNameAndAddsToPoll() 
+        public void Create_AddsCounterToThePollForEachName() 
         {
-            var names = new[] { "Yes", "No"};
+            var names = new[] { "Sam", "Tom"};
             var factory = new VotingPollFactory();
 
             var poll = factory.Create(names);
@@ -42,6 +42,11 @@ namespace VotingSystem.Tests
             {
                 Contains(name, poll.Counters.Select(x => x.Name));
             }
+        }
+
+        [Fact]
+        public void Create_AddsTitleToThePoll() 
+        { 
         }
  
     }
