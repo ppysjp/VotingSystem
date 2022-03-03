@@ -56,9 +56,9 @@ namespace VotingSystem.Tests
 
             new CounterManager().ResolveExcess(counters);
 
-            Assert.Equal(33.33, counter1.Percentage);
-            Assert.Equal(33.33, counter2.Percentage);
-            Assert.Equal(33.33, counter3.Percentage);
+            Equal(33.33, counter1.Percentage);
+            Equal(33.33, counter2.Percentage);
+            Equal(33.33, counter3.Percentage);
         }
 
         [Fact]
@@ -75,19 +75,18 @@ namespace VotingSystem.Tests
         }
 
         [Fact]
-        public void ReslveExcess_AddsExcessToLowestCounterWhenMoreThanOneHighestCounters() 
+        public void ResolveExcess_AddsExcessToLowestCounterWhenMoreThanOneHighestCounters() 
         { 
             var counter1 = new Counter { Count = 2, Percentage = 44.44 };
             var counter2 = new Counter { Count = 2, Percentage = 44.44 };
             var counter3 = new Counter { Count = 1, Percentage = 11.11 };
 
-            var counters = new List<Counter> { counter1, counter2};
+            var counters = new List<Counter> { counter1, counter2, counter3};
             new CounterManager().ResolveExcess(counters);
-
             
             Equal(44.44, counter1.Percentage);
-            Equal(44.44, counter1.Percentage);
-            Equal(11.12, counter2.Percentage);
+            Equal(44.44, counter2.Percentage);
+            Equal(11.12, counter3.Percentage);
         }
 
      }
@@ -97,10 +96,18 @@ namespace VotingSystem.Tests
         public void ResolveExcess(List<Counter> counters)
         {
             var highestPercentage = counters.Max(x => x.Percentage);
+            var lowestPercentage = counters.Min(x => x.Percentage);
+
             var highestCounters = counters.Where(x => x.Percentage == highestPercentage).ToList();
-            if (highestCounters.Count < counters.Count)
+            var lowestCounters = counters.Where(x => x.Percentage == lowestPercentage).ToList();
+
+            if (highestCounters.Count == 1)
             {
-                counters[0].Percentage += 0.01;
+                highestCounters.First().Percentage += 0.01;
+            }
+            else if (lowestCounters.Count == 1)
+            {
+                lowestCounters.First().Percentage += 0.01;
             }
         }
 
