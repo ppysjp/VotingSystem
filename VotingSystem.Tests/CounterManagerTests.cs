@@ -122,10 +122,10 @@ namespace VotingSystem.Tests
 
     public class CounterManager 
     { 
-        public Counter GetStatistics(int totalCount)
+        public Counter GetStatistics(Counter counter, int totalCount)
         {
-            Percentage = CounterManager.RoundUp(Count * 100.0 / totalCount);
-            return this; 
+            counter.Percentage = RoundUp(counter.Count * 100.0 / totalCount);
+            return counter; 
         }
  
         public void ResolveExcess(List<Counter> counters)
