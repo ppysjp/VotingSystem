@@ -39,7 +39,9 @@ namespace VotingSystem.Tests
         public void GetStatistics_ShowsPercentageUpToTwoDecimalsBasedOnTotalCount(int count, int total, double expected) 
         {
             _counter.Count = count; 
+
             var statistics = _counter.GetStatistics(total);
+            
             Equal(expected, statistics.Percentage);
         }
 
@@ -50,7 +52,6 @@ namespace VotingSystem.Tests
             var counter1 = new Counter { Count = 1, Percentage = 33.33 };
             var counter2 = new Counter { Count = 1, Percentage = 33.33 };
             var counter3 = new Counter { Count = 1, Percentage = 33.33 };
-
             var counters = new List<Counter> { counter1, counter2, counter3 };
 
             new CounterManager().ResolveExcess(counters);
@@ -65,12 +66,28 @@ namespace VotingSystem.Tests
         { 
             var counter1 = new Counter { Count = 2, Percentage = 66.66 };
             var counter2 = new Counter { Count = 1, Percentage = 33.33 };
-
             var counters = new List<Counter> { counter1, counter2};
+             
             new CounterManager().ResolveExcess(counters);
 
             Equal(66.67, counter1.Percentage);
             Equal(33.33, counter2.Percentage);
+        }
+
+        [Fact]
+        public void ReslveExcess_AddsExcessToLowestCounterWhenMoreThanOneHighestCounters() 
+        { 
+            var counter1 = new Counter { Count = 2, Percentage = 44.44 };
+            var counter2 = new Counter { Count = 2, Percentage = 44.44 };
+            var counter3 = new Counter { Count = 1, Percentage = 11.11 };
+
+            var counters = new List<Counter> { counter1, counter2};
+            new CounterManager().ResolveExcess(counters);
+
+            
+            Equal(44.44, counter1.Percentage);
+            Equal(44.44, counter1.Percentage);
+            Equal(11.12, counter2.Percentage);
         }
 
      }
