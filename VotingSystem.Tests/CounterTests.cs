@@ -13,12 +13,6 @@ namespace VotingSystem.Tests
         public Counter _counter = new Counter() { Name = CounterName, Count = 5};
 
         [Fact]
-        public void HasName() 
-        {
-            Equal(CounterName, _counter.Name);
-        }
-
-        [Fact]
         public void GetCounterStatistics_IncludesCounterName() 
         { 
             var statistics = _counter.GetStatistics(5);
