@@ -75,6 +75,16 @@ namespace VotingSystem.Tests
 
             Equal(expected, counter1.Percentage);
             Equal(lowest, counter2.Percentage);
+
+            var counter3 = new Counter { Percentage = initial };
+            var counter4 = new Counter { Percentage = lowest };
+            counters = new List<Counter> { counter4, counter3};
+             
+            new CounterManager().ResolveExcess(counters);
+
+            Equal(expected, counter1.Percentage);
+            Equal(lowest, counter2.Percentage);
+
         }
 
         [Theory]
