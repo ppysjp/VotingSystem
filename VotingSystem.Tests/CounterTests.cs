@@ -132,6 +132,9 @@ namespace VotingSystem.Tests
             }
         }
 
+        public static double RoundUp(double num) => Math.Round(num, 2);
+
+
     }
 
     public class Counter
@@ -142,7 +145,7 @@ namespace VotingSystem.Tests
 
         internal Counter GetStatistics(int totalCount)
         {
-            Percentage = Math.Round(Count * 100.0 / totalCount, 2);
+            Percentage = CounterManager.RoundUp(Count * 100.0 / totalCount);
             return this; 
         }
     }
