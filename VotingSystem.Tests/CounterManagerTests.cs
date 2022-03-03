@@ -7,7 +7,7 @@ using static Xunit.Assert;
 
 namespace VotingSystem.Tests
 {
-    public class CounterTests
+    public class CounterManagerTests
     {
         public const string CounterName = "Counter Name";
         public Counter _counter = new Counter() { Name = CounterName, Count = 5};
