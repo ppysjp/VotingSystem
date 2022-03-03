@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using Xunit;
 
@@ -20,6 +21,7 @@ namespace VotingSystem.Tests
     {
         public VotingPoll()
         {
+            Counters = Enumerable.Empty<Counter>();
         }
 
         public IEnumerable<Counter> Counters { get; }
