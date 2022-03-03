@@ -46,7 +46,11 @@ namespace VotingSystem.Tests
 
         [Fact]
         public void Create_AddsTitleToThePoll() 
-        { 
+        {
+            var title = "title";
+            var names = new[] { "Sam", "Tom"};
+            var factory = new VotingPollFactory();
+            var poll = factory.Create(title, names);
         }
  
     }
