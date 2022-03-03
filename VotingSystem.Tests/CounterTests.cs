@@ -129,6 +129,7 @@ namespace VotingSystem.Tests
             {
                 var lowestPercentage = counters.Min(x => x.Percentage);
                 var lowestCounter = counters.First(x => x.Percentage == lowestPercentage);
+                lowestCounter.Percentage = RoundUp(lowestCounter.Percentage + excess);
             }
         }
 
