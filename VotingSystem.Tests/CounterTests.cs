@@ -112,14 +112,17 @@ namespace VotingSystem.Tests
     { 
         public void ResolveExcess(List<Counter> counters)
         {
-            if (counters.Sum(x => x.Percentage) == 100) return;
+            var totalPercent = counters.Sum(x => x.Percentage); 
+            if (totalPercent == 100) return;
+
+            var excess = 100 - totalPercent;
 
             var highestPercentage = counters.Max(x => x.Percentage);
             var highestCounters = counters.Where(x => x.Percentage == highestPercentage).ToList();
 
             if (highestCounters.Count == 1)
             {
-                highestCounters.First().Percentage += 0.01;
+                highestCounters.First().Percentage += excess;
             }
             else if (highestCounters.Count < counters.Count)
             {
