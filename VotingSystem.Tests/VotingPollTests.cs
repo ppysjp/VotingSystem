@@ -22,6 +22,6 @@ namespace VotingSystem.Tests
         {
         }
 
-        public IEnumerable Counters { get; internal set; }
+        public IEnumerable<Counter> Counters { get; }
     }
 }
