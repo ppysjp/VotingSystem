@@ -64,6 +64,7 @@ namespace VotingSystem.Tests
         [Theory]
         [InlineData(66.66, 66.67, 33.33)]
         [InlineData(66.65, 66.67, 33.33)]
+        [InlineData(66.66, 66.68, 33.32)]
         public void ResolveExcess_AddsExcessToHighestCounter(double initial, double expected, double lowest) 
         { 
             var counter1 = new Counter { Count = 2, Percentage = initial };
@@ -103,8 +104,6 @@ namespace VotingSystem.Tests
             Equal(80, counter1.Percentage);
             Equal(20, counter2.Percentage);
         }
-
-
 
      }
 
