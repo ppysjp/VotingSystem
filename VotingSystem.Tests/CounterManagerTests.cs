@@ -118,15 +118,16 @@ namespace VotingSystem.Tests
         public int Count { get; set; }
         public double Percentage { get; set; }
 
-        internal Counter GetStatistics(int totalCount)
+   }
+
+    public class CounterManager 
+    { 
+        public Counter GetStatistics(int totalCount)
         {
             Percentage = CounterManager.RoundUp(Count * 100.0 / totalCount);
             return this; 
         }
-    }
-
-    public class CounterManager 
-    { 
+ 
         public void ResolveExcess(List<Counter> counters)
         {
             var totalPercent = counters.Sum(x => x.Percentage); 
