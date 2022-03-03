@@ -14,15 +14,15 @@ namespace VotingSystem.Tests
 
         [Fact]
         public void GetCounterStatistics_IncludesCounterName() 
-        { 
-            var statistics = _counter.GetStatistics(5);
+        {
+            var statistics = new CounterManager().GetStatistics(_counter, 5);
             Equal(CounterName, statistics.Name);
         }
 
         [Fact]
         public void GetCounterStatistics_IncludesCounterCount() 
         { 
-            var statistics = _counter.GetStatistics(5);
+            var statistics = new CounterManager().GetStatistics(_counter, 5);
             Equal(5, statistics.Count);
         }
 
@@ -34,7 +34,7 @@ namespace VotingSystem.Tests
         {
             _counter.Count = count; 
 
-            var statistics = _counter.GetStatistics(total);
+            var statistics = new CounterManager().GetStatistics(_counter, total);
             
             Equal(expected, statistics.Percentage);
         }
@@ -150,7 +150,7 @@ namespace VotingSystem.Tests
             }
         }
 
-        public static double RoundUp(double num) => Math.Round(num, 2);
+        private static double RoundUp(double num) => Math.Round(num, 2);
 
     }
 
