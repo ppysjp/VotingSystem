@@ -110,7 +110,7 @@ namespace VotingSystem.Tests
     { 
         public void ResolveExcess(List<Counter> counters)
         {
-            //if (counters.Sum(x => x.Percentage) == 100) return;
+            if (counters.Sum(x => x.Percentage) == 100) return;
 
             var highestPercentage = counters.Max(x => x.Percentage);
             var highestCounters = counters.Where(x => x.Percentage == highestPercentage).ToList();
