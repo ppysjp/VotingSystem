@@ -67,8 +67,8 @@ namespace VotingSystem.Tests
         [InlineData(66.66, 66.68, 33.32)]
         public void ResolveExcess_AddsExcessToHighestCounter(double initial, double expected, double lowest) 
         { 
-            var counter1 = new Counter { Count = 2, Percentage = initial };
-            var counter2 = new Counter { Count = 1, Percentage = lowest };
+            var counter1 = new Counter { Percentage = initial };
+            var counter2 = new Counter { Percentage = lowest };
             var counters = new List<Counter> { counter1, counter2};
              
             new CounterManager().ResolveExcess(counters);
@@ -80,9 +80,9 @@ namespace VotingSystem.Tests
         [Fact]
         public void ResolveExcess_AddsExcessToLowestCounterWhenMoreThanOneHighestCounters() 
         { 
-            var counter1 = new Counter { Count = 2, Percentage = 44.44 };
-            var counter2 = new Counter { Count = 2, Percentage = 44.44 };
-            var counter3 = new Counter { Count = 1, Percentage = 11.11 };
+            var counter1 = new Counter { Percentage = 44.44 };
+            var counter2 = new Counter { Percentage = 44.44 };
+            var counter3 = new Counter { Percentage = 11.11 };
 
             var counters = new List<Counter> { counter1, counter2, counter3};
             new CounterManager().ResolveExcess(counters);
@@ -95,8 +95,8 @@ namespace VotingSystem.Tests
         [Fact]
         public void ResolveExcess_DoesntAddExcessIfTotalPercentIs100() 
         { 
-            var counter1 = new Counter { Count = 2, Percentage = 80 };
-            var counter2 = new Counter { Count = 1, Percentage = 20 };
+            var counter1 = new Counter { Percentage = 80 };
+            var counter2 = new Counter { Percentage = 20 };
             var counters = new List<Counter> { counter1, counter2};
              
             new CounterManager().ResolveExcess(counters);
