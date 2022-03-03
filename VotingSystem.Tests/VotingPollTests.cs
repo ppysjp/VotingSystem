@@ -26,7 +26,8 @@ namespace VotingSystem.Tests
             var names = new[] { "name" };
             var factory = new VotingPollFactory();
 
-            Throws<ArgumentException>(() => factory.Create(names));
+            Throws<ArgumentException>(() => factory.Create(new[] { "name" }));
+            Throws<ArgumentException>(() => factory.Create(new string[] { }));
         }
 
         [Fact]
@@ -58,7 +59,7 @@ namespace VotingSystem.Tests
             return new VotingPoll
             {
                 Counters = names.Select(name => new Counter { Name = name })
-            }; 
+            };
         }
     }
 
