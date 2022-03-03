@@ -16,6 +16,9 @@ namespace VotingSystem.Tests
             Assert.Empty(poll.Counters);
         }
     }
+    public class VotingPollFactoryTests
+    {
+    }
 
     public class VotingPoll
     {
@@ -27,3 +30,4 @@ namespace VotingSystem.Tests
         public IEnumerable<Counter> Counters { get; }
     }
 }
+
