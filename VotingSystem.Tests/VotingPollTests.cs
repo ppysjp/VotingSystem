@@ -26,8 +26,8 @@ namespace VotingSystem.Tests
             var names = new[] { "name" };
             var factory = new VotingPollFactory();
 
-            Throws<ArgumentException>(() => factory.Create(new[] { "name" }));
-            Throws<ArgumentException>(() => factory.Create(new string[] { }));
+            Throws<ArgumentException>(() => factory.Create("", new[] { "name" }));
+            Throws<ArgumentException>(() => factory.Create("", new string[] { }));
         }
 
         [Fact]
@@ -36,7 +36,7 @@ namespace VotingSystem.Tests
             var names = new[] { "Sam", "Tom"};
             var factory = new VotingPollFactory();
 
-            var poll = factory.Create(names);
+            var poll = factory.Create("", names);
 
             foreach (var name in names)
             {
@@ -61,7 +61,7 @@ namespace VotingSystem.Tests
         {
         }
 
-        public VotingPoll Create(string[] names)
+        public VotingPoll Create(string title, string[] names)
         {
             if (names.Length < 2) throw new ArgumentException();
 
