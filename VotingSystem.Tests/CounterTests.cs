@@ -79,6 +79,7 @@ namespace VotingSystem.Tests
 
         [Theory]
         [InlineData(11.11, 11.12, 44.44)]
+        [InlineData(11.10, 11.12, 44.44)]
         public void ResolveExcess_AddsExcessToLowestCounterWhenMoreThanOneHighestCounters(double initial, double expected, double highest) 
         { 
             var counter1 = new Counter { Percentage = highest };
