@@ -89,12 +89,29 @@ namespace VotingSystem.Tests
             Equal(11.12, counter3.Percentage);
         }
 
+        [Fact]
+        public void ResolveExcess_DoesntAddExcessIfTotalPercentIs100() 
+        { 
+            var counter1 = new Counter { Count = 2, Percentage = 80 };
+            var counter2 = new Counter { Count = 1, Percentage = 20 };
+            var counters = new List<Counter> { counter1, counter2};
+             
+            new CounterManager().ResolveExcess(counters);
+
+            Equal(80, counter1.Percentage);
+            Equal(20, counter2.Percentage);
+        }
+
+
+
      }
 
     public class CounterManager 
     { 
         public void ResolveExcess(List<Counter> counters)
         {
+            //if (counters.Sum(x => x.Percentage) == 100) return;
+
             var highestPercentage = counters.Max(x => x.Percentage);
             var highestCounters = counters.Where(x => x.Percentage == highestPercentage).ToList();
 
