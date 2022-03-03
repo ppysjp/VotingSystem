@@ -23,7 +23,7 @@ namespace VotingSystem.Tests
         [Fact]
         public void Create_ThrowIfLessThanTwoCounterNames() 
         {
-            var names = new[] { "name"};
+            var names = new[] { "name" };
             var factory = new VotingPollFactory();
 
             Throws<ArgumentException>(() => factory.Create(names));
@@ -38,7 +38,7 @@ namespace VotingSystem.Tests
 
         internal void Create(string[] names)
         {
-            throw new NotImplementedException();
+            throw new ArgumentException();
         }
     }
 
