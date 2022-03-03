@@ -30,14 +30,17 @@ namespace VotingSystem.Tests
         }
 
         [Fact]
-        public void Create_ReturnsCounterForEachProvidedName() 
+        public void Create_CreatesCounterForEachProvidedNameAndAddsToPoll() 
         {
             var names = new[] { "Yes", "No"};
             var factory = new VotingPollFactory();
 
             var poll = factory.Create(names);
 
-            Assert.Equal(2, poll.Counters.ToList().Count);
+            foreach (var name in names)
+            {
+                Contains(name, poll.Counters.Select(x => x.Name));
+            }
         }
  
     }
