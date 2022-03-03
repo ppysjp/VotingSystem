@@ -16,6 +16,7 @@ namespace VotingSystem.Tests
         public void GetCounterStatistics_IncludesCounterName() 
         {
             var statistics = new CounterManager().GetStatistics(_counter, 5);
+
             Equal(CounterName, statistics.Name);
         }
 
@@ -23,6 +24,7 @@ namespace VotingSystem.Tests
         public void GetCounterStatistics_IncludesCounterCount() 
         { 
             var statistics = new CounterManager().GetStatistics(_counter, 5);
+
             Equal(5, statistics.Count);
         }
 
@@ -117,8 +119,7 @@ namespace VotingSystem.Tests
         public string Name { get; set; }
         public int Count { get; set; }
         public double Percentage { get; set; }
-
-   }
+    }
 
     public class CounterManager 
     { 
