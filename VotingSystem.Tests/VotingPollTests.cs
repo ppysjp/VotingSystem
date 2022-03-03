@@ -53,7 +53,12 @@ namespace VotingSystem.Tests
 
         public VotingPoll Create(string[] names)
         {
-            throw new ArgumentException();
+            if (names.Length < 2) throw new ArgumentException();
+
+            return new VotingPoll
+            {
+                Counters = names.Select(name => new Counter { Name = name })
+            }; 
         }
     }
 
@@ -64,7 +69,7 @@ namespace VotingSystem.Tests
             Counters = Enumerable.Empty<Counter>();
         }
 
-        public IEnumerable<Counter> Counters { get; }
+        public IEnumerable<Counter> Counters { get; set; }
     }
 }
 
