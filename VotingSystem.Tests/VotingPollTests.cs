@@ -3,7 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Xunit;
+using  Xunit;
+using static Xunit.Assert;
 
 namespace VotingSystem.Tests
 {
@@ -13,7 +14,7 @@ namespace VotingSystem.Tests
         public void ZeroCountersWhenCreated() 
         {
             var poll = new VotingPoll();
-            Assert.Empty(poll.Counters);
+            Empty(poll.Counters);
         }
     }
     public class VotingPollFactoryTests
