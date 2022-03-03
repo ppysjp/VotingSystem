@@ -28,6 +28,18 @@ namespace VotingSystem.Tests
 
             Throws<ArgumentException>(() => factory.Create(names));
         }
+
+        [Fact]
+        public void Create_ReturnsCounterForEachProvidedName() 
+        {
+            var names = new[] { "Yes", "No"};
+            var factory = new VotingPollFactory();
+
+            var poll = factory.Create(names);
+
+            Assert.Equal(2, poll.Counters.ToList().Count);
+        }
+ 
     }
 
     public class VotingPollFactory
@@ -36,7 +48,7 @@ namespace VotingSystem.Tests
         {
         }
 
-        internal void Create(string[] names)
+        public VotingPoll Create(string[] names)
         {
             throw new ArgumentException();
         }
