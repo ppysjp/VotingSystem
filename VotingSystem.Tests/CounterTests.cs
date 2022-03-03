@@ -128,7 +128,7 @@ namespace VotingSystem.Tests
             else if (highestCounters.Count < counters.Count)
             {
                 var lowestPercentage = counters.Min(x => x.Percentage);
-                counters.First(x => x.Percentage == lowestPercentage).Percentage += 0.01;
+                counters.First(x => x.Percentage == lowestPercentage).Percentage += excess;
             }
         }
 
