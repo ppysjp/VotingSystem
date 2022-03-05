@@ -57,6 +57,8 @@ namespace VotingSystem.Tests
             };
 
             var ex = Throws<ArgumentException>(() => _factory.Create(request));
+
+            Contains("Title must not be empty string.", ex.Message);
             
         }
 
@@ -126,7 +128,7 @@ namespace VotingSystem.Tests
         public VotingPoll Create(Request request)
         {
 
-            if (string.IsNullOrEmpty(request.Title)) throw new ArgumentException();
+            if (string.IsNullOrEmpty(request.Title)) throw new ArgumentException("Title must not be empty string.");
             if (string.IsNullOrEmpty(request.Description)) throw new ArgumentException();
             if (request.Names.Length < 2) throw new ArgumentException();
 
