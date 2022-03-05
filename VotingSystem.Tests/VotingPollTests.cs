@@ -58,7 +58,7 @@ namespace VotingSystem.Tests
 
             var ex = Throws<ArgumentException>(() => _factory.Create(request));
 
-            Contains("Title must not be empty string.", ex.Message);
+            Contains("Request Title must not be empty string.", ex.Message);
             
         }
 
@@ -73,7 +73,9 @@ namespace VotingSystem.Tests
                 Names = _names
             };
 
-            Throws<ArgumentException>(() => _factory.Create(request));
+            var ex = Throws<ArgumentException>(() => _factory.Create(request));
+
+            Contains("Request Description must not be empty string.", ex.Message);
         }
 
         //[Fact (Skip = "Exception thrown when ran interferes with workflow.")]
@@ -94,8 +96,11 @@ namespace VotingSystem.Tests
                 Names = new[] { "name" }
             };
 
-            Throws<ArgumentException>(() => _factory.Create(request1));
-            Throws<ArgumentException>(() => _factory.Create(request2));
+            var ex1 = Throws<ArgumentException>(() => _factory.Create(request1));
+            var ex2 = Throws<ArgumentException>(() => _factory.Create(request2));
+
+            Contains("Request Names must contain at least 2 counter names.", ex1.Message);
+            Contains("Request Names must contain at least 2 counter names.", ex2.Message);
         }
 
         [Fact]
@@ -128,9 +133,9 @@ namespace VotingSystem.Tests
         public VotingPoll Create(Request request)
         {
 
-            if (string.IsNullOrEmpty(request.Title)) throw new ArgumentException("Title must not be empty string.");
-            if (string.IsNullOrEmpty(request.Description)) throw new ArgumentException();
-            if (request.Names.Length < 2) throw new ArgumentException();
+            if (string.IsNullOrEmpty(request.Title)) throw new ArgumentException("Request Title must not be empty string.");
+            if (string.IsNullOrEmpty(request.Description)) throw new ArgumentException("Request Description must not be empty string.");
+            if (request.Names.Length < 2) throw new ArgumentException("Request Names must contain at least 2 counter names.");
 
             return new VotingPoll
             {
