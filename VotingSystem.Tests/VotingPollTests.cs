@@ -63,7 +63,7 @@ namespace VotingSystem.Tests
         {
             var poll = _factory.Create(_title, _description, _names);
 
-            Equal(_description, poll.Title);
+            Equal(_description, poll.Description);
         }
  
     }
@@ -94,7 +94,7 @@ namespace VotingSystem.Tests
         }
 
         public string Title { get; set; }
-
+        public string Description { get; internal set; }
         public IEnumerable<Counter> Counters { get; set; }
     }
 }
