@@ -22,14 +22,14 @@ namespace VotingSystem.Tests
     {
 
         private VotingPollFactory _factory = new VotingPollFactory();
+        private string[] _names = new[] { "names1", "name2" };
 
         [Fact]
         public void Create_AddsCounterToThePollForEachName() 
         {
-            var names = new[] { "Sam", "Tom"};
-            var poll = _factory.Create("", names);
+            var poll = _factory.Create("", _names);
 
-            foreach (var name in names)
+            foreach (var name in _names)
             {
                 Contains(name, poll.Counters.Select(x => x.Name));
             }
@@ -38,8 +38,6 @@ namespace VotingSystem.Tests
         [Fact]
         public void Create_ThrowIfLessThanTwoCounterNames() 
         {
-            var names = new[] { "name" };
-
             Throws<ArgumentException>(() => _factory.Create("", new[] { "name" }));
             Throws<ArgumentException>(() => _factory.Create("", new string[] { }));
         }
@@ -48,8 +46,7 @@ namespace VotingSystem.Tests
         public void Create_AddsTitleToThePoll() 
         {
             var title = "title";
-            var names = new[] { "Sam", "Tom"};
-            var poll = _factory.Create(title, names);
+            var poll = _factory.Create(title, _names);
 
             Equal(title, poll.Title);
         }
