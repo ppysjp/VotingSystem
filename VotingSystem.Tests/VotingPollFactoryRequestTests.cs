@@ -10,63 +10,51 @@ namespace VotingSystem.Tests
     {
 
         private VotingPollFactory _factory = new VotingPollFactory();
-        private string _title = "title";
-        private string _description = "descrition";
-        private string[] _names = new[] { "names1", "name2" };
+
+        VotingPollFactory.Request _request = new VotingPollFactory.Request 
+        { 
+            Title =  "title",
+            Description =  "descrition",
+            Names = new[] { "names1", "name2" }
+        };
+
 
         [Fact (Skip = "Exception thrown when ran interferes with workflow.")]
+        //[Fact]
         public void Create_ThrowIfRequestEmptyTitle() 
         {
-
-            var request = new VotingPollFactory.Request 
-            { 
-                Title = "",
-                Description = _description,
-                Names = _names
-            };
-
-            var ex = Throws<ArgumentException>(() => _factory.Create(request));
+            _request.Title = "";
+            
+            var ex = Throws<ArgumentException>(() => _factory.Create(_request));
 
             Contains("Request Title must not be empty string.", ex.Message);
-            
         }
 
         [Fact (Skip = "Exception thrown when ran interferes with workflow.")]
+        //[Fact]
         public void Create_ThrowIfRequestEmptyDescription() 
         {
-            var request = new VotingPollFactory.Request 
-            { 
-                Title = _title,
-                Description = "",
-                Names = _names
-            };
+            _request.Description = "";
 
-            var ex = Throws<ArgumentException>(() => _factory.Create(request));
+            var ex = Throws<ArgumentException>(() => _factory.Create(_request));
 
             Contains("Request Description must not be empty string.", ex.Message);
         }
 
         [Fact (Skip = "Exception thrown when ran interferes with workflow.")]
+        //[Fact]
         public void Create_ThrowIfRequestLessThanTwoCounterNames() 
         {
-            var request1 = new VotingPollFactory.Request 
-            { 
-                Title = _title,
-                Description = _description,
-                Names = new string[] { }
-            };
+            _request.Names = new string[] { };
 
-            var request2 = new VotingPollFactory.Request 
-            { 
-                Title = _title,
-                Description = _description,
-                Names = new[] { "name" }
-            };
-
-            var ex1 = Throws<ArgumentException>(() => _factory.Create(request1));
-            var ex2 = Throws<ArgumentException>(() => _factory.Create(request2));
+            var ex1 = Throws<ArgumentException>(() => _factory.Create(_request));
 
             Contains("Request Names must contain at least 2 counter names.", ex1.Message);
+
+            _request.Names = new[] { "name" }; 
+
+            var ex2 = Throws<ArgumentException>(() => _factory.Create(_request));
+
             Contains("Request Names must contain at least 2 counter names.", ex2.Message);
         }
 
