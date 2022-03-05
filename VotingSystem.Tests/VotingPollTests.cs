@@ -21,6 +21,14 @@ namespace VotingSystem.Tests
     {
 
         private VotingPollFactory _factory = new VotingPollFactory();
+
+        private VotingPollFactory.Request _request = new VotingPollFactory.Request 
+        { 
+            Title = "title",
+            Description = "descrition",
+            Names = new[] { "names1", "name2" }
+        };
+
         private string _title = "title";
         private string _description = "descrition";
         private string[] _names = new[] { "names1", "name2" };
@@ -28,7 +36,7 @@ namespace VotingSystem.Tests
         [Fact]
         public void Create_AddsCounterToThePollForEachName() 
         {
-            var poll = _factory.Create(_title, _description, _names);
+            var poll = _factory.Create(_request);
 
             foreach (var name in _names)
             {
@@ -36,29 +44,62 @@ namespace VotingSystem.Tests
             }
         }
 
-        [Fact (Skip = "Exception thrown when ran interferes with workflow.")]
-        public void Create_ThrowIfEmptyTitle() 
+        //[Fact (Skip = "Exception thrown when ran interferes with workflow.")]
+        [Fact]
+        public void Create_ThrowIfRequestEmptyTitle() 
         {
-            Throws<ArgumentException>(() => _factory.Create("", _description, _names));
+
+            var request = new VotingPollFactory.Request 
+            { 
+                Title = "",
+                Description = _description,
+                Names = _names
+            };
+
+            var ex = Throws<ArgumentException>(() => _factory.Create(request));
+            
         }
 
-        [Fact (Skip = "Exception thrown when ran interferes with workflow.")]
-        public void Create_ThrowIfEmptyDescription() 
+        //[Fact (Skip = "Exception thrown when ran interferes with workflow.")]
+        [Fact]
+        public void Create_ThrowIfRequestEmptyDescription() 
         {
-            Throws<ArgumentException>(() => _factory.Create(_title, "", _names));
+            var request = new VotingPollFactory.Request 
+            { 
+                Title = _title,
+                Description = "",
+                Names = _names
+            };
+
+            Throws<ArgumentException>(() => _factory.Create(request));
         }
 
-        [Fact (Skip = "Exception thrown when ran interferes with workflow.")]
-        public void Create_ThrowIfLessThanTwoCounterNames() 
+        //[Fact (Skip = "Exception thrown when ran interferes with workflow.")]
+        [Fact]
+        public void Create_ThrowIfRequestLessThanTwoCounterNames() 
         {
-            Throws<ArgumentException>(() => _factory.Create(_title, _description, new[] { "name" }));
-            Throws<ArgumentException>(() => _factory.Create(_title, _description, new string[] { }));
+            var request1 = new VotingPollFactory.Request 
+            { 
+                Title = _title,
+                Description = _description,
+                Names = new string[] { }
+            };
+
+            var request2 = new VotingPollFactory.Request 
+            { 
+                Title = _title,
+                Description = _description,
+                Names = new[] { "name" }
+            };
+
+            Throws<ArgumentException>(() => _factory.Create(request1));
+            Throws<ArgumentException>(() => _factory.Create(request2));
         }
 
         [Fact]
         public void Create_AddsTitleToThePoll() 
         {
-            var poll = _factory.Create(_title, _description, _names);
+            var poll = _factory.Create(_request);
 
             Equal(_title, poll.Title);
         }
@@ -66,7 +107,7 @@ namespace VotingSystem.Tests
         [Fact]
         public void Create_AddsDescriptionToThePoll() 
         {
-            var poll = _factory.Create(_title, _description, _names);
+            var poll = _factory.Create(_request);
 
             Equal(_description, poll.Description);
         }
