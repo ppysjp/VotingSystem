@@ -20,23 +20,14 @@ namespace VotingSystem.Tests
     }
     public class VotingPollFactoryTests
     {
-        [Fact]
-        public void Create_ThrowIfLessThanTwoCounterNames() 
-        {
-            var names = new[] { "name" };
-            var factory = new VotingPollFactory();
 
-            Throws<ArgumentException>(() => factory.Create("", new[] { "name" }));
-            Throws<ArgumentException>(() => factory.Create("", new string[] { }));
-        }
+        private VotingPollFactory _factory = new VotingPollFactory();
 
         [Fact]
         public void Create_AddsCounterToThePollForEachName() 
         {
             var names = new[] { "Sam", "Tom"};
-            var factory = new VotingPollFactory();
-
-            var poll = factory.Create("", names);
+            var poll = _factory.Create("", names);
 
             foreach (var name in names)
             {
@@ -45,12 +36,20 @@ namespace VotingSystem.Tests
         }
 
         [Fact]
+        public void Create_ThrowIfLessThanTwoCounterNames() 
+        {
+            var names = new[] { "name" };
+
+            Throws<ArgumentException>(() => _factory.Create("", new[] { "name" }));
+            Throws<ArgumentException>(() => _factory.Create("", new string[] { }));
+        }
+
+        [Fact]
         public void Create_AddsTitleToThePoll() 
         {
             var title = "title";
             var names = new[] { "Sam", "Tom"};
-            var factory = new VotingPollFactory();
-            var poll = factory.Create(title, names);
+            var poll = _factory.Create(title, names);
 
             Equal(title, poll.Title);
         }
