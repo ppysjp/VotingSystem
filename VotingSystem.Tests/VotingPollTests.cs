@@ -23,6 +23,7 @@ namespace VotingSystem.Tests
         private VotingPollFactory _factory = new VotingPollFactory();
         private string[] _names = new[] { "names1", "name2" };
         private string _title = "title";
+        private string _description = "descrition";
 
         [Fact]
         public void Create_AddsCounterToThePollForEachName() 
@@ -55,6 +56,14 @@ namespace VotingSystem.Tests
             var poll = _factory.Create(_title, _names);
 
             Equal(_title, poll.Title);
+        }
+        
+        [Fact]
+        public void Create_AddsDescriptionToThePoll() 
+        {
+            var poll = _factory.Create(_title, _description, _names);
+
+            Equal(_description, poll.Title);
         }
  
     }
