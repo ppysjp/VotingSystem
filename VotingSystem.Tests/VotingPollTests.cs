@@ -69,6 +69,7 @@ namespace VotingSystem.Tests
 
             return new VotingPoll
             {
+                Title = title,
                 Counters = names.Select(name => new Counter { Name = name })
             };
         }
