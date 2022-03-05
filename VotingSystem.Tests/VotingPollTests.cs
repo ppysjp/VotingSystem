@@ -37,14 +37,19 @@ namespace VotingSystem.Tests
         }
 
         [Fact]
-        public void Create_ThrowIfLessThanTwoCounterNamesAndTitle() 
+        public void Create_ThrowIfEmptyTitle() 
         {
-            Throws<ArgumentException>(() => _factory.Create("", _description, new[] { "name" }));
-            Throws<ArgumentException>(() => _factory.Create("", _description, new string[] { }));
+            Throws<ArgumentException>(() => _factory.Create("", _description, _names));
+        }
+
+        [Fact]
+        public void Create_ThrowIfEmptyDescription() 
+        {
+            Throws<ArgumentException>(() => _factory.Create(_title, "", _names));
         }
 
        [Fact]
-        public void Create_ThrowIfLessThanTwoCounterNamesAndEmptyTitle() 
+        public void Create_ThrowIfLessThanTwoCounterNames() 
         {
             Throws<ArgumentException>(() => _factory.Create(_title, _description, new[] { "name" }));
             Throws<ArgumentException>(() => _factory.Create(_title, _description, new string[] { }));
@@ -76,6 +81,9 @@ namespace VotingSystem.Tests
 
         public VotingPoll Create(string title, string description, string[] names)
         {
+
+            //if (string.IsNullOrEmpty(title)) throw new ArgumentException();
+            //if (string.IsNullOrEmpty(description)) throw new ArgumentException();
             if (names.Length < 2) throw new ArgumentException();
 
             return new VotingPoll
