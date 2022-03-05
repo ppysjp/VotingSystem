@@ -75,22 +75,25 @@ namespace VotingSystem.Tests
 
     public class VotingPollFactory
     {
-        public VotingPollFactory()
+        public class Request 
         {
+            public string Title { get; set; }
+            public string Description { get; set; }
+            public string[] Names { get; set; }
         }
-
-        public VotingPoll Create(string title, string description, string[] names)
+        
+        public VotingPoll Create(Request request)
         {
 
-            if (string.IsNullOrEmpty(title)) throw new ArgumentException();
-            if (string.IsNullOrEmpty(description)) throw new ArgumentException();
-            if (names.Length < 2) throw new ArgumentException();
+            if (string.IsNullOrEmpty(request.Title)) throw new ArgumentException();
+            if (string.IsNullOrEmpty(request.Description)) throw new ArgumentException();
+            if (request.Names.Length < 2) throw new ArgumentException();
 
             return new VotingPoll
             {
-                Title = title,
-                Description = description,
-                Counters = names.Select(name => new Counter { Name = name })
+                Title = request.Title,
+                Description = request.Description,
+                Counters = request.Names.Select(name => new Counter { Name = name })
             };
         }
     }
