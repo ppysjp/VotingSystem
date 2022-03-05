@@ -51,6 +51,8 @@ namespace VotingSystem.Tests
             var names = new[] { "Sam", "Tom"};
             var factory = new VotingPollFactory();
             var poll = factory.Create(title, names);
+
+            Equal(title, poll.Title);
         }
  
     }
@@ -78,6 +80,8 @@ namespace VotingSystem.Tests
         {
             Counters = Enumerable.Empty<Counter>();
         }
+
+        public string Title { get; set; }
 
         public IEnumerable<Counter> Counters { get; set; }
     }
