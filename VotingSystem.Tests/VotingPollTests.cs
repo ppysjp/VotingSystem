@@ -28,7 +28,7 @@ namespace VotingSystem.Tests
         [Fact]
         public void Create_AddsCounterToThePollForEachName() 
         {
-            var poll = _factory.Create("", _description, _names);
+            var poll = _factory.Create(_title, _description, _names);
 
             foreach (var name in _names)
             {
@@ -82,8 +82,8 @@ namespace VotingSystem.Tests
         public VotingPoll Create(string title, string description, string[] names)
         {
 
-            //if (string.IsNullOrEmpty(title)) throw new ArgumentException();
-            //if (string.IsNullOrEmpty(description)) throw new ArgumentException();
+            if (string.IsNullOrEmpty(title)) throw new ArgumentException();
+            if (string.IsNullOrEmpty(description)) throw new ArgumentException();
             if (names.Length < 2) throw new ArgumentException();
 
             return new VotingPoll
