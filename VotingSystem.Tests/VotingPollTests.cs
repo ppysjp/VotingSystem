@@ -14,7 +14,6 @@ namespace VotingSystem.Tests
         public void ZeroCountersWhenCreated() 
         {
             var poll = new VotingPoll();
-
             Empty(poll.Counters);
         }
     }
@@ -23,6 +22,7 @@ namespace VotingSystem.Tests
 
         private VotingPollFactory _factory = new VotingPollFactory();
         private string[] _names = new[] { "names1", "name2" };
+        private string _title = "title";
 
         [Fact]
         public void Create_AddsCounterToThePollForEachName() 
@@ -36,19 +36,25 @@ namespace VotingSystem.Tests
         }
 
         [Fact]
-        public void Create_ThrowIfLessThanTwoCounterNames() 
+        public void Create_ThrowIfLessThanTwoCounterNamesAndTitle() 
         {
             Throws<ArgumentException>(() => _factory.Create("", new[] { "name" }));
             Throws<ArgumentException>(() => _factory.Create("", new string[] { }));
         }
 
+       [Fact]
+        public void Create_ThrowIfLessThanTwoCounterNamesAndEmptyTitle() 
+        {
+            Throws<ArgumentException>(() => _factory.Create(_title, new[] { "name" }));
+            Throws<ArgumentException>(() => _factory.Create(_title, new string[] { }));
+        }
+
         [Fact]
         public void Create_AddsTitleToThePoll() 
         {
-            var title = "title";
-            var poll = _factory.Create(title, _names);
+            var poll = _factory.Create(_title, _names);
 
-            Equal(title, poll.Title);
+            Equal(_title, poll.Title);
         }
  
     }
