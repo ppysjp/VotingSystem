@@ -28,7 +28,7 @@ namespace VotingSystem.Tests
         [Fact]
         public void Create_AddsCounterToThePollForEachName() 
         {
-            var poll = _factory.Create("", _names);
+            var poll = _factory.Create("", _description, _names);
 
             foreach (var name in _names)
             {
@@ -39,21 +39,21 @@ namespace VotingSystem.Tests
         [Fact]
         public void Create_ThrowIfLessThanTwoCounterNamesAndTitle() 
         {
-            Throws<ArgumentException>(() => _factory.Create("", new[] { "name" }));
-            Throws<ArgumentException>(() => _factory.Create("", new string[] { }));
+            Throws<ArgumentException>(() => _factory.Create("", _description, new[] { "name" }));
+            Throws<ArgumentException>(() => _factory.Create("", _description, new string[] { }));
         }
 
        [Fact]
         public void Create_ThrowIfLessThanTwoCounterNamesAndEmptyTitle() 
         {
-            Throws<ArgumentException>(() => _factory.Create(_title, new[] { "name" }));
-            Throws<ArgumentException>(() => _factory.Create(_title, new string[] { }));
+            Throws<ArgumentException>(() => _factory.Create(_title, _description, new[] { "name" }));
+            Throws<ArgumentException>(() => _factory.Create(_title, _description, new string[] { }));
         }
 
         [Fact]
         public void Create_AddsTitleToThePoll() 
         {
-            var poll = _factory.Create(_title, _names);
+            var poll = _factory.Create(_title, _description, _names);
 
             Equal(_title, poll.Title);
         }
@@ -74,7 +74,7 @@ namespace VotingSystem.Tests
         {
         }
 
-        public VotingPoll Create(string title, string[] names)
+        public VotingPoll Create(string title, string description, string[] names)
         {
             if (names.Length < 2) throw new ArgumentException();
 
