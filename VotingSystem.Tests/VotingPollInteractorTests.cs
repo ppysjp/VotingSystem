@@ -13,13 +13,12 @@ namespace VotingSystem.Tests
         public void CreateVotingPoll_UsesVotingPollFactoryToCreateVotingPoll()
         {
             var request = new VotingPollFactory.Request();
-            var mockLibrary = new Mock<VotingPollFactory>();
-            var factory = new VotingPollFactory();
-            var interactor = new VotingPollInteractor(mockLibrary.Object);
+            var mockFactory = new Mock<VotingPollFactory>();
+            var interactor = new VotingPollInteractor(mockFactory.Object);
 
             interactor.CreateVotingPoll(request);
 
-            mockLibrary.Verify(x => x.Create(request));
+            mockFactory.Verify(x => x.Create(request));
         }
     }
 
