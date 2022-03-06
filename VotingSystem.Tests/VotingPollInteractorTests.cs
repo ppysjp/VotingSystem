@@ -34,13 +34,15 @@ namespace VotingSystem.Tests
 
             var interactor = new VotingPollInteractor(mockFactory.Object, mockPersistance.Object);
 
+            interactor.CreateVotingPoll(request);
+
             mockPersistance.Verify(x => x.SaveVotingPoll(poll));
         }
     }
 
     public interface IVotingSystemPersistance
     {
-        void SaveVotingPoll(VotingPoll poll);
+        void SaveVotingPoll(VotingPoll votingPoll);
     }
 
     public class VotingPollInteractor
@@ -56,7 +58,8 @@ namespace VotingSystem.Tests
 
         internal void CreateVotingPoll(VotingPollFactory.Request request)
         {
-            _factory.Create(request);
+            var poll = _factory.Create(request);
+            _peristance.SaveVotingPoll(poll);
         }
     }
 
