@@ -13,7 +13,7 @@ namespace VotingSystem.Tests
         public void CreateVotingPoll_UsesVotingPollFactoryToCreateVotingPoll()
         {
             var request = new VotingPollFactory.Request();
-            var mockFactory = new Mock<VotingPollFactory>();
+            var mockFactory = new Mock<IVotingPollFactory>();
             var interactor = new VotingPollInteractor(mockFactory.Object);
 
             interactor.CreateVotingPoll(request);
@@ -24,9 +24,9 @@ namespace VotingSystem.Tests
 
     public class VotingPollInteractor
     {
-        private readonly VotingPollFactory _factory;
+        private readonly IVotingPollFactory _factory;
 
-        public VotingPollInteractor(VotingPollFactory factory)
+        public VotingPollInteractor(IVotingPollFactory factory)
         {
             _factory = factory;
         }

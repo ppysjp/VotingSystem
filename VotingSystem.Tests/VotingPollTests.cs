@@ -61,7 +61,6 @@ namespace VotingSystem.Tests
     public interface IVotingPollFactory 
     {
         public VotingPoll Create(VotingPollFactory.Request request);
-
     }
 
     public class VotingPollFactory
