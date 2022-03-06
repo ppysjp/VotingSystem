@@ -28,12 +28,19 @@ namespace VotingSystem.Tests
             var request = new VotingPollFactory.Request();
             var mockFactory = new Mock<IVotingPollFactory>();
             var mockPersistance = new Mock<IVotingSystemPersistance>();
+
+            var poll = new VotingPoll();
+            mockFactory.Setup(x => x.Create(request)).Returns(poll);
+
             var interactor = new VotingPollInteractor(mockFactory.Object, mockPersistance.Object);
+
+            mockPersistance.Verify(x => x.SaveVotingPoll(poll));
         }
     }
 
     public interface IVotingSystemPersistance
     {
+        void SaveVotingPoll(VotingPoll poll);
     }
 
     public class VotingPollInteractor
