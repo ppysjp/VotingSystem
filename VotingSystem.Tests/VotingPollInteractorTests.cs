@@ -30,7 +30,6 @@ namespace VotingSystem.Tests
         [Fact]
         public void CreateVoting_PersistsCreatedPoll() 
         { 
-
             var poll = new VotingPoll();
             _mockFactory.Setup(x => x.Create(_request)).Returns(poll);
 
