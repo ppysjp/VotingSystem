@@ -14,21 +14,37 @@ namespace VotingSystem.Tests
         {
             var request = new VotingPollFactory.Request();
             var mockFactory = new Mock<IVotingPollFactory>();
-            var interactor = new VotingPollInteractor(mockFactory.Object);
+            var mockPersistance = new Mock<IVotingSystemPersistance>();
+            var interactor = new VotingPollInteractor(mockFactory.Object, mockPersistance.Object);
 
             interactor.CreateVotingPoll(request);
 
             mockFactory.Verify(x => x.Create(request));
         }
+
+        [Fact]
+        public void CreateVoting_PersistsCreatedPoll() 
+        { 
+            var request = new VotingPollFactory.Request();
+            var mockFactory = new Mock<IVotingPollFactory>();
+            var mockPersistance = new Mock<IVotingSystemPersistance>();
+            var interactor = new VotingPollInteractor(mockFactory.Object, mockPersistance.Object);
+        }
+    }
+
+    public interface IVotingSystemPersistance
+    {
     }
 
     public class VotingPollInteractor
     {
         private readonly IVotingPollFactory _factory;
+        private readonly IVotingSystemPersistance _peristance;
 
-        public VotingPollInteractor(IVotingPollFactory factory)
+        public VotingPollInteractor(IVotingPollFactory factory, IVotingSystemPersistance persistance)
         {
             _factory = factory;
+            _peristance = persistance;
         }
 
         internal void CreateVotingPoll(VotingPollFactory.Request request)
@@ -36,4 +52,5 @@ namespace VotingSystem.Tests
             _factory.Create(request);
         }
     }
+
 }
