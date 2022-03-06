@@ -9,34 +9,34 @@ namespace VotingSystem.Tests
 {
     public class VotingPollInteractorTests
     {
+        private VotingPollFactory.Request _request = new VotingPollFactory.Request();
+        private Mock<IVotingPollFactory> _mockFactory = new Mock<IVotingPollFactory>();
+        private Mock<IVotingSystemPersistance> _mockPersistance = new Mock<IVotingSystemPersistance>();
+        private VotingPollInteractor _interactor;
+
+        public VotingPollInteractorTests()
+        {
+            _interactor = new VotingPollInteractor(_mockFactory.Object, _mockPersistance.Object);
+        }            
+
         [Fact]
         public void CreateVotingPoll_UsesVotingPollFactoryToCreateVotingPoll()
         {
-            var request = new VotingPollFactory.Request();
-            var mockFactory = new Mock<IVotingPollFactory>();
-            var mockPersistance = new Mock<IVotingSystemPersistance>();
-            var interactor = new VotingPollInteractor(mockFactory.Object, mockPersistance.Object);
+            _interactor.CreateVotingPoll(_request);
 
-            interactor.CreateVotingPoll(request);
-
-            mockFactory.Verify(x => x.Create(request));
+            _mockFactory.Verify(x => x.Create(_request));
         }
 
         [Fact]
         public void CreateVoting_PersistsCreatedPoll() 
         { 
-            var request = new VotingPollFactory.Request();
-            var mockFactory = new Mock<IVotingPollFactory>();
-            var mockPersistance = new Mock<IVotingSystemPersistance>();
 
             var poll = new VotingPoll();
-            mockFactory.Setup(x => x.Create(request)).Returns(poll);
+            _mockFactory.Setup(x => x.Create(_request)).Returns(poll);
 
-            var interactor = new VotingPollInteractor(mockFactory.Object, mockPersistance.Object);
+            _interactor.CreateVotingPoll(_request);
 
-            interactor.CreateVotingPoll(request);
-
-            mockPersistance.Verify(x => x.SaveVotingPoll(poll));
+            _mockPersistance.Verify(x => x.SaveVotingPoll(poll));
         }
     }
 
