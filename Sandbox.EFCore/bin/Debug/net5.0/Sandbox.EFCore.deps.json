@@ -8,7 +8,8 @@
     ".NETCoreApp,Version=v5.0": {
       "Sandbox.EfCore/1.0.0": {
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": "5.0.15"
+          "Microsoft.EntityFrameworkCore": "5.0.15",
+          "Microsoft.EntityFrameworkCore.InMemory": "5.0.15"
         },
         "runtime": {
           "Sandbox.EfCore.dll": {}
@@ -41,6 +42,17 @@
         }
       },
       "Microsoft.EntityFrameworkCore.Analyzers/5.0.15": {},
+      "Microsoft.EntityFrameworkCore.InMemory/5.0.15": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "5.0.15"
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.EntityFrameworkCore.InMemory.dll": {
+            "assemblyVersion": "5.0.15.0",
+            "fileVersion": "5.0.1522.10812"
+          }
+        }
+      },
       "Microsoft.Extensions.Caching.Abstractions/5.0.0": {
         "dependencies": {
           "Microsoft.Extensions.Primitives": "5.0.0"
@@ -166,6 +178,13 @@
       "sha512": "sha512-QfJBhr49Jmvt+zJf1VPSBPq2ZPY5PlpiDSF3UFV37joyKiWMDyEsNTHd3RLFzagC4k8cmSKTgk+7Y49XwDvPJQ==",
       "path": "microsoft.entityframeworkcore.analyzers/5.0.15",
       "hashPath": "microsoft.entityframeworkcore.analyzers.5.0.15.nupkg.sha512"
+    },
+    "Microsoft.EntityFrameworkCore.InMemory/5.0.15": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-G0M1/0ejm6RuHqRywt9bgBdOn0czWmSJBLpNyRtw0KDtBPDEVSNmXSM1a60b0r14Fd/uaPWkWFVPaHngslAiwg==",
+      "path": "microsoft.entityframeworkcore.inmemory/5.0.15",
+      "hashPath": "microsoft.entityframeworkcore.inmemory.5.0.15.nupkg.sha512"
     },
     "Microsoft.Extensions.Caching.Abstractions/5.0.0": {
       "type": "package",
