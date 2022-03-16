@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\samuel.palmer\\Source\\Repos\\Voting System\\Sandbox.EFCore\\Sandbox.EFCore.csproj": {}
+    "C:\\Users\\samuel.palmer\\Source\\Repos\\Voting System\\Sandbox.EfCore\\Sandbox.EfCore.csproj": {}
   },
   "projects": {
-    "C:\\Users\\samuel.palmer\\Source\\Repos\\Voting System\\Sandbox.EFCore\\Sandbox.EFCore.csproj": {
+    "C:\\Users\\samuel.palmer\\Source\\Repos\\Voting System\\Sandbox.EfCore\\Sandbox.EfCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\samuel.palmer\\Source\\Repos\\Voting System\\Sandbox.EFCore\\Sandbox.EFCore.csproj",
-        "projectName": "Sandbox.EFCore",
-        "projectPath": "C:\\Users\\samuel.palmer\\Source\\Repos\\Voting System\\Sandbox.EFCore\\Sandbox.EFCore.csproj",
+        "projectUniqueName": "C:\\Users\\samuel.palmer\\Source\\Repos\\Voting System\\Sandbox.EfCore\\Sandbox.EfCore.csproj",
+        "projectName": "Sandbox.EfCore",
+        "projectPath": "C:\\Users\\samuel.palmer\\Source\\Repos\\Voting System\\Sandbox.EfCore\\Sandbox.EfCore.csproj",
         "packagesPath": "C:\\Users\\samuel.palmer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\samuel.palmer\\Source\\Repos\\Voting System\\Sandbox.EFCore\\obj\\",
+        "outputPath": "C:\\Users\\samuel.palmer\\Source\\Repos\\Voting System\\Sandbox.EfCore\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -43,6 +43,12 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.15, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

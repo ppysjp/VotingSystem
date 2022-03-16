@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sandbox", "Sandbox\Sandbox.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VotingSystem.Tests", "VotingSystem.Tests\VotingSystem.Tests.csproj", "{1626CDA3-5572-47F8-88CD-5211E1CEBD88}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sandbox.EFCore", "Sandbox.EFCore\Sandbox.EFCore.csproj", "{1476BE60-1543-4146-84C2-6AA59B9ED001}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sandbox.EfCore", "Sandbox.EfCore\Sandbox.EfCore.csproj", "{E21DA2B7-6C9B-41F6-A53F-197BD571E660}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{1626CDA3-5572-47F8-88CD-5211E1CEBD88}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1626CDA3-5572-47F8-88CD-5211E1CEBD88}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1626CDA3-5572-47F8-88CD-5211E1CEBD88}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1476BE60-1543-4146-84C2-6AA59B9ED001}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1476BE60-1543-4146-84C2-6AA59B9ED001}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1476BE60-1543-4146-84C2-6AA59B9ED001}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1476BE60-1543-4146-84C2-6AA59B9ED001}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E21DA2B7-6C9B-41F6-A53F-197BD571E660}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E21DA2B7-6C9B-41F6-A53F-197BD571E660}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E21DA2B7-6C9B-41F6-A53F-197BD571E660}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E21DA2B7-6C9B-41F6-A53F-197BD571E660}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

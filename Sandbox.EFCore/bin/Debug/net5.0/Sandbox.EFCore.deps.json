@@ -6,15 +6,15 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v5.0": {
-      "Sandbox.EFCore/1.0.0": {
+      "Sandbox.EfCore/1.0.0": {
         "runtime": {
-          "Sandbox.EFCore.dll": {}
+          "Sandbox.EfCore.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "Sandbox.EFCore/1.0.0": {
+    "Sandbox.EfCore/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
