@@ -1,0 +1,16 @@
+C:\Users\samuel.palmer\Source\Repos\Voting System\Sandbox.EFCore\bin\Debug\net5.0\Sandbox.EFCore.exe
+C:\Users\samuel.palmer\Source\Repos\Voting System\Sandbox.EFCore\bin\Debug\net5.0\Sandbox.EFCore.deps.json
+C:\Users\samuel.palmer\Source\Repos\Voting System\Sandbox.EFCore\bin\Debug\net5.0\Sandbox.EFCore.runtimeconfig.json
+C:\Users\samuel.palmer\Source\Repos\Voting System\Sandbox.EFCore\bin\Debug\net5.0\Sandbox.EFCore.runtimeconfig.dev.json
+C:\Users\samuel.palmer\Source\Repos\Voting System\Sandbox.EFCore\bin\Debug\net5.0\Sandbox.EFCore.dll
+C:\Users\samuel.palmer\Source\Repos\Voting System\Sandbox.EFCore\bin\Debug\net5.0\ref\Sandbox.EFCore.dll
+C:\Users\samuel.palmer\Source\Repos\Voting System\Sandbox.EFCore\bin\Debug\net5.0\Sandbox.EFCore.pdb
+C:\Users\samuel.palmer\Source\Repos\Voting System\Sandbox.EFCore\obj\Debug\net5.0\Sandbox.EFCore.csproj.AssemblyReference.cache
+C:\Users\samuel.palmer\Source\Repos\Voting System\Sandbox.EFCore\obj\Debug\net5.0\Sandbox.EFCore.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\samuel.palmer\Source\Repos\Voting System\Sandbox.EFCore\obj\Debug\net5.0\Sandbox.EFCore.AssemblyInfoInputs.cache
+C:\Users\samuel.palmer\Source\Repos\Voting System\Sandbox.EFCore\obj\Debug\net5.0\Sandbox.EFCore.AssemblyInfo.cs
+C:\Users\samuel.palmer\Source\Repos\Voting System\Sandbox.EFCore\obj\Debug\net5.0\Sandbox.EFCore.csproj.CoreCompileInputs.cache
+C:\Users\samuel.palmer\Source\Repos\Voting System\Sandbox.EFCore\obj\Debug\net5.0\Sandbox.EFCore.dll
+C:\Users\samuel.palmer\Source\Repos\Voting System\Sandbox.EFCore\obj\Debug\net5.0\ref\Sandbox.EFCore.dll
+C:\Users\samuel.palmer\Source\Repos\Voting System\Sandbox.EFCore\obj\Debug\net5.0\Sandbox.EFCore.pdb
+C:\Users\samuel.palmer\Source\Repos\Voting System\Sandbox.EFCore\obj\Debug\net5.0\Sandbox.EFCore.genruntimeconfig.cache
