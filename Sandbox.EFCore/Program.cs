@@ -19,7 +19,6 @@ namespace Sandbox.EfCore
     
     public class Fruit 
     {
-        public int Id { get; set; }
         public string Name { get; set; }
         public int Weight { get; set; }
     }
@@ -36,7 +35,8 @@ namespace Sandbox.EfCore
 
             ctx.SaveChanges();
 
-            var fruit = ctx.Fruits.Single(x => x.Name == "Banana");
+            var fruit1 = ctx.Fruits.FirstOrDefault();
+            var fruit2 = ctx.Fruits.Single(x => x.Name == "Banana");
 
             Console.ReadLine();
         }
