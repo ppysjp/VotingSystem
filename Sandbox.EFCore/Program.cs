@@ -13,7 +13,7 @@ namespace Sandbox.EfCore
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Fruit>().Property("Id"); 
+            modelBuilder.Entity<Fruit>().Property<int>("Id"); 
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
