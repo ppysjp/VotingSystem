@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Microsoft.EntityFrameworkCore;
 
 namespace Sandbox.EfCore
@@ -20,7 +21,10 @@ namespace Sandbox.EfCore
     {
         static void Main(string[] args)
         {
-            IEnumerable<Fruit> fruits = new[] { new Fruit { Name = "Banana", Weight = 1 } }; 
+            var ctx = new AppDbContext();
+            var fruit = ctx.Fruits.FirstOrDefault();
+
+            Console.ReadLine();
         }
     }
 }
