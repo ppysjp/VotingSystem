@@ -11,6 +11,11 @@ namespace Sandbox.EfCore
 
         public DbSet<Fruit> Fruits { get; set; }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Fruit>().Property("Id"); 
+        }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseInMemoryDatabase("Database");
