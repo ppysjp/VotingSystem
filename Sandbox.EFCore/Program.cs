@@ -8,7 +8,13 @@ namespace Sandbox.EfCore
 
     public class AppDbContext : DbContext
     {
+
         public DbSet<Fruit> Fruits { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseInMemoryDatabase("Database");
+        }
     }
     
     public class Fruit 
