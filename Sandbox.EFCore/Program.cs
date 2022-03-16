@@ -29,6 +29,9 @@ namespace Sandbox.EfCore
         static void Main(string[] args)
         {
             var ctx = new AppDbContext();
+
+            var orange = new Fruit { Name = "Orange" };
+            ctx.Fruits.Add(orange);
             var fruit = ctx.Fruits.FirstOrDefault();
 
             Console.ReadLine();
