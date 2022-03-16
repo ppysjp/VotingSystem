@@ -32,10 +32,11 @@ namespace Sandbox.EfCore
 
             var orange = new Fruit { Name = "Orange" };
             ctx.Fruits.Add(orange);
+            ctx.Fruits.Add(new Fruit { Name = "Banana" });
 
             ctx.SaveChanges();
 
-            var fruit = ctx.Fruits.FirstOrDefault();
+            var fruit = ctx.Fruits.Single(x => x.Name == "Banana");
 
             Console.ReadLine();
         }
