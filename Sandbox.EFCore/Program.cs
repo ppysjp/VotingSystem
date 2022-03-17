@@ -44,16 +44,17 @@ namespace Sandbox.EfCore
             var ctx = new AppDbContext();
 
             var orange = new Fruit { Name = "Orange" };
+            var banana = new Fruit { Name = "Banana" };
             ctx.Fruits.Add(orange);
-            ctx.Fruits.Add(new Fruit { Name = "Banana" });
+            ctx.Fruits.Add(banana);
 
             ctx.SaveChanges();
 
-            var fruit1 = ctx.Fruits
+            var fruits = ctx.Fruits
                 .Select(x => new FruitVm {
                     Id = EF.Property<int>(x, "Id"),
                     Name = x.Name
-                }).FirstOrDefault();
+                }).ToList();
 
 
             Console.ReadLine();
