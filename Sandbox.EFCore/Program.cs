@@ -49,8 +49,12 @@ namespace Sandbox.EfCore
 
             ctx.SaveChanges();
 
-            var fruit1 = ctx.Fruits.FirstOrDefault();
-            var fruit2 = ctx.Fruits.Single(x => x.Name == "Banana");
+            var fruit1 = ctx.Fruits
+                .Select(x => new FruitVm {
+                    Id = EF.Property<int>(x, "Id"),
+                    Name = x.Name
+                }).FirstOrDefault();
+
 
             Console.ReadLine();
         }
