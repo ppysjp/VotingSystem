@@ -10,6 +10,7 @@ namespace Sandbox.EfCore
     {
 
         public DbSet<Fruit> Fruits { get; set; }
+        public DbSet<Address> Addresses { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -26,13 +27,12 @@ namespace Sandbox.EfCore
     {
         public string Name { get; set; }
         public int Weight { get; set; }
-
-        public string Address1 { get; set; }
-        public string Address2{ get; set; }
+        public Address Address { get; set; }
     }
 
     public class Address 
     { 
+        public int Id { get; set; }
         public string PostCode { get; set; }
     }
 
