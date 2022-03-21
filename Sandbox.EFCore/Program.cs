@@ -70,9 +70,13 @@ namespace Sandbox.EfCore
                 ctx.SaveChanges();
             }
 
-            var fruits = ctx.Fruits.ToList();
+            using (var ctx = new AppDbContext())
+            {
+                var fruits = ctx.Fruits.ToList();
 
-            var addresses = ctx.Addresses.ToList();
+                var addresses = ctx.Addresses.ToList();
+            }
+
 
             Console.ReadLine();
         }
