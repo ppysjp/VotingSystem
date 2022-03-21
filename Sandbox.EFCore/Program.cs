@@ -73,6 +73,8 @@ namespace Sandbox.EfCore
                 }).ToList();
 
 
+            var addresses = ctx.Addresses.ToList();
+
             Console.ReadLine();
         }
     }
