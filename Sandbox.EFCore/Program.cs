@@ -72,7 +72,9 @@ namespace Sandbox.EfCore
 
             using (var ctx = new AppDbContext())
             {
-                var fruits = ctx.Fruits.ToList();
+                var fruits = ctx.Fruits
+                    .Include(x => x.Address)
+                    .ToList();
 
                 var addresses = ctx.Addresses.ToList();
             }
