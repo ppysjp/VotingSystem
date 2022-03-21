@@ -45,7 +45,11 @@ namespace Sandbox.EfCore
 
             var orange = new Fruit { Name = "Orange" };
             var banana = new Fruit { Name = "Banana" };
+
             ctx.Fruits.Add(orange);
+
+            var orangeId = ctx.Entry(orange).Property<int>("Id").CurrentValue;
+
             ctx.Fruits.Add(banana);
 
             ctx.SaveChanges();
