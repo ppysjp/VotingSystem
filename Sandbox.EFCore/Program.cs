@@ -58,7 +58,8 @@ namespace Sandbox.EfCore
 
             var address = new Address { PostCode = "Moon" };
 
-            ctx.Addresses.Add(address);
+            //ctx.Addresses.Add(address);
+            orange.Address = address;
 
             var orangeId = ctx.Entry(orange).Property<int>("Id").CurrentValue;
 
@@ -66,12 +67,7 @@ namespace Sandbox.EfCore
 
             ctx.SaveChanges();
 
-            var fruits = ctx.Fruits
-                .Select(x => new FruitVm {
-                    Id = EF.Property<int>(x, "Id"),
-                    Name = x.Name
-                }).ToList();
-
+            var fruits = ctx.Fruits.ToList();
 
             var addresses = ctx.Addresses.ToList();
 
