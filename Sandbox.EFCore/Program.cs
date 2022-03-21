@@ -54,7 +54,7 @@ namespace Sandbox.EfCore
                 .Select(x => new FruitVm {
                     Id = EF.Property<int>(x, "Id"),
                     Name = x.Name
-                }).ToList();
+                });
 
 
             Console.ReadLine();
