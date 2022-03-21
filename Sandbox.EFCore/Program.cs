@@ -56,6 +56,10 @@ namespace Sandbox.EfCore
 
             ctx.Fruits.Add(orange);
 
+            var address = new Address { PostCode = "Moon" };
+
+            ctx.Addresses.Add(address);
+
             var orangeId = ctx.Entry(orange).Property<int>("Id").CurrentValue;
 
             ctx.Fruits.Add(banana);
