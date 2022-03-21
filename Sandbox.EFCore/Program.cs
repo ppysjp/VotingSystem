@@ -49,23 +49,26 @@ namespace Sandbox.EfCore
     {
         static void Main(string[] args)
         {
-            var ctx = new AppDbContext();
 
-            var orange = new Fruit { Name = "Orange" };
-            var banana = new Fruit { Name = "Banana" };
 
-            ctx.Fruits.Add(orange);
+            using (var ctx = new AppDbContext())
+            {
+                var orange = new Fruit { Name = "Orange" };
+                var banana = new Fruit { Name = "Banana" };
 
-            var address = new Address { PostCode = "Moon" };
+                ctx.Fruits.Add(orange);
 
-            //ctx.Addresses.Add(address);
-            orange.Address = address;
+                var address = new Address { PostCode = "Moon" };
 
-            var orangeId = ctx.Entry(orange).Property<int>("Id").CurrentValue;
+                //ctx.Addresses.Add(address);
+                orange.Address = address;
 
-            ctx.Fruits.Add(banana);
+                var orangeId = ctx.Entry(orange).Property<int>("Id").CurrentValue;
 
-            ctx.SaveChanges();
+                ctx.Fruits.Add(banana);
+
+                ctx.SaveChanges();
+            }
 
             var fruits = ctx.Fruits.ToList();
 
