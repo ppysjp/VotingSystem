@@ -31,6 +31,11 @@ namespace Sandbox.EfCore
         public string Address2{ get; set; }
     }
 
+    public class Address 
+    { 
+        public string PostCode { get; set; }
+    }
+
 
     public class FruitVm
     {
