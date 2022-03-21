@@ -50,6 +50,7 @@ namespace Sandbox.EfCore
         static void Main(string[] args)
         {
 
+            int orangeId = 0;
 
             using (var ctx = new AppDbContext())
             {
@@ -58,15 +59,19 @@ namespace Sandbox.EfCore
 
                 ctx.Fruits.Add(orange);
 
-                var address = new Address { PostCode = "Moon" };
-
-                //ctx.Addresses.Add(address);
-                orange.Address = address;
-
-                var orangeId = ctx.Entry(orange).Property<int>("Id").CurrentValue;
+                orangeId = ctx.Entry(orange).Property<int>("Id").CurrentValue;
 
                 ctx.Fruits.Add(banana);
 
+                ctx.SaveChanges();
+            }
+
+            using (var ctx = new AppDbContext())
+            {
+                var address = new Address { PostCode = "Moon" };
+
+                ctx.Addresses.Add(address);
+                
                 ctx.SaveChanges();
             }
 
