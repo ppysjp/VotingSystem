@@ -19,3 +19,46 @@ You deselect everything and then override the OnCofiguring method.
 Because we are going to tell the AppDbContext and we are going to 
 use the UseInMemoryDatabase which is a function that is now available 
 because we have added the nuget package for it.
+So then he does a very simple example where he adds a simple orange to
+the context object and what is clever is the Id of the fruit which exists
+at this time in the video is used as the Primary for this object. So 
+if you debug this object then you get the Orange with an Id of 1 
+automatically generated. 
+
+The transaction...
+
+A Database requires transactions.
+Adding to your ctx object basically is like adding things to a basket in 
+a supermarket. But nothing is 'saved' to the database until you make 
+a transaction. So in the case of the database what you need to do is go
+and save to the database. This way what you have added will be stored
+there.
+
+Once the ctx has been saved, you just query the database using linq.
+
+Shadow Properties
+-----------------
+
+So to create a Shadow Property using EF you need to override another
+method. This method is called OnModelCreating.
+Again you get the modelbuilder that is a parameter of the function and 
+what we are basically doing is saying how do the wrapper interact with 
+the object that we have just created. 
+So in the case that we have from the video 
+
+            modelBuilder.Entity<Fruit>().Property<int>("Id"); 
+
+We have an Id property that we are asking the Entity Framework to look
+after for us, this means that we don't have to manage it ourselves and it
+means that our Fruit class no longer needs to have a fruit Id. I think this
+is what it is saying essentially.
+
+FruitVm
+-------
+
+Now FruitVm is the fruit object that we would use to display our fruit 
+object in essense
+
+
+
+
