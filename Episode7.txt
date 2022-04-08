@@ -1,0 +1,21 @@
+
+I've just decided to watch the video from beginning because it has 
+been a month since I last looked at this stuff.
+The point of Entity Framework means that you don't have to write sql. 
+You can instead use the Framework and it will write your sql for you.
+The DbContext is a wrapper for your data.
+An AppDbContext is a set of tables that is wrapped by your DbContext.
+The Fruit class represents a table for example.
+A DbSet is a collection with rows.
+So DbSet<Fruit> is a collection of fruit with a load of instances of fruit.
+You should look at the Interfaces this class implements.
+A DbSet allows you to generate queries.
+You use linq to make queries to your database context.
+In this example we are going to use the InMemory database nuget package
+which will allow use to use a fake database.
+If you type Alt-Enter in the body of the AppDbContext and then select
+GenerateOverrides...
+You deselect everything and then override the OnCofiguring method.
+Because we are going to tell the AppDbContext and we are going to 
+use the UseInMemoryDatabase which is a function that is now available 
+because we have added the nuget package for it.

@@ -63,6 +63,8 @@ namespace Sandbox.EfCore
 
                 ctx.Fruits.Add(banana);
 
+                //orange.Address = Address;
+
                 ctx.SaveChanges();
             }
 
