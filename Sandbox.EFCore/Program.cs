@@ -15,6 +15,7 @@ namespace Sandbox.EfCore
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Fruit>().Property<int>("Id"); 
+            modelBuilder.Entity<Address>().Property<int>("FruitId"); 
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -72,6 +73,8 @@ namespace Sandbox.EfCore
             {
                 var address = new Address { PostCode = "Moon" };
 
+                ctx.Entry(address).Property<int>("FruitId").CurrentValue = orangeId;
+
                 ctx.Addresses.Add(address);
                 
                 ctx.SaveChanges();
@@ -79,6 +82,7 @@ namespace Sandbox.EfCore
 
             using (var ctx = new AppDbContext())
             {
+                
                 var fruits = ctx.Fruits
                     .Include(x => x.Address)
                     .ToList();

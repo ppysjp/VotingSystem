@@ -1,4 +1,3 @@
-
 I've just decided to watch the video from beginning because it has 
 been a month since I last looked at this stuff.
 The point of Entity Framework means that you don't have to write sql. 
@@ -57,7 +56,169 @@ FruitVm
 -------
 
 Now FruitVm is the fruit object that we would use to display our fruit 
-object in essense
+object in essense. So what we are going to do is take every fruit that we 
+have in the database and convert it to a FruitVm object.
+In this bit of code we have an example of linq Select (which is map) but 
+how are we going to add the Id property to out fruitVm instance. We do 
+this by extracting the Id property using the Entity Framework static 
+method as shown below.
+
+var fruit = ctx.Fruits
+.Select(x => new FruitVm {
+  Id = EF.Property<int>(x,"Id").CurrentValue
+  Name = x.Name
+})
+.FirstOrDefault();
+
+The first or default takes the first fruit from the fruits that we have
+saved in the database and then using that fruit we can create the FruitVm
+using the Select statement where the properties are mapped to eachohter
+and then we have used EF to retrieve the shadow property of the Id to 
+make sure the FruitVm has a value for the Id. 
+
+The key thing is the following line allows us to extract the shadow property
+
+  Id = EF.Property<int>(x,"Id")
+
+EF automatically updates the Id number.
+
+He then explains that you get a query which is an empty collection and then 
+you need to evaluate what you want with FirstOrDefault or ToList method on 
+the query. This is an example of the C# lazy evaluation stuff.
+
+If you have something that is IQueriable, this means it hasn't been evaluated,
+or another way to say this is that the database hasn't been called yet.
+
+
+How do we grab an Id Value without Querying the Database? 
+
+We can do this with the following code snippet
+
+  Id = EF.Property<int>(x,"Id").CurrentValue,
+
+
+RelationDatabases
+#################
+
+So now we introduce another class which is an Address. 
+And now we can see that we have a Fruit that has an Address object.
+And basically we could now have a set of fruits that point to a single 
+address we if we wanted or the case of one Fruit pointing at one address
+whilst another Fruit points at another. The point is the Fruit has an
+address and so we can represent this as a relationaldatabase. 
+
+We don't want unecessary repeated addresses so if we had the case where 
+we had a set of fruit that was destined for a particular address. We would
+just need a table with that one address in it, and we would want the 
+fruits to each point at the same address. So how do we set this up 
+using EF.
+
+Again we create a new DbSet like the following:
+
+        public DbSet<Address> Addresses { get; set; }
+
+This just configures the Table
+
+   public class Address 
+    { 
+        public int Id { get; set; }
+        public string PostCode { get; set; }
+    }
+
+For now we are going to give the Address an Id property, we can make this
+a shadow property at a later stage. 
+
+            using (var ctx = new AppDbContext())
+            {
+                var address = new Address { PostCode = "Moon" };
+
+                ctx.Addresses.Add(address);
+                
+                ctx.SaveChanges();
+            }
+
+
+The fruit object now lookes like this, note that it has an Address property: 
+
+So in the past when we wanted to add an address to the database we could add
+it directly via the context, as a transaction.
+
+ctx.Addresses.Add(address);
+
+However we aren't going to do that, instead we are going to add it to the
+fruit and then send the fruit as the transaction.
+
+orange.Address = address.
+
+For example.
+
+The using statement
+###################
+
+The following ctx statement is going to be used multiple time so what we
+do is put it in a using statement like so: 
+
+using (var ctx = new AppDbcontext())
+
+So we want to try an replicate the behaviour of the database which is 
+that we create an ctx object and use it to save to the database. then
+what we want to do is create another ctx object and what we want to do is
+is to retrieve from the database.
+
+To retrieve all the fruits thtat have an address for example you would use the 
+Include method like so 
+
+                var fruits = ctx.Fruits
+                    .Include(x => x.Address)
+                    .ToList();
+
+Sometimes you don't want to be querying an object to be able to assing a property
+to an object. 
+
+So sometimes you don't want to have the line: 
+
+orange.Address = Address; 
+
+The reason for this is that we want to minimise the number of transactions to the database. 
+The key thing to understand is querying and writing are trips to the database and are things
+that we want to keep to a minimum.
+To do this we can just add a Foreign key as a property to the Address which is called the 
+FruitId.
+This then means we can create a new Address with the following line: 
+
+var address = new Address {PosCode = "Moon", FruitId = orangeId }
+
+So we haven't use the orange object itself to do the assignment but we have assigned the 
+address to the orange instance via the foreign key. 
+
+We can then do the shadow property thing again and let EF take care of oranising the FK for 
+us.
+
+It's basically in reverse. 
+
+orangeId = ctx.Entry(orange).Property<int>("Id").CurrentValue;
+
+We do a line like the above to generate an Id key and we do a line like below to 
+use the Primary Key we have generated as a Foreign Key: 
+
+orangeId = ctx.Entry(orange).Property<int>("Id").CurrentValue;
+
+To do this we also need to make sure that the OnModelCreating method at the top is aware of 
+the new Foreign Key we are introducing to the model we are creating.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
