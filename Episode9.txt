@@ -30,3 +30,16 @@ are the same.
 When I try and run the test it tells me that I need to override the 
 OnConfiguring method. So we need to set it up to use the 
 InMemoryDatabase.
+
+However for this project is that we need to provide options through the 
+constructor for the AppDbContext. This is a design choice. We want 
+to provide a separate name for the database through the constructor
+so that each database has a separate name. We want this because the tests
+run in parallel and if they happen to use the same database by accident 
+then we will get faulty test results.
+
+You may need to revise a bit about how base key word works so here is 
+a link here: 
+
+https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/base#:~:text=base%20(C%23%20Reference)&text=The%20base%20keyword%20is%20used,instances%20of%20the%20derived%20class.
+

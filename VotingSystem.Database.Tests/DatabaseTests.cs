@@ -28,15 +28,13 @@ namespace VotingSystem.Database.Tests
 
     public class AppDbContext : DbContext
     {
-        public AppDbContext()
-        {
-        }
+        public AppDbContext(DbContextOptions<AppDbContext> options)
+            : base(options) { }
 
         public DbSet<Counter> Counters { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseInMemoryDatabase();
         }
     }
 }
