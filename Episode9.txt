@@ -88,3 +88,14 @@ So basically what I just learned is not to much during this block.
 
 I just learned that the name of the class should be renamed because 
 what we are testing is basically the AppDbContext.
+
+gacp "Rename test class to AppDbContextTests"
+
+So basically there is some repeated code that we want to refactor.
+To do this we are going to create a new function that is called 
+CreateDbContext.
+
+gacp "Create function that will be used for refactoring."
+
+
+

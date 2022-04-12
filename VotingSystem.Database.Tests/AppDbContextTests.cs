@@ -8,6 +8,12 @@ namespace VotingSystem.Database.Tests
 {
     public class AppDbContextTests
     {
+
+        public AppDbContext CreateDbContext(string databaseName) 
+        { 
+
+        }
+
         [Fact]
         public void SavesCounterToDatabase() 
         {
