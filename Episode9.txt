@@ -19,3 +19,5 @@ that the Counters property is going to be is going to be the following:
 DbSet<counter>
 
 So yeah. we create that.
+
+We then create a new counter can check against.
