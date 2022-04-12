@@ -48,4 +48,14 @@ by using a DbContextOptionsBuilder. So we have now passed the options
 into the AppDbContext object, so yeah we are now making some progress.
 
 
+So we are now getting a primary key error so the next step is to fix 
+this error. We need to ask ourselves whether the dataobject we are dealing
+with actually needs a primary key specifically defined.
+
+We use our domain knowledge in this case and override hthe OnModelCreating
+function. So we have added the Counter table in the domain knowledge.
+
+Finally we have the first test passing.
+
+
 

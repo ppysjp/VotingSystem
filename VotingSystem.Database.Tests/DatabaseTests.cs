@@ -37,8 +37,9 @@ namespace VotingSystem.Database.Tests
 
         public DbSet<Counter> Counters { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Counter>().Property<int>("Id"); 
         }
     }
 }
