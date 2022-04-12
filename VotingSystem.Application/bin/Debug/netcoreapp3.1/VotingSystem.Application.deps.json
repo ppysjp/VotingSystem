@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "VotingSystem.Application/1.0.0": {
+        "dependencies": {
+          "VotingSystem": "1.0.0"
+        },
+        "runtime": {
+          "VotingSystem.Application.dll": {}
+        }
+      },
+      "VotingSystem/1.0.0": {
+        "runtime": {
+          "VotingSystem.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "VotingSystem.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "VotingSystem/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

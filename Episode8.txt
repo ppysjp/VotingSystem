@@ -7,3 +7,36 @@ moved it the models folder. This has meant we have needed to go around the place
 are getting errors and have needed to use Alt-Enter in order to tell the program where to 
 get various parts. We have done this by using Alt-Enter on any bit of code that has had 
 red squiggle underneath it.
+He's basically saying that the voting poll interactor is it's own project because it 
+helps compose the project.
+
+The most complex step in this video so far is at 10:56 where we have look at the 
+VotingPollInteractor.
+
+  public class VotingPollInteractor
+    {
+        private readonly IVotingPollFactory _factory;
+        private readonly IVotingSystemPersistance _peristance;
+
+Here we can see that it interacts with the factory and the persistanace layer. 
+We have already placed the factory into the Voting system project. And the persistance layer
+is supposed to represent the part of the project that deals with interactions with the 
+database which we haven't built yet. So it makes sense to put the Interactor into it's own 
+project that will make references to these other two projects basically. So that is the next
+step. The project is called the VotingSystem.Application and this will be explained later.
+
+The Application Layer is supposed to be the layer which separates the innerworkings of the
+application with the UI.
+The Application layer is where everything comes together.
+
+The ideal situation is where a tet project only references the project that it is going to be 
+testing.
+
+And so we can basically use the Heirachy of projects to ensure that one project references 
+the next and so on. So because the Application layer refrences the Voting System we do not 
+need to reference both projects because of the transitive dependency. 
+
+Basically, organise your projects so that they make use of transitive dependencies and 
+look at the csproj files from this project to see how this is done. 
+
+He then says to put the source code in an src folder and the test code in an tests folder.
