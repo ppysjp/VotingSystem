@@ -110,7 +110,17 @@ gacp "Refactored places where ApDbContext is created."
 
 We now do the the same thing but for the second test.
 
-gacp "So we have now refactored the second test."
+gacp "So we have now refactored the second test to use the new function."
+
+focus
+
+So basically the VotingPollInteractor is dependent upon the IVotingPoll
+SystemPersistance. So what we need to do is implement the interface 
+correctly which is what we are going to attempt to do next.
+
+18:58
+
+
 
 
 
