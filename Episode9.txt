@@ -76,11 +76,15 @@ So basically at this stage we have copied the test for counters and
 then rewired it up so that it works for the voting poll. That is all 
 that we did here.
 
-acp ""
+acp "Test now passes for voting poll"
 
+15:25
 
+The issue with what we have created right now is that the tests created 
+basically test Entity Framework and they aren't really testing what we
+want to test so we need to change this.
 
+So basically what I just learned is not to much during this block.
 
-
-
-
+I just learned that the name of the class should be renamed because 
+what we are testing is basically the AppDbContext.

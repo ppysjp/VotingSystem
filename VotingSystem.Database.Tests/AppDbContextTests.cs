@@ -6,7 +6,7 @@ using Xunit;
 
 namespace VotingSystem.Database.Tests
 {
-    public class DatabaseTests
+    public class AppDbContextTests
     {
         [Fact]
         public void SavesCounterToDatabase() 
