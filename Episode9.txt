@@ -57,5 +57,17 @@ function. So we have added the Counter table in the domain knowledge.
 
 Finally we have the first test passing.
 
+So yeah that's pretyy good.
+
+I think we are now going to look at what happens when we have multiple 
+counters being saved to a database.
+
+acp "Demonstration of what can happen when you have 2 databases with the same name"
+
+If you don't give different names to the databases, the state will be shared
+for the ctx across both tests and this cause your tests to fail.
+
+
+
 
 
