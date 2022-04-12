@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\samuel.palmer\\Source\\Repos\\Voting System\\VotingSystem.Database\\VotingSystem.Database.Tests.csproj": {}
+    "C:\\Users\\samuel.palmer\\Source\\Repos\\Voting System\\VotingSystem.Database.Tests\\VotingSystem.Database.Tests.csproj": {}
   },
   "projects": {
     "C:\\Users\\samuel.palmer\\Source\\Repos\\Voting System\\VotingSystem.Application\\VotingSystem.Application.csproj": {
@@ -66,14 +66,14 @@
         }
       }
     },
-    "C:\\Users\\samuel.palmer\\Source\\Repos\\Voting System\\VotingSystem.Database\\VotingSystem.Database.Tests.csproj": {
+    "C:\\Users\\samuel.palmer\\Source\\Repos\\Voting System\\VotingSystem.Database.Tests\\VotingSystem.Database.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\samuel.palmer\\Source\\Repos\\Voting System\\VotingSystem.Database\\VotingSystem.Database.Tests.csproj",
+        "projectUniqueName": "C:\\Users\\samuel.palmer\\Source\\Repos\\Voting System\\VotingSystem.Database.Tests\\VotingSystem.Database.Tests.csproj",
         "projectName": "VotingSystem.Database.Tests",
-        "projectPath": "C:\\Users\\samuel.palmer\\Source\\Repos\\Voting System\\VotingSystem.Database\\VotingSystem.Database.Tests.csproj",
+        "projectPath": "C:\\Users\\samuel.palmer\\Source\\Repos\\Voting System\\VotingSystem.Database.Tests\\VotingSystem.Database.Tests.csproj",
         "packagesPath": "C:\\Users\\samuel.palmer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\samuel.palmer\\Source\\Repos\\Voting System\\VotingSystem.Database\\obj\\",
+        "outputPath": "C:\\Users\\samuel.palmer\\Source\\Repos\\Voting System\\VotingSystem.Database.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -110,6 +110,14 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.15, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[5.0.15, )"
+            },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[16.5.0, )"

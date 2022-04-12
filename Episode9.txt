@@ -1,0 +1,21 @@
+We are going to use TDD to create the database.
+Classic first step is to get a test that will get your foot throught the
+door.
+So we are going to create a simple test that saves to the database to 
+get our foot through the door. We know from episode 7 that we are going
+to be using an AppDbContext to do stuff with our database so the first
+step is probably to create that. 
+The point is at this point you have done the planning because you have
+the domain knowledge to get stuff done.
+We take the package references that we have got froom our SandboxEfCore
+to instantiate the context that we want to use.
+
+We then create a transactional scope which is done by doing a using 
+statement. We want our database to have a set of counters so we know 
+that we need to add a counter to the AppDbContext object so we do this
+by adding the property. From our domain knowledge we know that the type
+that the Counters property is going to be is going to be the following:
+
+DbSet<counter>
+
+So yeah. we create that.
