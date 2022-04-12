@@ -9,10 +9,10 @@ namespace VotingSystem.Database.Tests
     public class AppDbContextTests
     {
 
-        public AppDbContext CreateDbContext(string databaseName) 
+        public AppDbContext CreateDbContext(string databasename) 
         { 
             var options = new DbContextOptionsBuilder<AppDbContext>()
-                .UseInMemoryDatabase(databaseName)
+                .UseInMemoryDatabase(databasename)
                 .Options;
             return new AppDbContext(options);
         }
@@ -20,19 +20,15 @@ namespace VotingSystem.Database.Tests
         [Fact]
         public void SavesCounterToDatabase() 
         {
-            var options = new DbContextOptionsBuilder<AppDbContext>()
-                .UseInMemoryDatabase(nameof(SavesCounterToDatabase))
-                .Options;
-
             var counter = new Counter { Name = "New Counter"};
 
-            using (var ctx = new AppDbContext(options)) 
+            using (var ctx = CreateDbContext(nameof(SavesCounterToDatabase)))
             {
                 ctx.Counters.Add(counter);
                 ctx.SaveChanges();
             }
 
-            using (var ctx = new AppDbContext(options)) 
+            using (var ctx = CreateDbContext(nameof(SavesCounterToDatabase)))
             {
                 var savedCounter = ctx.Counters.Single();
                 Assert.Equal(counter.Name, savedCounter.Name);

@@ -101,5 +101,23 @@ So basically we have just started to fill out the body of the function
 by copying and pasting the parts that we think we are going to need on 
 repeat.
 
-gacp "Added some of the body to the function";
+gacp "Added some of the body to the function"
+
+So what we just did was then use the function we have just created and 
+started to  replace it in the places where it is being used.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
