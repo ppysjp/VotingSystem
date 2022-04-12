@@ -30,6 +30,29 @@ namespace VotingSystem.Database.Tests
             }
         }
 
+        [Fact]
+        public void SavesVotingPollToDatabase() 
+        {
+            var options = new DbContextOptionsBuilder<AppDbContext>()
+                .UseInMemoryDatabase(nameof(SavesVotingPollToDatabase))
+                .Options;
+
+            var poll = new VotingPoll { Title = "New VotingPoll"};
+
+            using (var ctx = new AppDbContext(options)) 
+            {
+                ctx.VotingPolls.Add(poll);
+                ctx.SaveChanges();
+            }
+
+            using (var ctx = new AppDbContext(options)) 
+            {
+                var savedPoll = ctx.VotingPolls.Single();
+                Assert.Equal(poll.Title, ""); 
+            }
+        }
+
+
 
     }
 
@@ -39,6 +62,7 @@ namespace VotingSystem.Database.Tests
             : base(options) { }
 
         public DbSet<Counter> Counters { get; set; }
+        public  DbSet<VotingPoll> VotingPolls { get; internal set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

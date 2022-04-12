@@ -68,6 +68,12 @@ If you don't give different names to the databases, the state will be shared
 for the ctx across both tests and this cause your tests to fail.
 
 
+acp "Begin creating foot in the door test for the voting poll"
+
+acp "Create failing test for saving a voting poll to the database."
+
+
+
 
 
 
