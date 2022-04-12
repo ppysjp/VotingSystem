@@ -11,14 +11,18 @@ namespace VotingSystem.Database.Tests
         [Fact]
         public void SavesCounterToDatabase() 
         {
+            var options = new DbContextOptionsBuilder<AppDbContext>()
+                .UseInMemoryDatabase(nameof(SavesCounterToDatabase))
+                .Options;
+
             var counter = new Counter { Name = "New Counter"};
-            using (var ctx = new AppDbContext()) 
+            using (var ctx = new AppDbContext(options)) 
             {
                 ctx.Counters.Add(counter);
                 ctx.SaveChanges();
             }
 
-            using (var ctx = new AppDbContext()) 
+            using (var ctx = new AppDbContext(options)) 
             {
                 var savedCounter = ctx.Counters.Single();
                 Assert.Equal(counter.Name, savedCounter.Name);

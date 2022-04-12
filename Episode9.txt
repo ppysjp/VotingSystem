@@ -43,3 +43,9 @@ a link here:
 
 https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/base#:~:text=base%20(C%23%20Reference)&text=The%20base%20keyword%20is%20used,instances%20of%20the%20derived%20class.
 
+We then construct the options that we are going to pass into the context
+by using a DbContextOptionsBuilder. So we have now passed the options 
+into the AppDbContext object, so yeah we are now making some progress.
+
+
+
