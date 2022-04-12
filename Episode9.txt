@@ -97,5 +97,9 @@ CreateDbContext.
 
 gacp "Create function that will be used for refactoring."
 
+So basically we have just started to fill out the body of the function
+by copying and pasting the parts that we think we are going to need on 
+repeat.
 
+gacp "Added some of the body to the function";
 

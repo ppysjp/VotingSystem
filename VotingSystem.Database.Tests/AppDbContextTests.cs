@@ -11,7 +11,10 @@ namespace VotingSystem.Database.Tests
 
         public AppDbContext CreateDbContext(string databaseName) 
         { 
-
+            var options = new DbContextOptionsBuilder<AppDbContext>()
+                .UseInMemoryDatabase(databaseName)
+                .Options;
+            return new AppDbContext(options);
         }
 
         [Fact]
