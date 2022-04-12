@@ -44,13 +44,13 @@ namespace VotingSystem.Database.Tests
 
             var poll = new VotingPoll { Title = "New VotingPoll"};
 
-            using (var ctx = new AppDbContext(options)) 
+            using (var ctx = CreateDbContext(nameof(SavesVotingPollToDatabase)))
             {
                 ctx.VotingPolls.Add(poll);
                 ctx.SaveChanges();
             }
 
-            using (var ctx = new AppDbContext(options)) 
+            using (var ctx = CreateDbContext(nameof(SavesVotingPollToDatabase)))
             {
                 var savedPoll = ctx.VotingPolls.Single();
                 Assert.Equal(poll.Title, savedPoll.Title); 

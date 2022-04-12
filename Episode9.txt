@@ -106,7 +106,11 @@ gacp "Added some of the body to the function"
 So what we just did was then use the function we have just created and 
 started to  replace it in the places where it is being used.
 
+gacp "Refactored places where ApDbContext is created."
 
+We now do the the same thing but for the second test.
+
+gacp "So we have now refactored the second test."
 
 
 
