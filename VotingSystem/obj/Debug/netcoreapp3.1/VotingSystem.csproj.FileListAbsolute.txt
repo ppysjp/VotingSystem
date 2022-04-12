@@ -7,3 +7,4 @@ C:\Users\samuel.palmer\Source\Repos\Voting System\VotingSystem\obj\Debug\netcore
 C:\Users\samuel.palmer\Source\Repos\Voting System\VotingSystem\obj\Debug\netcoreapp3.1\VotingSystem.csproj.CoreCompileInputs.cache
 C:\Users\samuel.palmer\Source\Repos\Voting System\VotingSystem\obj\Debug\netcoreapp3.1\VotingSystem.dll
 C:\Users\samuel.palmer\Source\Repos\Voting System\VotingSystem\obj\Debug\netcoreapp3.1\VotingSystem.pdb
+C:\Users\samuel.palmer\Source\Repos\Voting System\VotingSystem\obj\Debug\netcoreapp3.1\VotingSystem.csproj.AssemblyReference.cache

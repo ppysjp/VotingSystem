@@ -26,3 +26,7 @@ retrieve it.
 We then create a savedCounter instance which is the counter object that 
 is retrieved from the database. We then assert that the old an new counters
 are the same.
+
+When I try and run the test it tells me that I need to override the 
+OnConfiguring method. So we need to set it up to use the 
+InMemoryDatabase.
