@@ -19,7 +19,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A81B1057-CB5
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{081D8903-C3CA-46BE-BB6F-D24743070FAB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VotingSystem.Database", "VotingSystem.Database\VotingSystem.Database.csproj", "{7F70D86F-1EA9-46A4-A6A4-0E1E116E6750}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VotingSystem.Database.Tests", "VotingSystem.Database.Tests\VotingSystem.Database.Tests.csproj", "{7F70D86F-1EA9-46A4-A6A4-0E1E116E6750}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
