@@ -20,8 +20,8 @@ namespace VotingSystem.Database.Tests
 
             using (var ctx = new AppDbContext()) 
             {
-                var counter = ctx.Counters.Single();
-
+                var savedCounter = ctx.Counters.Single();
+                Assert.Equal(counter.Name, savedCounter.Name);
             }
         }
     }

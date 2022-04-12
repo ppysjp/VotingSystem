@@ -21,3 +21,8 @@ DbSet<counter>
 So yeah. we create that.
 
 We then create a new counter can check against.
+In one using statement we save it to the database and in the other we 
+retrieve it.
+We then create a savedCounter instance which is the counter object that 
+is retrieved from the database. We then assert that the old an new counters
+are the same.
