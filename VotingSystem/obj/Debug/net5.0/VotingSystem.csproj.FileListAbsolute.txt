@@ -1,0 +1,12 @@
+C:\Users\samuel.palmer\Source\Repos\Voting System\VotingSystem\bin\Debug\net5.0\VotingSystem.deps.json
+C:\Users\samuel.palmer\Source\Repos\Voting System\VotingSystem\bin\Debug\net5.0\VotingSystem.dll
+C:\Users\samuel.palmer\Source\Repos\Voting System\VotingSystem\bin\Debug\net5.0\ref\VotingSystem.dll
+C:\Users\samuel.palmer\Source\Repos\Voting System\VotingSystem\bin\Debug\net5.0\VotingSystem.pdb
+C:\Users\samuel.palmer\Source\Repos\Voting System\VotingSystem\obj\Debug\net5.0\VotingSystem.csproj.AssemblyReference.cache
+C:\Users\samuel.palmer\Source\Repos\Voting System\VotingSystem\obj\Debug\net5.0\VotingSystem.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\samuel.palmer\Source\Repos\Voting System\VotingSystem\obj\Debug\net5.0\VotingSystem.AssemblyInfoInputs.cache
+C:\Users\samuel.palmer\Source\Repos\Voting System\VotingSystem\obj\Debug\net5.0\VotingSystem.AssemblyInfo.cs
+C:\Users\samuel.palmer\Source\Repos\Voting System\VotingSystem\obj\Debug\net5.0\VotingSystem.csproj.CoreCompileInputs.cache
+C:\Users\samuel.palmer\Source\Repos\Voting System\VotingSystem\obj\Debug\net5.0\VotingSystem.dll
+C:\Users\samuel.palmer\Source\Repos\Voting System\VotingSystem\obj\Debug\net5.0\ref\VotingSystem.dll
+C:\Users\samuel.palmer\Source\Repos\Voting System\VotingSystem\obj\Debug\net5.0\VotingSystem.pdb

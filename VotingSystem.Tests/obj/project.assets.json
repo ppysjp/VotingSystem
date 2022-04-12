@@ -1809,6 +1809,16 @@
         "build": {
           "build/netcoreapp1.0/xunit.runner.visualstudio.props": {}
         }
+      },
+      "VotingSystem/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/VotingSystem.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/VotingSystem.dll": {}
+        }
       }
     }
   },
@@ -6095,12 +6105,18 @@
         "xunit.runner.visualstudio.2.4.0.nupkg.sha512",
         "xunit.runner.visualstudio.nuspec"
       ]
+    },
+    "VotingSystem/1.0.0": {
+      "type": "project",
+      "path": "../VotingSystem/VotingSystem.csproj",
+      "msbuildProject": "../VotingSystem/VotingSystem.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "Microsoft.NET.Test.Sdk >= 16.5.0",
       "Moq >= 4.16.1",
+      "VotingSystem >= 1.0.0",
       "coverlet.collector >= 1.2.0",
       "xunit >= 2.4.0",
       "xunit.runner.visualstudio >= 2.4.0"
@@ -6137,7 +6153,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\samuel.palmer\\Source\\Repos\\Voting System\\VotingSystem\\VotingSystem.csproj": {
+              "projectPath": "C:\\Users\\samuel.palmer\\Source\\Repos\\Voting System\\VotingSystem\\VotingSystem.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

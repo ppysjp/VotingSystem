@@ -1,0 +1,9 @@
+We begin by tidying up everything that we have made so far in the CounterManagerTests.cs 
+file. If you type Alt-Enter where a class is defined then you can get a menu up for 
+reorganising your code.
+You can use Add New File using shift F2.
+We've basically moved the "Data" object which is in this case the Counter object and have 
+moved it the models folder. This has meant we have needed to go around the places where we 
+are getting errors and have needed to use Alt-Enter in order to tell the program where to 
+get various parts. We have done this by using Alt-Enter on any bit of code that has had 
+red squiggle underneath it.

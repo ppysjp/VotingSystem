@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using System.Linq;
 using System.Text;
-using  Xunit;
+using VotingSystem.Models;
+using Xunit;
 using static Xunit.Assert;
 
 namespace VotingSystem.Tests
@@ -56,48 +55,6 @@ namespace VotingSystem.Tests
             Equal(_request.Description, poll.Description);
         }
  
-    }
-
-    public interface IVotingPollFactory 
-    {
-        public VotingPoll Create(VotingPollFactory.Request request);
-    }
-
-    public class VotingPollFactory
-    {
-        public class Request 
-        {
-            public string Title { get; set; }
-            public string Description { get; set; }
-            public string[] Names { get; set; }
-        }
-        
-        public VotingPoll Create(Request request)
-        {
-
-            if (string.IsNullOrEmpty(request.Title)) throw new ArgumentException("Request Title must not be empty string.");
-            if (string.IsNullOrEmpty(request.Description)) throw new ArgumentException("Request Description must not be empty string.");
-            if (request.Names.Length < 2) throw new ArgumentException("Request Names must contain at least 2 counter names.");
-
-            return new VotingPoll
-            {
-                Title = request.Title,
-                Description = request.Description,
-                Counters = request.Names.Select(name => new Counter { Name = name })
-            };
-        }
-    }
-
-    public class VotingPoll
-    {
-        public VotingPoll()
-        {
-            Counters = Enumerable.Empty<Counter>();
-        }
-
-        public string Title { get; set; }
-        public string Description { get; internal set; }
-        public IEnumerable<Counter> Counters { get; set; }
     }
 }
 
