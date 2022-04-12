@@ -48,7 +48,7 @@ namespace VotingSystem.Database.Tests
             using (var ctx = new AppDbContext(options)) 
             {
                 var savedPoll = ctx.VotingPolls.Single();
-                Assert.Equal(poll.Title, ""); 
+                Assert.Equal(poll.Title, savedPoll.Title); 
             }
         }
 
@@ -62,11 +62,12 @@ namespace VotingSystem.Database.Tests
             : base(options) { }
 
         public DbSet<Counter> Counters { get; set; }
-        public  DbSet<VotingPoll> VotingPolls { get; internal set; }
+        public  DbSet<VotingPoll> VotingPolls { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Counter>().Property<int>("Id"); 
+            modelBuilder.Entity<VotingPoll>().Property<int>("Id"); 
         }
     }
 }
