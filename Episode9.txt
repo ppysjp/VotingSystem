@@ -146,6 +146,8 @@ So we are going to start implementing the SaveVotiingPoll function but
 he takes a left turn and creates an infastructure folder for the database
 so that he can then create a factory for the AppDbContext.
 
+gacp "Just started creating the DbcontextFactory" 
+
 
 
 
