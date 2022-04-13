@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,6 +8,7 @@ using VotingSystem.Application;
 using VotingSystem.Database.Tests.Infrastructure;
 using VotingSystem.Models;
 using Xunit;
+using System.Linq;
 
 namespace VotingSystem.Database.Tests
 {
@@ -30,6 +32,22 @@ namespace VotingSystem.Database.Tests
             {
                 IVotingSystemPersistance persistance = new VotingSystemPersistance(ctx);
                 persistance.SaveVotingPoll(poll);
+            }
+
+            using (var ctx = DbContextFactory.Create(nameof(SavesVotingPollToDatabase)))
+            {
+                var savedPoll = ctx.VotingPolls
+                    .Include(x => x.Counters)
+                    .Single();
+
+                Assert.Equal(poll.Title, savedPoll.Title); 
+                Assert.Equal(poll.Description, savedPoll.Description);
+                Assert.Equal(poll.Counters.Count(), savedPoll.Counters.Count());
+
+                foreach (var name in poll.Counters.Select(x => x.Name))
+                {
+                    Assert.Contains(name, savedPoll.Counters.Select(x => x.Name));
+                }
             }
 
 

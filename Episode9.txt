@@ -166,7 +166,39 @@ VotingSystemPersistance. That means we will also need to introduce a
 constructor so that we can then use the ctx in our SaveVotingPoll method.
 So now we implement that.
 
+gacp "Inject ctx into VotingSystemPersistance"
 
+So we are now going to perform a set of asserts that ensure that the 
+poll and the saved poll are the same. We also learn how to retrieve 
+the saved poll by using the ctx a second time in a second ctx statement
+which ehave done before.
+
+There are 4 asserts that we introduce: 
+
+These first 2 are self explainitory, These are first level checks: 
+
+Assert.Equal(poll.Title, savedPoll.Title); 
+Assert.Equal(poll.Description, savedPoll.Description);
+
+These second 2 are second level checks because basically the Counters are 
+retrieved as a biproduct of being part of the voting poll.
+
+Assert.Equal(poll.Counters.Count(), savedPoll.Counters.Count());
+
+There is also a loop that ensure the names of the Counters match up and 
+this is checked via a loop. 
+
+The linq query with Include is the same as doing the following query in 
+sql 
+
+SELECT *
+FROM Customers JOIN Orders ON Customers.Id = Orders.CustomerId;
+
+if the most basic query would be 
+
+SELECT * FROM Customers;
+
+gacp "Create first test for VotingSystemPersistanceTests"
 
 
 
