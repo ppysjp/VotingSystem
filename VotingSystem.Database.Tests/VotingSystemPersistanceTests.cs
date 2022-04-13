@@ -25,8 +25,9 @@ namespace VotingSystem.Database.Tests
                 }
             };
 
-            
             IVotingSystemPersistance persistance = new VotingSystemPersistance();
+            
+            persistance.SaveVotingPoll(poll);
         }
     }
 
