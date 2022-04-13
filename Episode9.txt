@@ -124,10 +124,16 @@ gacp "18:58"
 
 
 So to do this we create a set of tests within the Database.tests
-which is called votingsystempersitancetest.cs file
+which is called votingsystempersitancetest.cs file. 
+All we need to do is use th interface on an object.
 
+gacp "Create persitance test class"
 
+We are creating the first test for this class. 
+The test is called SavesVotingPollToDatabase()
+And we are going to implement the interface as the first step.
 
+gacp "Began first test and createed classs that implements IVotingSystemPersistance"
 
 
 
