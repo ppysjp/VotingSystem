@@ -154,7 +154,20 @@ than CreateAppDbContext and the reason for this is because the fact that
 we are using a factory basically gives the game away as to what we are
 trying to do.
 
-gacp "Implemented a factory for the creation of ApDbContexts.
+gacp "Implemented a factory for the creation of ApDbContexts."
+
+So we are now going to start using some of the stuff we created for the
+AppDbContextTests. We take the using statement we have already created 
+but this time we are going to modify it from what we already have.
+We need to change the body of the using block so that it makes use of the
+persistance, which is the thing we are actually trying to test!
+To do this we actually need to inject the context into the 
+VotingSystemPersistance. That means we will also need to introduce a 
+constructor so that we can then use the ctx in our SaveVotingPoll method.
+So now we implement that.
+
+
+
 
 
 
