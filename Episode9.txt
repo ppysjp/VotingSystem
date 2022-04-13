@@ -120,7 +120,11 @@ correctly which is what we are going to attempt to do next.
 
 18:58
 
+gacp "18:58"
 
+
+So to do this we create a set of tests within the Database.tests
+which is called votingsystempersitancetest.cs file
 
 
 
