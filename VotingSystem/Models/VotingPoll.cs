@@ -11,7 +11,7 @@ namespace VotingSystem.Models
         }
 
         public string Title { get; set; }
-        public string Description { get; internal set; }
+        public string Description { get; set; }
         public IEnumerable<Counter> Counters { get; set; }
     }
 }

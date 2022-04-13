@@ -14,6 +14,18 @@ namespace VotingSystem.Database.Tests
        [Fact] 
        public void SavesVotingPollToDatabase() 
         {
+            var poll = new VotingPoll
+            {
+                Title = "title",
+                Description = "desc",
+                Counters = new List<Counter>
+                {
+                    new Counter {Name = "One" },
+                    new Counter {Name = "Two" },
+                }
+            };
+
+            
             IVotingSystemPersistance persistance = new VotingSystemPersistance();
         }
     }

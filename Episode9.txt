@@ -134,6 +134,15 @@ The test is called SavesVotingPollToDatabase()
 And we are going to implement the interface as the first step.
 
 gacp "Began first test and createed classs that implements IVotingSystemPersistance"
+ 
+So We can see that the thing we need to implement here is SaveVotiingPoll.
+This means that we are going to need a voitng poll to save to the database.
+Now deep in your memory you should remember that a voting poll 
+has a set of counters.
+
+gacp "Added Voting poll to my first test"
+
+
 
 
 
