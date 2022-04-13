@@ -147,6 +147,14 @@ he takes a left turn and creates an infastructure folder for the database
 so that he can then create a factory for the AppDbContext.
 
 gacp "Just started creating the DbcontextFactory" 
+gacp "Save Episode9.txt " 
+
+So the Function that we make in the DbFactory is called Create rather 
+than CreateAppDbContext and the reason for this is because the fact that
+we are using a factory basically gives the game away as to what we are
+trying to do.
+
+gacp "Implemented a factory for the creation of ApDbContexts.
 
 
 
