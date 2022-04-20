@@ -39,3 +39,12 @@ Ok so the Vote class is actually part of the Model so we need to move the class 
 folder and then change the namespace etc where it is found. We are doing this so that 
 we can get rid of the compilation errros we are facing at the moment.
 
+gacp "Fixing Compilation errors that occurs when we move the Vote class which belongs to the Model"
+
+studyvideo
+
+So we now do the next task of making the test pass and then we begin adding more complex 
+logic surround when a vote can be persisted and when it can't. This is done by beginning the 
+next test, so let's now do that. 
+
+

@@ -24,6 +24,17 @@ namespace VotingSystem.Application.Tests
             _mockPersistance.Verify(x => x.SaveVote(vote));
         }
         
+        [Fact]
+        public void Vote_DoesNotPersistsVote() 
+        {
+            var vote = new Vote();
+            var interactor = new VotingInteractor(_mockPersistance.Object);
+
+            interactor.Vote(vote);
+
+            _mockPersistance.Verify(x => x.SaveVote(vote));
+        }
+ 
     }
 
     public class VotingInteractor
@@ -37,7 +48,7 @@ namespace VotingSystem.Application.Tests
 
         public void Vote(Vote vote)
         {
-            throw new NotImplementedException();
+            _persistance.SaveVote(vote); 
         }
     }
 }
