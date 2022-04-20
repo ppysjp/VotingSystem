@@ -150,6 +150,7 @@ Let's see if I'm correct.
 
 The InMemory database needed to remain in the Database.Tests csproj for obvs reasons... 
 
+gacp "Finished reorganising project"
 
 
 
