@@ -113,6 +113,15 @@ So I think I am a bit lost but I'm trying to implement the test and am not being
 successful. haha. I need to keep on trying. So the error I am getting is that the method 
 SaveVVote has not been implemented so I'm just going to fix that now. 
 
+gacp "Have implemented the method so that all tests are now passing"
+
+studyvideo
+
+So we now want to create a test for the other method that is going to be implemented by the 
+interface which is vote exists. We need to copy the previous test we created but we 
+will only need one using statement as we are not going to be saving anything to the database,
+but we are goin to check that when we call the VoteExists method when using our persistance
+layer that it does in fact return False when the database in question is empty.
 
 
 

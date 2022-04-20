@@ -71,6 +71,21 @@ namespace VotingSystem.Database.Tests
                 Equal(vote.CounterId, savedVote.CounterId);
             }
        }
+
+       [Fact] 
+       public void VoteExists_ReturnsFalseWhenNoVote() 
+       {
+
+            var vote = new Vote { UserId = "user", CounterId = 1 };
+
+            using (var ctx = DbContextFactory.Create(nameof(VoteExists_ReturnsFalseWhenNoVote)))
+            {
+                var persistance = new VotingSystemPersistance(ctx);
+                False(persistance.VoteExists(vote));
+            }
+       }
+
+
     }
 
     public class VotingSystemPersistance : IVotingSystemPersistance
