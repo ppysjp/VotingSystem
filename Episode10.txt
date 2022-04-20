@@ -125,6 +125,13 @@ layer that it does in fact return False when the database in question is empty.
 
 gacp "Created failing test for VoteExists method of the persistance layer"
 
+gacp "Here we opt for the easiest and simplest solution to getting the test to pass." 
+
+So we now create another test that will fail, initially and this is because we are testing
+that the Vote does in fact exist when we save something to our appdbcontext.
+
+
+
 
 
 
