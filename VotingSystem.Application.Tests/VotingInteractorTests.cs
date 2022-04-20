@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 using Moq;
+using VotingSystem.Models;
 
 namespace VotingSystem.Application.Tests
 {
@@ -23,13 +24,6 @@ namespace VotingSystem.Application.Tests
             _mockPersistance.Verify(x => x.SaveVote(vote));
         }
         
-    }
-
-    public class Vote
-    {
-        public Vote()
-        {
-        }
     }
 
     public class VotingInteractor

@@ -63,6 +63,11 @@ namespace VotingSystem.Database.Tests
             _ctx = ctx;
         }
 
+        public void SaveVote(Vote vote)
+        {
+            throw new NotImplementedException();
+        }
+
         public void SaveVotingPoll(VotingPoll votingPoll)
         {
             _ctx.VotingPolls.Add(votingPoll);

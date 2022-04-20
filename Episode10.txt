@@ -30,3 +30,12 @@ layer to make a call to the SaveVote function. So that is what we are implementi
 
 We have partially implemented the fact that the  persistance layer being called when the 
 interactor calls Vote but we have compilation errors still that need to be fixed.
+
+gacp "Ensure interactor calls persistance SaveVote when Vote is called"
+
+studyvideo
+
+Ok so the Vote class is actually part of the Model so we need to move the class to the Model
+folder and then change the namespace etc where it is found. We are doing this so that 
+we can get rid of the compilation errros we are facing at the moment.
+
