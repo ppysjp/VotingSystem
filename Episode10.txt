@@ -8,3 +8,16 @@ gacp "First commit for Episode10"
 So we are now going to start with the simplest step which is just to get a Vote saving to the 
 database. To do this we are going to add a class to VotingSystem.Application.Tests which 
 will have a class which will test the VotingInteractor.
+
+gacp "Created first test for saving a vote to the database"
+
+So it's important to pont out that the votinginteractor is not the same thing as the 
+votingpollinteractor. 
+The second thing is we know that we are going to need to use the persistance layer to 
+do the testing so we use the mock persistance layer that we use in the VotingPollInteractorTests.cs
+here as well.
+
+Cool.
+
+The other thing we have done is alse create 2 new classes. The first class we have created 
+is the Vote class and the next class we have created is called the VotingInteractor.
