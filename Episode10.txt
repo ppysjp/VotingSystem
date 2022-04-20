@@ -58,7 +58,16 @@ or counterIds that are already there... something like that.
 
 This is where we setup the persistance so that it will retrieve something from the database.
 
+studyvideo
 
+So we now create a function for the interface which is a boolean called VoteExists, and we 
+use the mockobject to ensure that it returns true. and then we also ensure that when this is 
+ran the Verify function checks that the SaveVote of the Persistance layer is not called ever.
+
+gacp "We have now got a failing test for which we need to implement the logic so that SaveVote is never called."
+
+We then get the tests to pass with some simple logic and then we begin to refactor as we normally 
+would if we were doing TDD. 
 
 
 

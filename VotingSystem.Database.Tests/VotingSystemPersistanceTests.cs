@@ -72,5 +72,10 @@ namespace VotingSystem.Database.Tests
             _ctx.VotingPolls.Add(votingPoll);
             _ctx.SaveChanges();
         }
+
+        public bool VoteExists(Vote vote)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

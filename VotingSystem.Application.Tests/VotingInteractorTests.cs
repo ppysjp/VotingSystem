@@ -49,7 +49,10 @@ namespace VotingSystem.Application.Tests
 
         public void Vote(Vote vote)
         {
-            _persistance.SaveVote(vote); 
+            if (!_persistance.VoteExists(vote))
+            {
+                _persistance.SaveVote(vote); 
+            }
         }
     }
 }
