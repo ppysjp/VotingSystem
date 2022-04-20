@@ -8,11 +8,10 @@
     ".NETCoreApp,Version=v3.1": {
       "VotingSystem.Database.Tests/1.0.0": {
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": "5.0.15",
           "Microsoft.EntityFrameworkCore.InMemory": "5.0.15",
           "Microsoft.NET.Test.Sdk": "16.5.0",
           "Moq": "4.16.1",
-          "VotingSystem.Application": "1.0.0",
+          "VotingSystem.Database": "1.0.0",
           "coverlet.collector": "1.2.0",
           "xunit": "2.4.0",
           "xunit.runner.visualstudio": "2.4.0"
@@ -1347,6 +1346,15 @@
         "runtime": {
           "VotingSystem.Application.dll": {}
         }
+      },
+      "VotingSystem.Database/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "5.0.15",
+          "VotingSystem.Application": "1.0.0"
+        },
+        "runtime": {
+          "VotingSystem.Database.dll": {}
+        }
       }
     }
   },
@@ -2160,6 +2168,11 @@
       "sha512": ""
     },
     "VotingSystem.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "VotingSystem.Database/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

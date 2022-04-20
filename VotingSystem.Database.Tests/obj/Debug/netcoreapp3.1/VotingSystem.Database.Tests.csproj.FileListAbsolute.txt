@@ -115,3 +115,5 @@ C:\Users\samuel.palmer\Source\Repos\Voting System\VotingSystem.Database.Tests\ob
 C:\Users\samuel.palmer\Source\Repos\Voting System\VotingSystem.Database.Tests\obj\Debug\netcoreapp3.1\VotingSystem.Database.Tests.dll
 C:\Users\samuel.palmer\Source\Repos\Voting System\VotingSystem.Database.Tests\obj\Debug\netcoreapp3.1\VotingSystem.Database.Tests.pdb
 C:\Users\samuel.palmer\Source\Repos\Voting System\VotingSystem.Database.Tests\obj\Debug\netcoreapp3.1\VotingSystem.Database.Tests.genruntimeconfig.cache
+C:\Users\samuel.palmer\Source\Repos\Voting System\VotingSystem.Database.Tests\bin\Debug\netcoreapp3.1\VotingSystem.Database.dll
+C:\Users\samuel.palmer\Source\Repos\Voting System\VotingSystem.Database.Tests\bin\Debug\netcoreapp3.1\VotingSystem.Database.pdb

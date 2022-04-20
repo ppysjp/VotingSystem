@@ -4,7 +4,6 @@ C:\Users\samuel.palmer\Source\Repos\Voting System\DigitalCircuit.Sandbox\bin\Deb
 C:\Users\samuel.palmer\Source\Repos\Voting System\DigitalCircuit.Sandbox\bin\Debug\netcoreapp3.1\DigitalCircuit.Sandbox.runtimeconfig.dev.json
 C:\Users\samuel.palmer\Source\Repos\Voting System\DigitalCircuit.Sandbox\bin\Debug\netcoreapp3.1\DigitalCircuit.Sandbox.dll
 C:\Users\samuel.palmer\Source\Repos\Voting System\DigitalCircuit.Sandbox\bin\Debug\netcoreapp3.1\DigitalCircuit.Sandbox.pdb
-C:\Users\samuel.palmer\Source\Repos\Voting System\DigitalCircuit.Sandbox\obj\Debug\netcoreapp3.1\DigitalCircuit.Sandbox.csproj.AssemblyReference.cache
 C:\Users\samuel.palmer\Source\Repos\Voting System\DigitalCircuit.Sandbox\obj\Debug\netcoreapp3.1\DigitalCircuit.Sandbox.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\samuel.palmer\Source\Repos\Voting System\DigitalCircuit.Sandbox\obj\Debug\netcoreapp3.1\DigitalCircuit.Sandbox.AssemblyInfoInputs.cache
 C:\Users\samuel.palmer\Source\Repos\Voting System\DigitalCircuit.Sandbox\obj\Debug\netcoreapp3.1\DigitalCircuit.Sandbox.AssemblyInfo.cs
@@ -12,3 +11,4 @@ C:\Users\samuel.palmer\Source\Repos\Voting System\DigitalCircuit.Sandbox\obj\Deb
 C:\Users\samuel.palmer\Source\Repos\Voting System\DigitalCircuit.Sandbox\obj\Debug\netcoreapp3.1\DigitalCircuit.Sandbox.dll
 C:\Users\samuel.palmer\Source\Repos\Voting System\DigitalCircuit.Sandbox\obj\Debug\netcoreapp3.1\DigitalCircuit.Sandbox.pdb
 C:\Users\samuel.palmer\Source\Repos\Voting System\DigitalCircuit.Sandbox\obj\Debug\netcoreapp3.1\DigitalCircuit.Sandbox.genruntimeconfig.cache
+C:\Users\samuel.palmer\Source\Repos\Voting System\DigitalCircuit.Sandbox\obj\Debug\netcoreapp3.1\DigitalCircuit.Sandbox.csproj.AssemblyReference.cache

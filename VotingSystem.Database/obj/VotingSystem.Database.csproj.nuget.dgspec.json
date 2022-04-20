@@ -1,0 +1,196 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\samuel.palmer\\Source\\Repos\\Voting System\\VotingSystem.Database\\VotingSystem.Database.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\samuel.palmer\\Source\\Repos\\Voting System\\VotingSystem.Application\\VotingSystem.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\samuel.palmer\\Source\\Repos\\Voting System\\VotingSystem.Application\\VotingSystem.Application.csproj",
+        "projectName": "VotingSystem.Application",
+        "projectPath": "C:\\Users\\samuel.palmer\\Source\\Repos\\Voting System\\VotingSystem.Application\\VotingSystem.Application.csproj",
+        "packagesPath": "C:\\Users\\samuel.palmer\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\samuel.palmer\\Source\\Repos\\Voting System\\VotingSystem.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\samuel.palmer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/DprGroupLtd/DPR/_packaging/DPR/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\Users\\samuel.palmer\\Source\\Repos\\Voting System\\VotingSystem\\VotingSystem.csproj": {
+                "projectPath": "C:\\Users\\samuel.palmer\\Source\\Repos\\Voting System\\VotingSystem\\VotingSystem.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\samuel.palmer\\Source\\Repos\\Voting System\\VotingSystem.Database\\VotingSystem.Database.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\samuel.palmer\\Source\\Repos\\Voting System\\VotingSystem.Database\\VotingSystem.Database.csproj",
+        "projectName": "VotingSystem.Database",
+        "projectPath": "C:\\Users\\samuel.palmer\\Source\\Repos\\Voting System\\VotingSystem.Database\\VotingSystem.Database.csproj",
+        "packagesPath": "C:\\Users\\samuel.palmer\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\samuel.palmer\\Source\\Repos\\Voting System\\VotingSystem.Database\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\samuel.palmer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/DprGroupLtd/DPR/_packaging/DPR/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\Users\\samuel.palmer\\Source\\Repos\\Voting System\\VotingSystem.Application\\VotingSystem.Application.csproj": {
+                "projectPath": "C:\\Users\\samuel.palmer\\Source\\Repos\\Voting System\\VotingSystem.Application\\VotingSystem.Application.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.15, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\samuel.palmer\\Source\\Repos\\Voting System\\VotingSystem\\VotingSystem.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\samuel.palmer\\Source\\Repos\\Voting System\\VotingSystem\\VotingSystem.csproj",
+        "projectName": "VotingSystem",
+        "projectPath": "C:\\Users\\samuel.palmer\\Source\\Repos\\Voting System\\VotingSystem\\VotingSystem.csproj",
+        "packagesPath": "C:\\Users\\samuel.palmer\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\samuel.palmer\\Source\\Repos\\Voting System\\VotingSystem\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\samuel.palmer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/DprGroupLtd/DPR/_packaging/DPR/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

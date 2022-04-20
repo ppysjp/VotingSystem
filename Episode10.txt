@@ -136,7 +136,19 @@ studyvideo
 
 Ok so we now have something where all of the tests are passing. 
 
+gacp "Got the tests to pass for VoteExists when a vote is actually persisted"
 
+studyvideo
+
+Now that we have got all the tests passing we being tidying up the project and organising it 
+further!
+
+I've now just tried to see if I can do the changes to the files and put everything where it 
+belongs myself. 
+
+Let's see if I'm correct. 
+
+The InMemory database needed to remain in the Database.Tests csproj for obvs reasons... 
 
 
 
