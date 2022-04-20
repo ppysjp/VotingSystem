@@ -47,4 +47,20 @@ So we now do the next task of making the test pass and then we begin adding more
 logic surround when a vote can be persisted and when it can't. This is done by beginning the 
 next test, so let's now do that. 
 
+gacp "Get test to pass and then begin next test which adds complexity to persisting a vote"
+
+studyvideo
+
+So we are now wanting to ensure that someone who has voted in the past can't already have 
+voted. This means that the Vote class will now need to properties like UserId and CounterId.
+We want to use our _mockPersistance to bascially retrieve for us from the database any users
+or counterIds that are already there... something like that. 
+
+This is where we setup the persistance so that it will retrieve something from the database.
+
+
+
+
+
+
 

@@ -8,7 +8,6 @@ using VotingSystem.Application;
 using VotingSystem.Database.Tests.Infrastructure;
 using VotingSystem.Models;
 using Xunit;
-using System.Linq;
 
 namespace VotingSystem.Database.Tests
 {

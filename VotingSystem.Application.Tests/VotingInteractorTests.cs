@@ -25,14 +25,15 @@ namespace VotingSystem.Application.Tests
         }
         
         [Fact]
-        public void Vote_DoesNotPersistsVote() 
+        public void Vote_DoesNotPersistsVoteWhenUserAlreadyVoted() 
         {
             var vote = new Vote();
             var interactor = new VotingInteractor(_mockPersistance.Object);
+            _mockPersistance.Setup(x => x.VoteExists(vote)).Returns(true);
 
             interactor.Vote(vote);
 
-            _mockPersistance.Verify(x => x.SaveVote(vote));
+            _mockPersistance.Verify(x => x.SaveVote(vote), Times.Never);
         }
  
     }

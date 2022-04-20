@@ -6,6 +6,7 @@ namespace VotingSystem.Application
     {
         void SaveVotingPoll(VotingPoll votingPoll);
         void SaveVote(Vote vote);
+        bool VoteExists(Vote vote);
     }
 
 }
