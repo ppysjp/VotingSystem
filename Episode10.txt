@@ -4,3 +4,7 @@ set of logic which dicates how and whether a vote is going to be recorded to the
 so most of the changes will be made to the VotingPollInteractor.
 
 gacp "First commit for Episode10"
+
+So we are now going to start with the simplest step which is just to get a Vote saving to the 
+database. To do this we are going to add a class to VotingSystem.Application.Tests which 
+will have a class which will test the VotingInteractor.
