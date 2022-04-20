@@ -3,4 +3,4 @@ We are going to upgrade the application so that it records a vote, there is goin
 set of logic which dicates how and whether a vote is going to be recorded to the database 
 so most of the changes will be made to the VotingPollInteractor.
 
-gacp "First commit"
+gacp "First commit for Episode10"
