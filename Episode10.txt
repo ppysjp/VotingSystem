@@ -21,3 +21,12 @@ Cool.
 
 The other thing we have done is alse create 2 new classes. The first class we have created 
 is the Vote class and the next class we have created is called the VotingInteractor.
+
+gacp "Create Vote and VotingInteractor objects"
+
+So we have now started to make further in roads into the test we are creating. We want to
+make sure that when the interactor calls Vote function it will then cause the persistance 
+layer to make a call to the SaveVote function. So that is what we are implementing next.
+
+We have partially implemented the fact that the  persistance layer being called when the 
+interactor calls Vote but we have compilation errors still that need to be fixed.
