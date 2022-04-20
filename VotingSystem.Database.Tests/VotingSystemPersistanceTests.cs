@@ -8,6 +8,8 @@ using VotingSystem.Application;
 using VotingSystem.Database.Tests.Infrastructure;
 using VotingSystem.Models;
 using Xunit;
+using static Xunit.Assert;
+
 
 namespace VotingSystem.Database.Tests
 {
@@ -39,13 +41,13 @@ namespace VotingSystem.Database.Tests
                     .Include(x => x.Counters)
                     .Single();
 
-                Assert.Equal(poll.Title, savedPoll.Title); 
-                Assert.Equal(poll.Description, savedPoll.Description);
-                Assert.Equal(poll.Counters.Count(), savedPoll.Counters.Count());
+                Equal(poll.Title, savedPoll.Title);
+                Equal(poll.Description, savedPoll.Description);
+                Equal(poll.Counters.Count(), savedPoll.Counters.Count());
 
                 foreach (var name in poll.Counters.Select(x => x.Name))
                 {
-                    Assert.Contains(name, savedPoll.Counters.Select(x => x.Name));
+                    Contains(name, savedPoll.Counters.Select(x => x.Name));
                 }
             }
         }
@@ -65,6 +67,8 @@ namespace VotingSystem.Database.Tests
             using (var ctx = DbContextFactory.Create(nameof(PersistsVote)))
             {
                 var savedVote = ctx.Votes.Single();
+                Equal(vote.UserId, savedVote.UserId);
+                Equal(vote.CounterId, savedVote.CounterId);
             }
         }
     }

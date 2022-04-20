@@ -95,6 +95,16 @@ instnatiate the "real" persistance and then we are going to perform SaveVote and
 to then from there save it using the persistnace and then we will be doing some sort of 
 assertions...
 
+gacp "Partially implemented Persists Vote test"
+
+studyvideo 
+
+So we are now going to set up the tests to assure us tha the vote that is saved to the database
+is the same as the vote that is retrieved from the database. 
+
+Ok so we now have our failing test because the AppDbContext does not implement the SaveVote
+method from our IVotingSystemPersistance Interface. So we need to fix that as well.
+
 
 
 
