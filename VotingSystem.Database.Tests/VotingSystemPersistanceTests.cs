@@ -15,7 +15,7 @@ namespace VotingSystem.Database.Tests
     public class VotingSystemPersistanceTests
     {
        [Fact] 
-       public void SavesVotingPollToDatabase() 
+       public void PersistsVotingPoll() 
         {
             var poll = new VotingPoll
             {
@@ -28,13 +28,13 @@ namespace VotingSystem.Database.Tests
                 }
             };
 
-            using (var ctx = DbContextFactory.Create(nameof(SavesVotingPollToDatabase)))
+            using (var ctx = DbContextFactory.Create(nameof(PersistsVotingPoll)))
             {
                 IVotingSystemPersistance persistance = new VotingSystemPersistance(ctx);
                 persistance.SaveVotingPoll(poll);
             }
 
-            using (var ctx = DbContextFactory.Create(nameof(SavesVotingPollToDatabase)))
+            using (var ctx = DbContextFactory.Create(nameof(PersistsVotingPoll)))
             {
                 var savedPoll = ctx.VotingPolls
                     .Include(x => x.Counters)
