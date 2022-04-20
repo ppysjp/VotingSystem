@@ -130,6 +130,13 @@ gacp "Here we opt for the easiest and simplest solution to getting the test to p
 So we now create another test that will fail, initially and this is because we are testing
 that the Vote does in fact exist when we save something to our appdbcontext.
 
+gacp "So now we have created a test that fails so we need to actually implement something better than false"
+
+studyvideo 
+
+Ok so we now have something where all of the tests are passing. 
+
+
 
 
 

@@ -94,6 +94,7 @@ namespace VotingSystem.Database.Tests
             using (var ctx = DbContextFactory.Create(nameof(VoteExists_ReturnsTrueWhenVotePersisted)))
             {
                 ctx.Votes.Add(vote);
+                ctx.SaveChanges();
             }
 
             using (var ctx = DbContextFactory.Create(nameof(VoteExists_ReturnsTrueWhenVotePersisted)))
@@ -128,7 +129,7 @@ namespace VotingSystem.Database.Tests
 
         public bool VoteExists(Vote vote)
         {
-            return false; 
+            return _ctx.Votes.Any(x => x.UserId == vote.UserId && x.CounterId == vote.CounterId);
         }
     }
 }
