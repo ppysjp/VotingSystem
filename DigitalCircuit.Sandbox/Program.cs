@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace DigitalCircuit.Sandbox
 {
@@ -13,32 +14,50 @@ namespace DigitalCircuit.Sandbox
 
             Console.WriteLine(
                 String.Format(
-                "Initial input signal value = {0}", input._Signal));
+                "Initial input signal value = {0}", input.Signal));
 
             var output = new Wire();
             var inverter = new Inverter(input, output, theAgenda);
 
-            inverter._Delay = 5;
+            inverter.Delay = 5;
 
             inverter.InvertInput(); 
 
 
             Console.WriteLine(
                 String.Format(
-                "input signal value = {0}", input._Signal, "after Inverting input."));
+                "input signal value = {0}", input.Signal, "after Inverting input."));
         }
     }
 
     public class Agenda
     {
         public int CurrentTime { get; set; }
+        public List<TimeSegment> Segments { get; set; }
 
         public Agenda()
         {
             CurrentTime = 0;
+            Segments = new List<TimeSegment>();
         }
 
-        internal void AddToAgenda(int v, Action action)
+        public List<TimeSegment> GetTimeSegments()
+        {
+            return Segments.OrderBy(seg => seg.SegmentTime).ToList();
+        }
+
+        public TimeSegment FirstSegment()
+        {
+            return GetTimeSegments().First();
+        }
+
+        public List<TimeSegment> RestOfSegments() 
+        {
+            return GetTimeSegments().Skip(1).ToList();
+        }
+
+
+        internal void AddToAgenda(int delay, Action action)
         {
             throw new NotImplementedException();
         }
@@ -46,20 +65,20 @@ namespace DigitalCircuit.Sandbox
 
     public class TimeSegment 
     {
-        public int _SegmentTime;
-        public Queue<Action> _SegmentQueue; 
+        public int SegmentTime { get; set; }
+        public Queue<Action> SegmentQueue { get; set; } 
     }
 
     public class Wire
     {
-        public int _Signal;
+        public int Signal { get; set; } 
 
-        public List<Action> _Actions { get; }
+        public List<Action> Actions { get; }
 
         public Wire()
         {
-            _Signal = InitialSignal();
-            _Actions = new List<Action>();
+            Signal = InitialSignal();
+            Actions = new List<Action>();
         }
 
         private int InitialSignal()
@@ -69,20 +88,20 @@ namespace DigitalCircuit.Sandbox
 
         public void SetSignal(int newSignal)
         {
-            if (_Signal != newSignal)
+            if (Signal != newSignal)
             {
-                _Signal = newSignal;
+                Signal = newSignal;
                 CallEachAction();
             }
         }
         public void AddAction(Action action)
         {
-            _Actions.Insert(0, action); // Ensures LIFO
+            Actions.Insert(0, action); // Ensures LIFO
         }
 
         private void CallEachAction()
         {
-            foreach (var action in _Actions)
+            foreach (var action in Actions)
             {
                 action.Invoke();
             }
@@ -91,28 +110,28 @@ namespace DigitalCircuit.Sandbox
 
     public class Inverter
     {
-        public Wire _Input { get; }
-        public Wire _Output { get; }
-        public int _Delay { get; internal set; }
-        private Agenda _Agenda;
+        private Wire _input; 
+        private Wire _output; 
+        private Agenda _agenda;
+        public int Delay { get; set; }
 
         public Inverter(Wire input, Wire output, Agenda agenda)
         {
-            _Input = input;
-            _Output = output;
-            _Input.AddAction(InvertInput);
-            _Agenda = agenda; 
+            _input = input;
+            _output = output;
+            _agenda = agenda; 
+            _input.AddAction(InvertInput);
         }
 
         public void InvertInput()
         {
-            var newSignal = LogicalNot(_Input._Signal);
-            AfterDelay(_Delay, () => _Output.SetSignal(newSignal));
+            var newSignal = LogicalNot(_input.Signal);
+            AfterDelay(Delay, () => _output.SetSignal(newSignal)); 
         }
 
         private void AfterDelay(int delay, Action action)
         {
-            _Agenda.AddToAgenda(_Agenda.CurrentTime + delay, action);
+            _agenda.AddToAgenda(_agenda.CurrentTime + delay, action);
         }
 
         private int LogicalNot(int signal)
