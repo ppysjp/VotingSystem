@@ -111,7 +111,7 @@ namespace VotingSystem.Database.Tests
 
         public bool VoteExists(Vote vote)
         {
-            throw new NotImplementedException();
+            return false; 
         }
     }
 }

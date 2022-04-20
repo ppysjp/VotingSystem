@@ -123,6 +123,9 @@ will only need one using statement as we are not going to be saving anything to 
 but we are goin to check that when we call the VoteExists method when using our persistance
 layer that it does in fact return False when the database in question is empty.
 
+gacp "Created failing test for VoteExists method of the persistance layer"
+
+
 
 
 
