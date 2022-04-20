@@ -70,6 +70,15 @@ We then get the tests to pass with some simple logic and then we begin to refact
 would if we were doing TDD. 
 
 
+gacp "Tests are all now passing so we begin to refactor"
+
+studyvideo
+
+So we introduce a constructor that then allows us to tidy up all of the tests that have been
+written, we also we rename the first test to specify that a vote will be persisted when 
+a user hasn't voted.
+
+
 
 
 

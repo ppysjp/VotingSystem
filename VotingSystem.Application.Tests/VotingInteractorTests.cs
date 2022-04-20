@@ -12,28 +12,33 @@ namespace VotingSystem.Application.Tests
     public class VotingInteractorTests
     {
         private Mock<IVotingSystemPersistance> _mockPersistance = new Mock<IVotingSystemPersistance>();
-        
-        [Fact]
-        public void Vote_PersistsVote() 
+        private Vote _vote; 
+        private VotingInteractor _interactor; 
+
+        public VotingInteractorTests()
         {
-            var vote = new Vote();
-            var interactor = new VotingInteractor(_mockPersistance.Object);
-
-            interactor.Vote(vote);
-
-            _mockPersistance.Verify(x => x.SaveVote(vote));
+            _vote = new Vote() { UserId = "user", CounterId = 1 };
+            _interactor = new VotingInteractor(_mockPersistance.Object);
         }
         
         [Fact]
-        public void Vote_DoesNotPersistsVoteWhenUserAlreadyVoted() 
+        public void Vote_PersistsVoteWhenUserHasNotAlreadyVoted() 
         {
-            var vote = new Vote();
-            var interactor = new VotingInteractor(_mockPersistance.Object);
-            _mockPersistance.Setup(x => x.VoteExists(vote)).Returns(true);
+            _mockPersistance.Setup(x => x.VoteExists(_vote)).Returns(false);
 
-            interactor.Vote(vote);
+            _interactor.Vote(_vote);
 
-            _mockPersistance.Verify(x => x.SaveVote(vote), Times.Never);
+            _mockPersistance.Verify(x => x.SaveVote(_vote));
+        }
+        
+        [Fact]
+        public void Vote_DoesNotPersistsVoteWhenUserHasAlreadyVoted() 
+        {
+            _mockPersistance.Setup(x => x.VoteExists(_vote)).Returns(true);
+
+            _interactor.Vote(_vote);
+
+            _mockPersistance.Verify(x => x.SaveVote(_vote), Times.Never);
         }
  
     }
