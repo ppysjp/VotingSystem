@@ -86,6 +86,17 @@ So by implenting the tests that we have just created it naturally leads us to tr
 the interface methods for our actual persistance layer. So the next job is to create a test 
 that will test whether a vote has actually been saved using our appdbcontext. 
 
+gacp "Setup the ground work for testing the new functions that I want to test"
+
+studyvideo
+
+Ok so we are now going to set up the test but htis time for vote, this time we are going to
+instnatiate the "real" persistance and then we are going to perform SaveVote and we are going
+to then from there save it using the persistnace and then we will be doing some sort of 
+assertions...
+
+
+
 
 
 

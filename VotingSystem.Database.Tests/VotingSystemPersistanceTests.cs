@@ -54,12 +54,17 @@ namespace VotingSystem.Database.Tests
        public void PersistsVote() 
         {
 
+            var vote = new Vote { UserId = "user", CounterId = 1 };
+
             using (var ctx = DbContextFactory.Create(nameof(PersistsVote)))
             {
+                var persistance = new VotingSystemPersistance(ctx);
+                persistance.SaveVote(vote);
             }
 
             using (var ctx = DbContextFactory.Create(nameof(PersistsVote)))
             {
+                var savedVote = ctx.Votes.Single();
             }
         }
     }

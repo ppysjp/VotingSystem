@@ -61,11 +61,13 @@ namespace VotingSystem.Database.Tests
 
         public DbSet<Counter> Counters { get; set; }
         public  DbSet<VotingPoll> VotingPolls { get; set; }
+        public DbSet<Vote> Votes { get; internal set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Counter>().Property<int>("Id"); 
             modelBuilder.Entity<VotingPoll>().Property<int>("Id"); 
+            // I think there may be something interesting here to come like a Property<string>() for example. 
         }
     }
 }
