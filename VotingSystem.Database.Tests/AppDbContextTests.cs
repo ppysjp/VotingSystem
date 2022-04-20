@@ -67,7 +67,7 @@ namespace VotingSystem.Database.Tests
         {
             modelBuilder.Entity<Counter>().Property<int>("Id"); 
             modelBuilder.Entity<VotingPoll>().Property<int>("Id"); 
-            // I think there may be something interesting here to come like a Property<string>() for example. 
+            modelBuilder.Entity<Vote>().Property<int>("Id"); 
         }
     }
 }

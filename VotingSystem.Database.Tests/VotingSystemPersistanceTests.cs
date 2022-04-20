@@ -54,7 +54,7 @@ namespace VotingSystem.Database.Tests
 
        [Fact] 
        public void PersistsVote() 
-        {
+       {
 
             var vote = new Vote { UserId = "user", CounterId = 1 };
 
@@ -70,7 +70,7 @@ namespace VotingSystem.Database.Tests
                 Equal(vote.UserId, savedVote.UserId);
                 Equal(vote.CounterId, savedVote.CounterId);
             }
-        }
+       }
     }
 
     public class VotingSystemPersistance : IVotingSystemPersistance
@@ -84,7 +84,8 @@ namespace VotingSystem.Database.Tests
 
         public void SaveVote(Vote vote)
         {
-            throw new NotImplementedException();
+            _ctx.Votes.Add(vote);
+            _ctx.SaveChanges();
         }
 
         public void SaveVotingPoll(VotingPoll votingPoll)
