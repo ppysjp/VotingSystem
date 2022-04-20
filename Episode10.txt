@@ -78,6 +78,14 @@ So we introduce a constructor that then allows us to tidy up all of the tests th
 written, we also we rename the first test to specify that a vote will be persisted when 
 a user hasn't voted.
 
+gacp "Refactor step has now been completed"objects
+
+studyvideo
+
+So by implenting the tests that we have just created it naturally leads us to try and the implement
+the interface methods for our actual persistance layer. So the next job is to create a test 
+that will test whether a vote has actually been saved using our appdbcontext. 
+
 
 
 

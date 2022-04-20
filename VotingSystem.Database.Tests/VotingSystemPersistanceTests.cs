@@ -48,8 +48,19 @@ namespace VotingSystem.Database.Tests
                     Assert.Contains(name, savedPoll.Counters.Select(x => x.Name));
                 }
             }
+        }
 
+       [Fact] 
+       public void PersistsVote() 
+        {
 
+            using (var ctx = DbContextFactory.Create(nameof(PersistsVote)))
+            {
+            }
+
+            using (var ctx = DbContextFactory.Create(nameof(PersistsVote)))
+            {
+            }
         }
     }
 
