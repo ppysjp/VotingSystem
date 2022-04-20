@@ -205,8 +205,12 @@ gacp "Create first test for VotingSystemPersistanceTests"
 The test breaks because we have not implemented the SaveVotingPoll method
 We now finally implement the method so that it actually saves stuff. 
 
+gacp "We now have a different error which says that we need to change the type that the 
+			counters property is in the Voting poll to ICollection"
 
+We then go through the errors in the tests and fix those
 
+gacp "Fixing all of the errors we are getting, we actually have to rename the test because we have accidently saved twice to the same database." 
 
 
 
