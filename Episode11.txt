@@ -1,4 +1,9 @@
 We begin creating the next class we are goin to use which brings everything together. 
 This thing we are going to create is called the StatisticsInteractor.
 
-gacp "Begin Episode11 create StatitcsInteractor class"
+gacp "Begin Episode11 create StatitcsInteractor class" 
+
+So we are now going to begin by creating our first test. This is going to be like a god test
+that will bring together everything in our program into one place. So that is the next 
+step. We are going to make use of a voting Poll so we need to find the place wheere we have
+used that in a test and bring it to the current test. Code reuse.
