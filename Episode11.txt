@@ -1,0 +1,2 @@
+We begin creating the next class we are goin to use which brings everything together. 
+This thing we are going to create is called the StatisticsInteractor.
