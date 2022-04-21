@@ -35,6 +35,9 @@ namespace VotingSystem.Application.Tests
             var interactor = new StatisticsInteractor(_mockPersistance.Object);
             var pollStatistics = interactor.GetStatistics(pollId);
 
+
+            Assert.Equal(poll.Description, pollStatistics.Description);
+
         }
     }
 
@@ -47,9 +50,9 @@ namespace VotingSystem.Application.Tests
              _persistance= persistance;
         }
 
-        public object GetStatistics(int pollId)
+        public VotingPoll GetStatistics(int pollId)
         {
-            throw new NotImplementedException();
+            return _persistance.GetPoll(pollId);
         }
     }
 
