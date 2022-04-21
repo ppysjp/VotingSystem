@@ -36,7 +36,7 @@ namespace VotingSystem.Tests
             _counter.Count = count; 
 
             var statistics = new CounterManager().GetStatistics(_counter, total);
-            
+
             Equal(expected, statistics.Percentage);
         }
 

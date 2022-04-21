@@ -11,3 +11,4 @@ C:\Users\samuel.palmer\Source\Repos\Voting System\Sandbox\obj\Debug\netcoreapp3.
 C:\Users\samuel.palmer\Source\Repos\Voting System\Sandbox\obj\Debug\netcoreapp3.1\Sandbox.dll
 C:\Users\samuel.palmer\Source\Repos\Voting System\Sandbox\obj\Debug\netcoreapp3.1\Sandbox.pdb
 C:\Users\samuel.palmer\Source\Repos\Voting System\Sandbox\obj\Debug\netcoreapp3.1\Sandbox.genruntimeconfig.cache
+C:\Users\samuel.palmer\Source\Repos\Voting System\Sandbox\obj\Debug\netcoreapp3.1\Sandbox.csproj.AssemblyReference.cache

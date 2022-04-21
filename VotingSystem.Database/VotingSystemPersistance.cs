@@ -14,6 +14,11 @@ namespace VotingSystem.Database
             _ctx = ctx;
         }
 
+        public VotingPoll GetPoll(int pollId)
+        {
+            throw new System.NotImplementedException();
+        }
+
         public void SaveVote(Vote vote)
         {
             _ctx.Votes.Add(vote);

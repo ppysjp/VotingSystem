@@ -7,3 +7,38 @@ So we are now going to begin by creating our first test. This is going to be lik
 that will bring together everything in our program into one place. So that is the next 
 step. We are going to make use of a voting Poll so we need to find the place wheere we have
 used that in a test and bring it to the current test. Code reuse.
+
+gacp "We know that when we display the statistics we are going to make use of a Voting Poll" 
+
+studyvideo
+
+So we are now going to mock the persistance layer as we are going to be using it to 
+retrieve the data that is going to be displayed by the interactor. We've also just realised
+that the class we initially created's name is wrong so that needs fixing. 
+
+So I'm trying to implement this myself.
+We have a counter manager that actually has a GetStatistics function so I wonder if 
+I'll be making use of that... I think most likely yes.
+The Counter Manager has two methods
+
+GetStatistics: 
+	which assigns a Percentage to counter that is supplied and then returns 
+	that counter.
+
+ResolveExcess: 
+	which tkaes a set of counters and performs some logic to ensure that each of the counters
+	supplied that have a percentage that makes sense, so that all the percentages add up to
+	some value that actually makes sense.
+
+Looking at the other interactor tests I think it is highly likely that the _mockPersistance
+is going to be injected into the new interactor for what ever reason so I'm going to do that.
+
+I suppose what we are trying to do is to save a voting poll to the database using the persistance 
+object. And then we want to retrieve that voting poll from the database and get its statitistcs.
+Something like that.
+
+studyvideo
+
+so we are wnating to get some statistics back from our test so we are creating a method for
+the interactor which is called GetStatistics and we are going to use it to retrieve the 
+pollStatistics.
