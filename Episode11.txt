@@ -41,4 +41,31 @@ studyvideo
 
 so we are wnating to get some statistics back from our test so we are creating a method for
 the interactor which is called GetStatistics and we are going to use it to retrieve the 
-pollStatistics.
+pollStatistics. We also use a pollId to retrieve the statitics for a specific poll that we 
+are after. 
+
+gacp "Setting up first test for retrieving and displaying the statistics"
+
+gacp "Set up first test so that it passes but it doesn't have the functionality what we want"
+
+The reason that this test isn't really doing what we want it to is that it isn't really 
+making use of the CounterManager we made way back when which had all the logic for calculating
+things like the statistics. Now a Poll has a set of Counters, this is important to remember. 
+
+studyvideo
+
+So we are now going to setup the test so that it makes calls to the CounterManager for which
+we have created the tests for earlier. To do this we are going to create counters that 
+actually have Counts so we actually have some statistics and we are going to create a 
+mock Counter Manager that will make calls to functions that the counter manager uses. 
+Cool.
+
+I've had a guess at implementing but I think I have doine it wrong.
+
+studyvideo
+
+So the issue that we have, is that basically the countermanger was created at a time in 
+the project when we didn't have such a large system. This means that the functions I discussed
+above are kind of righ but need adapting. So the interface is still going to be called the 
+ICounterManager but we are going to go for a top down approach and basically wire everything
+up from the top down instead of bottom up. 

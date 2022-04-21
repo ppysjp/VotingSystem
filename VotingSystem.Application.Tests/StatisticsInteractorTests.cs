@@ -13,47 +13,77 @@ namespace VotingSystem.Application.Tests
     {
 
         private readonly Mock<IVotingSystemPersistance> _mockPersistance = new Mock<IVotingSystemPersistance>();
+        private readonly Mock<ICounterManager> _mockCounterManager = new Mock<ICounterManager>();
 
         [Fact] 
         public void DisplayPollStatistics() 
         {
             var pollId = 1;
+
+            var counter1 = new Counter {Name = "One", Count = 1};
+            var counter2 = new Counter {Name = "Two", Count = 2};
+
+            var counterStats1 = new CounterStatistics {Name = "One", Count = 1, Percent = 60};
+            var counterStats2 = new CounterStatistics {Name = "Two", Count = 2, Percent = 40};
+            var counterStats = new[] {counterStats1, counterStats2};
              
             var poll = new VotingPoll
             {
                 Title = "title",
                 Description = "desc",
-                Counters = new List<Counter>
-                {
-                    new Counter {Name = "One" },
-                    new Counter {Name = "Two" },
-                }
+                Counters = new List<Counter> { counter1, counter2 }
             };
 
             _mockPersistance.Setup(x => x.GetPoll(pollId)).Returns(poll);
+            _mockCounterManager.Setup(x => x.ResolvePercentage(poll.Counters)).Returns(counterStats);
  
-            var interactor = new StatisticsInteractor(_mockPersistance.Object);
+            var interactor = new StatisticsInteractor(_mockPersistance.Object, _mockCounterManager.Object);
             var pollStatistics = interactor.GetStatistics(pollId);
 
-
+            Assert.Equal(poll.Title, pollStatistics.Title);
             Assert.Equal(poll.Description, pollStatistics.Description);
+            var stats1 = pollStatistics.Counters[0];
+            Assert.Equal(counterStats1.Name, stats1.Name);
+            Assert.Equal(counterStats1.Count, stats1.Count);
+            Assert.Equal(counterStats1.Percent, stats1.Percentage);
 
         }
+    }
+
+    public class CounterStatistics
+    {
+        public string Name { get; set; }
+        public int Count { get; set; }
+        public int Percent { get; set; }
+    }
+
+    public interface ICounterManager
+    {
+        ICollection<CounterStatistics> ResolvePercentage(ICollection<Counter> counters);
     }
 
     public class StatisticsInteractor
     {
         private IVotingSystemPersistance _persistance;
+        private ICounterManager _counterManager;
 
-        public StatisticsInteractor(IVotingSystemPersistance persistance)
+        public StatisticsInteractor(IVotingSystemPersistance persistance, ICounterManager counterManager)
         {
              _persistance= persistance;
+             _counterManager = counterManager;
         }
 
         public VotingPoll GetStatistics(int pollId)
         {
-            return _persistance.GetPoll(pollId);
+            var poll = _persistance.GetPoll(pollId);
+            _counterManager.ResolvePercentage(poll.Counters);
+            return poll;
         }
     }
 
 }
+
+
+
+
+
