@@ -139,6 +139,18 @@ from the database.
 
 gacp "Continue setting up GetPoll_RetrievesAPollWithCountersFromDatabase"
 
+studyvideo
+
+So we do some more steps to create the test and we want to Assert some things, and then 
+we need to actually implement the GetPoll for the persistance object that we are creating 
+so that is what is done next.
+
+gacp "Set up test so that it fails because the GetPoll is not implemented"
+
+So now we need to actually implement the GetPoll function. It needs to have all the tests 
+passing that we have put into the original test and we need ensure that when we retrieve a 
+poll the counters are also retrieved. This is done by using the Linq include function so that 
+is the next thing that we are going to retrieve. 
 
 
 

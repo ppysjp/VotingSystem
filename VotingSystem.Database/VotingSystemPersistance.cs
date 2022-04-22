@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using Microsoft.EntityFrameworkCore;
+using System.Linq;
 using VotingSystem.Application;
 using VotingSystem.Models;
 
@@ -16,7 +17,10 @@ namespace VotingSystem.Database
 
         public VotingPoll GetPoll(int pollId)
         {
-            throw new System.NotImplementedException();
+            return _ctx.VotingPolls
+                .Include(x => x.Counters)
+                .Where(x => EF.Property<int>(x, "Id") == pollId)
+                .First();
         }
 
         public void SaveVote(Vote vote)
