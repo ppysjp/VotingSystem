@@ -53,6 +53,8 @@ namespace VotingSystem.Application.Tests
             Assert.Equal(counterStats2.Count, stats2.Count);
             Assert.Equal(counterStats2.Percentage, stats2.Percentage);
 
+            _mockCounterManager.Verify(x => x.ResolveExcess(counterStats), Times.Once);
+
         }
     }
 
@@ -74,6 +76,7 @@ namespace VotingSystem.Application.Tests
     public interface ICounterManager
     {
         List<CounterStatistics> GetStatistics(ICollection<Counter> counters);
+        void ResolveExcess(List<CounterStatistics> counterStats);
     }
 
     public class StatisticsInteractor

@@ -96,4 +96,9 @@ Whener the interactor call GetStatistics for a specific pollId, we want a poll t
 the database layer and then we want to perfrom an action to that poll so that we can get some 
 statistics from it. 
 The action we are performing on that poll is the GetStatistics method belonging to the 
-CounterManager. 
+CounterManager. What it does is it takes the counters that belong to the poll in question and 
+returns a list of counter statistics. The list of statistics is represented as a 
+CounterStatistics object. 
+
+gacp "persistance and countermanager are used by interactor.GetStatistics method"
+
