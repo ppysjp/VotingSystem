@@ -235,5 +235,9 @@ do.
 
 gacp "Finally we have the test which implements business logic working for the GetPoll"
 
+studyvideo
 
-
+So the Count which is associated with the Counter is derived from the number of Votes 
+in the database. Therefore the Count should not be a field in our database which is 
+why it should be ignored. This means we can go to the AppDbContext and make sure that 
+that field in particular is not kept. 
