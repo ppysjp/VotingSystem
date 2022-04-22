@@ -81,3 +81,19 @@ The Percentage is something that we don't want to store in the database, I think
 it will constantly be changing based on the votes, I'm not entirely sure why. But anyway 
 we have a test that is failing and we are about to resolve it which is what I'm trying to learn
 here. 
+
+gacp "Fixing test so that percentages work"
+
+A Voting Poll doesn't have votingpoll statistics. So what we are going to do is create a new 
+type which is called pollStatistics.
+
+So now we have the first test that works, I'm not sure if if covers all the bases. But basically
+this test is try to Display a poll. To do this it is is using the new statisticsinteractor 
+which has a persistance layer, to retrieve data from the database, and a CounterManager, which
+for now is just implemented off an interface but we have created it so that it has methods 
+that are similarly named.  
+Whener the interactor call GetStatistics for a specific pollId, we want a poll to be retrieved from
+the database layer and then we want to perfrom an action to that poll so that we can get some 
+statistics from it. 
+The action we are performing on that poll is the GetStatistics method belonging to the 
+CounterManager. 
