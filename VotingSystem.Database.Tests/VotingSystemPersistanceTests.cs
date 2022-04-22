@@ -105,7 +105,7 @@ namespace VotingSystem.Database.Tests
        }
 
        [Fact] 
-       public void GetPoll_RetrievesAPollWithCountersFromDatabase() 
+       public void GetPoll_RetrievesAPollWithCountersFromDatabase_AndVotesAsCount() 
        {
             var poll = new VotingPoll
             {
@@ -118,13 +118,16 @@ namespace VotingSystem.Database.Tests
                 }
             };
 
-            using (var ctx = DbContextFactory.Create(nameof(GetPoll_RetrievesAPollWithCountersFromDatabase)))
+            using (var ctx = DbContextFactory.Create(nameof(GetPoll_RetrievesAPollWithCountersFromDatabase_AndVotesAsCount)))
             {
                 ctx.VotingPolls.Add(poll);
+                ctx.Votes.Add(new Vote {UserId = "a", CounterId = 1 });
+                ctx.Votes.Add(new Vote {UserId = "b", CounterId = 1 });
+                ctx.Votes.Add(new Vote {UserId = "c", CounterId = 2 });
                 ctx.SaveChanges();
             }
 
-            using (var ctx = DbContextFactory.Create(nameof(GetPoll_RetrievesAPollWithCountersFromDatabase)))
+            using (var ctx = DbContextFactory.Create(nameof(GetPoll_RetrievesAPollWithCountersFromDatabase_AndVotesAsCount)))
             {
                 var savedPoll =  new VotingSystemPersistance(ctx).GetPoll(1);
 
@@ -132,10 +135,14 @@ namespace VotingSystem.Database.Tests
                 Equal(poll.Description, savedPoll.Description);
                 Equal(poll.Counters.Count(), savedPoll.Counters.Count());
 
-                foreach (var name in poll.Counters.Select(x => x.Name))
-                {
-                    Contains(name, savedPoll.Counters.Select(x => x.Name));
-                }
+                var counter1 = savedPoll.Counters[0];
+                Assert.Equal("One", counter1.Name);
+                Assert.Equal(2 , counter1.Count);
+    
+                var counter2 = savedPoll.Counters[0];
+                Assert.Equal("Two", counter2.Name);
+                Assert.Equal(1 , counter2.Count);
+
             }
        }
 

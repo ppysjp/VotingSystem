@@ -19,8 +19,7 @@ namespace VotingSystem.Database
         {
             return _ctx.VotingPolls
                 .Include(x => x.Counters)
-                .Where(x => EF.Property<int>(x, "Id") == pollId)
-                .First();
+                .FirstOrDefault(x => EF.Property<int>(x, "Id") == pollId);
         }
 
         public void SaveVote(Vote vote)

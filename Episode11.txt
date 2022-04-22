@@ -152,11 +152,33 @@ passing that we have put into the original test and we need ensure that when we 
 poll the counters are also retrieved. This is done by using the Linq include function so that 
 is the next thing that we are going to retrieve. 
 
+gacp "Attempted my own implementation which seems to get the tests to pass"
 
+Looks like I'm getting better at C# because I actually managed to implement this! 
 
+studyvideo
 
+studyvideo
 
+So we are not going to store the counters in the database because he says that they are 
+basically 'accidental state' however we need to kick this test up a notch by adding some 
+Votes to the AppDbContext so that we can retrieve the votes as the Count. I'm not sure what
+is meant by accidental state here. 
 
+studyvideo 
+
+So we now want the test to actually check to see that when we add votes to our AppDbContext
+that the relevant counter gets a count that increase the correct amount. What we want is 
+the first Counter to have a count of 2, and a the second counter to have a count of one 
+based on the tests so far. 
+We can use some of the code we created earlier for the StatisticsInteractorTestst to 
+help us along the way with this. So let's use the tests as boiler plate and adapt them to 
+work for what we are trying to test here. 
+
+So we have now creted a test that verifies we get the correct poll.
+We then verify that each counter that the poll has has the correct number of counts. 
+
+gacp "We have now created a test that verifies that getpoll retrieves the correct poll, and it's counters have the correct count."
 
 
 
