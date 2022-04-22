@@ -20,11 +20,11 @@ namespace VotingSystem.Application.Tests
         {
             var pollId = 1;
 
-            var counter1 = new Counter {Name = "One", Count = 1};
-            var counter2 = new Counter {Name = "Two", Count = 2};
+            var counter1 = new Counter {Name = "One", Count = 2};
+            var counter2 = new Counter {Name = "Two", Count = 1};
 
-            var counterStats1 = new CounterStatistics {Name = "One", Count = 1, Percent = 60};
-            var counterStats2 = new CounterStatistics {Name = "Two", Count = 2, Percent = 40};
+            var counterStats1 = new CounterStatistics {Name = "One", Count = 2, Percent = 60};
+            var counterStats2 = new CounterStatistics {Name = "Two", Count = 1, Percent = 40};
             var counterStats = new[] {counterStats1, counterStats2};
              
             var poll = new VotingPoll
@@ -42,10 +42,16 @@ namespace VotingSystem.Application.Tests
 
             Assert.Equal(poll.Title, pollStatistics.Title);
             Assert.Equal(poll.Description, pollStatistics.Description);
+
             var stats1 = pollStatistics.Counters[0];
             Assert.Equal(counterStats1.Name, stats1.Name);
             Assert.Equal(counterStats1.Count, stats1.Count);
             Assert.Equal(counterStats1.Percent, stats1.Percentage);
+
+            var stats2 = pollStatistics.Counters[1];
+            Assert.Equal(counterStats2.Name, stats2.Name);
+            Assert.Equal(counterStats2.Count, stats2.Count);
+            Assert.Equal(counterStats2.Percent, stats2.Percentage);
 
         }
     }
@@ -75,9 +81,7 @@ namespace VotingSystem.Application.Tests
 
         public VotingPoll GetStatistics(int pollId)
         {
-            var poll = _persistance.GetPoll(pollId);
-            _counterManager.ResolvePercentage(poll.Counters);
-            return poll;
+            return _persistance.GetPoll(pollId);
         }
     }
 

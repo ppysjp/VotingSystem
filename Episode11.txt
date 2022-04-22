@@ -68,4 +68,16 @@ So the issue that we have, is that basically the countermanger was created at a 
 the project when we didn't have such a large system. This means that the functions I discussed
 above are kind of righ but need adapting. So the interface is still going to be called the 
 ICounterManager but we are going to go for a top down approach and basically wire everything
-up from the top down instead of bottom up. 
+up from the top down instead of bottom up. This means the methods from the CounterManager will be 
+used but we just aren't quite there yet to link them up. 
+
+gacp "so we have decisided on a class called CounterStatistics which is going to be part of the design so we are adapting the first test to cater for this"
+
+studyvideo
+
+12:52
+
+The Percentage is something that we don't want to store in the database, I think it's because
+it will constantly be changing based on the votes, I'm not entirely sure why. But anyway 
+we have a test that is failing and we are about to resolve it which is what I'm trying to learn
+here. 
