@@ -241,3 +241,5 @@ So the Count which is associated with the Counter is derived from the number of 
 in the database. Therefore the Count should not be a field in our database which is 
 why it should be ignored. This means we can go to the AppDbContext and make sure that 
 that field in particular is not kept. 
+
+gacp "Ensure that the Count for the counter is not a column in the database"
