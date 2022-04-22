@@ -102,3 +102,12 @@ CounterStatistics object.
 
 gacp "persistance and countermanager are used by interactor.GetStatistics method"
 
+studyvideo
+
+Finally we want to ensure that when the Display Statistics function is called we want to make
+sure that the the countermanager calls the resolve excess method as well to ensure that the 
+statistics actually produce something that kind of makes sense. So to do that we need to 
+verify that this is the case.
+
+gacp "Add to the test that ResolveExcess method is called by the _counterManager"
+
