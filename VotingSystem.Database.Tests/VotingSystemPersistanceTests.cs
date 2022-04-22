@@ -118,16 +118,24 @@ namespace VotingSystem.Database.Tests
                 }
             };
 
-            using (var ctx = DbContextFactory.Create(nameof(PersistsVotingPoll)))
+            using (var ctx = DbContextFactory.Create(nameof(GetPoll_RetrievesAPollWithCountersFromDatabase)))
             {
                 ctx.VotingPolls.Add(poll);
                 ctx.SaveChanges();
             }
 
-            using (var ctx = DbContextFactory.Create(nameof(PersistsVotingPoll)))
+            using (var ctx = DbContextFactory.Create(nameof(GetPoll_RetrievesAPollWithCountersFromDatabase)))
             {
-                IVotingSystemPersistance persistance = new VotingSystemPersistance(ctx);
-                var savedPoll = persistance.GetPoll(1);
+                var savedPoll =  new VotingSystemPersistance(ctx).GetPoll(1);
+
+                Equal(poll.Title, savedPoll.Title);
+                Equal(poll.Description, savedPoll.Description);
+                Equal(poll.Counters.Count(), savedPoll.Counters.Count());
+
+                foreach (var name in poll.Counters.Select(x => x.Name))
+                {
+                    Contains(name, savedPoll.Counters.Select(x => x.Name));
+                }
             }
        }
 
