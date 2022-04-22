@@ -94,6 +94,7 @@ namespace VotingSystem.Application.Tests
         {
             var poll = _persistance.GetPoll(pollId);
             var statistics = _counterManager.GetStatistics(poll.Counters);
+            _counterManager.ResolveExcess(statistics);
 
             return new PollStatistics
             {

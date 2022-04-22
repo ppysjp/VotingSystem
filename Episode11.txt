@@ -111,3 +111,7 @@ verify that this is the case.
 
 gacp "Add to the test that ResolveExcess method is called by the _counterManager"
 
+studyvideo
+
+So we now make the test pass by making sure that the counterManager takes the statistics
+and that the ResolveExcess function is called on it. 
