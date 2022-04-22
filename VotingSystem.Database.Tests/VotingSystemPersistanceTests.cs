@@ -104,5 +104,46 @@ namespace VotingSystem.Database.Tests
             }
        }
 
+            var poll = new VotingPoll
+            {
+                Title = "title",
+                Description = "desc",
+                Counters = new List<Counter>
+                {
+                    new Counter {Name = "One" },
+                    new Counter {Name = "Two" },
+                }
+            };
+
+       [Fact] 
+       public void GetPoll_RetrievesAPollFWithCountersFromDatabase() 
+       {
+            var poll = new VotingPoll
+            {
+                Title = "title",
+                Description = "desc",
+                Counters = new List<Counter>
+                {
+                    new Counter {Name = "One" },
+                    new Counter {Name = "Two" },
+                }
+            };
+
+            using (var ctx = DbContextFactory.Create(nameof(PersistsVotingPoll)))
+            {
+                IVotingSystemPersistance persistance = new VotingSystemPersistance(ctx);
+                persistance.SaveVotingPoll(poll);
+            }
+
+            using (var ctx = DbContextFactory.Create(nameof(PersistsVotingPoll)))
+            {
+                IVotingSystemPersistance persistance = new VotingSystemPersistance(ctx);
+                var savedPoll = persistance.GetPoll(1);
+            }
+       }
+
+
+
+
     }
 }

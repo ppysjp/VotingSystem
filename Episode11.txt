@@ -115,3 +115,19 @@ studyvideo
 
 So we now make the test pass by making sure that the counterManager takes the statistics
 and that the ResolveExcess function is called on it. 
+
+gacp "Ensure that the test passes by making the countermanager call resolveexcess"
+
+To summarise we are retrieving a poll, getting the statistics from the counters and then 
+resolving the excess and then we are returning the cummulative result.
+
+studyvideo
+
+So now we are actually going to implement and test the new interface that we created.
+The first thing we need t odo is make sure that when we call the GetPoll method, the database
+layer  of the thing we are making retrieves a voting poll. 
+
+So I've tried myself at this stage to try and set up the test in the way that I think it should look 
+but I know this isn't right which is fine. But yeah I know it's almost correct.
+ 
+gacp "Create First Test which makes use of the GetPoll Method that needs implementing." 
