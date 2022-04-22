@@ -104,19 +104,8 @@ namespace VotingSystem.Database.Tests
             }
        }
 
-            var poll = new VotingPoll
-            {
-                Title = "title",
-                Description = "desc",
-                Counters = new List<Counter>
-                {
-                    new Counter {Name = "One" },
-                    new Counter {Name = "Two" },
-                }
-            };
-
        [Fact] 
-       public void GetPoll_RetrievesAPollFWithCountersFromDatabase() 
+       public void GetPoll_RetrievesAPollWithCountersFromDatabase() 
        {
             var poll = new VotingPoll
             {
@@ -131,8 +120,8 @@ namespace VotingSystem.Database.Tests
 
             using (var ctx = DbContextFactory.Create(nameof(PersistsVotingPoll)))
             {
-                IVotingSystemPersistance persistance = new VotingSystemPersistance(ctx);
-                persistance.SaveVotingPoll(poll);
+                ctx.VotingPolls.Add(poll);
+                ctx.SaveChanges();
             }
 
             using (var ctx = DbContextFactory.Create(nameof(PersistsVotingPoll)))
