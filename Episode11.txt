@@ -243,3 +243,19 @@ why it should be ignored. This means we can go to the AppDbContext and make sure
 that field in particular is not kept. 
 
 gacp "Ensure that the Count for the counter is not a column in the database"
+
+studyvideo
+
+So we are now going to move the various classes that we have created into the correct 
+place within our project and correct the namespaces. We are then going to retrofit the 
+ICounterManager interface to the CounterManager and basically make steps to get that to 
+link up everything in the way that it should. 
+
+gacp "Move all of the new classes into the correct places within the project"
+
+studyvideo
+
+So now we are going to start doing some refactoring where we implement the ICounterManager
+interface.
+
+gacp "Reimplement the GetStatistics with the CounterManager"

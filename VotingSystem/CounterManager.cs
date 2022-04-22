@@ -5,8 +5,21 @@ using VotingSystem.Models;
 
 namespace VotingSystem
 {
-    public class CounterManager 
+    public class CounterManager : ICounterManager
     { 
+
+        public List<CounterStatistics> GetStatistics(ICollection<Counter> counters)
+        {
+            var totalCount = counters.Sum(x => x.Count);
+
+            return counters.Select(x => new CounterStatistics
+            {
+                Name = x.Name,
+                Count = x.Count,
+                Percentage = RoundUp(x.Count * 100.0 / totalCount)
+            }).ToList();
+        }
+
         public Counter GetStatistics(Counter counter, int totalCount)
         {
             counter.Percentage = RoundUp(counter.Count * 100.0 / totalCount);
@@ -37,6 +50,11 @@ namespace VotingSystem
 
         private static double RoundUp(double num) => Math.Round(num, 2);
 
+
+        public void ResolveExcess(List<CounterStatistics> counterStats)
+        {
+            throw new NotImplementedException();
+        }
     }
 
 }
