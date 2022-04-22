@@ -267,3 +267,8 @@ type of the parameter. When we run the tests on the other hand a load of stuff b
 so that will need to be fixed.
 
 gacp "Implement ResolveExcess causes the tests to fail"
+
+So now we go ahead and fix the compilation errors that have resulted in the change that we 
+made. The next step will be to fix the errors that are produced by the tests themselves.
+
+gacp "Finally we fix all the broken tests. Episode11 complete"

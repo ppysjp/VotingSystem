@@ -20,12 +20,6 @@ namespace VotingSystem
             }).ToList();
         }
 
-        public Counter GetStatistics(Counter counter, int totalCount)
-        {
-            counter.Percentage = RoundUp(counter.Count * 100.0 / totalCount);
-            return counter; 
-        }
- 
         public void ResolveExcess(List<CounterStatistics> counters)
         {
             var totalPercent = counters.Sum(x => x.Percentage); 
