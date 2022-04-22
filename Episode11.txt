@@ -137,6 +137,8 @@ studyvideo
 So just making further steps to save th poll to the database. And we want to retrieve it 
 from the database. 
 
+gacp "Continue setting up GetPoll_RetrievesAPollWithCountersFromDatabase"
+
 
 
 
