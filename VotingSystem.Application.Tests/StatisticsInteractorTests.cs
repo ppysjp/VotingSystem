@@ -57,55 +57,6 @@ namespace VotingSystem.Application.Tests
 
         }
     }
-
-    public class PollStatistics
-    {
-        public string Title { get; set; }
-        public string Description { get; set; }
-        public List<CounterStatistics> Counters { get; set; }
-
-    }
-
-    public class CounterStatistics
-    {
-        public string Name { get; set; }
-        public int Count { get; set; }
-        public double Percentage { get; set; }
-    }
-
-    public interface ICounterManager
-    {
-        List<CounterStatistics> GetStatistics(ICollection<Counter> counters);
-        void ResolveExcess(List<CounterStatistics> counterStats);
-    }
-
-    public class StatisticsInteractor
-    {
-        private IVotingSystemPersistance _persistance;
-        private ICounterManager _counterManager;
-
-        public StatisticsInteractor(IVotingSystemPersistance persistance, ICounterManager counterManager)
-        {
-             _persistance= persistance;
-             _counterManager = counterManager;
-        }
-
-        public PollStatistics GetStatistics(int pollId)
-        {
-            var poll = _persistance.GetPoll(pollId);
-            var statistics = _counterManager.GetStatistics(poll.Counters);
-            _counterManager.ResolveExcess(statistics);
-
-            return new PollStatistics
-            {
-                Title = poll.Title,
-                Description = poll.Description,
-                Counters = statistics
-            };
-        }
-    }
-
-
 }
 
 
