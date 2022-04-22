@@ -180,8 +180,47 @@ We then verify that each counter that the poll has has the correct number of cou
 
 gacp "We have now created a test that verifies that getpoll retrieves the correct poll, and it's counters have the correct count."
 
+So now I'm going to have a go at implementing this. 
+I know the change needs to implemented in the VotingSystemPersistance.cs
 
+I suppose we want the case that when a vote is added to the context it will add 1 to the 
+count of it's counter and presumably this is done via it's CounterId???? 
+How does the Vote link to everything else then? It links via it's counterId 
 
+So I've used the context to retrieve the votes. I know this isn't probably right 
+but it is a step in the right direction. And I know that I want to get a Sum of the votes
 
+I want to sum all of the votes that have an CounterId1. 
 
+I tried and my solution got very complicated. 
 
+studyvideo
+
+So the method I tried was what was causing a mess! I tried to make a second call to the context
+to retrieve the Votes and then failed to do the assignment becasue I'm stil getting used to
+Linq, like soo...
+
+var votes = _ctx.Votes.ToList();
+            var poll = _ctx.VotingPolls.Include(x => x.Counters).FirstOrDefault(x => EF.Property<int>(x, "Id") == pollId);
+
+            var sumCounterId1 = votes.Where(x => x.CounterId == 1).Count();
+            var sumCounterId2 = votes.Where(x => x.CounterId == 1).Count();
+
+            return _ctx.VotingPolls
+                .Include(x => x.Counters)
+                .FirstOrDefault(x => EF.Property<int>(x, "Id") == pollId);
+
+However this didn't relly work even though the sumsVals were what I wanted and I just needed 
+to work out how to assign them to the count for each of the counters. 
+
+The approach that he suggests to take is to actually use Entity framework simply. 
+And set up a way of wiring the classes of Counter and Vote together. So the point of confusion
+here was to spot that the Counter and the Vote were not linked together.
+
+He actually creates a new voting poll using the voting poll from the database.
+And he says that a Counter has a List of Votes, and he lets Entity Framework do the job 
+of linking the Counter and Votes together. The magic that happens is that with the 
+complex Linq Query in GetPoll, Entity Framework will do the job of writing the nice and 
+efficient sql query to retrieve the thing from the databasae for us. 
+
+gacp "Almost working query to get the test to pass"

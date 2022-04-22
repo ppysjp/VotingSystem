@@ -17,8 +17,17 @@ namespace VotingSystem.Database
 
         public VotingPoll GetPoll(int pollId)
         {
+
             return _ctx.VotingPolls
                 .Include(x => x.Counters)
+                .Select(x => new VotingPoll { 
+                    Title = x.Title,
+                    Description = x.Description,
+                    Counters = x.Counters.Select(y => new Counter { 
+                        Name = y.Name,
+                        Count = y.Votes.Count
+                    }).ToList()
+                })
                 .FirstOrDefault(x => EF.Property<int>(x, "Id") == pollId);
         }
 
