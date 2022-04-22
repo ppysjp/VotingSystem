@@ -259,3 +259,11 @@ So now we are going to start doing some refactoring where we implement the ICoun
 interface.
 
 gacp "Reimplement the GetStatistics with the CounterManager"
+
+studyvideo
+
+Implementing the Resolve Excess is very straight forward because we just have to change the
+type of the parameter. When we run the tests on the other hand a load of stuff breaks 
+so that will need to be fixed.
+
+gacp "Implement ResolveExcess causes the tests to fail"

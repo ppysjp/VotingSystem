@@ -26,7 +26,7 @@ namespace VotingSystem
             return counter; 
         }
  
-        public void ResolveExcess(List<Counter> counters)
+        public void ResolveExcess(List<CounterStatistics> counters)
         {
             var totalPercent = counters.Sum(x => x.Percentage); 
             if (totalPercent == 100) return;
@@ -50,11 +50,6 @@ namespace VotingSystem
 
         private static double RoundUp(double num) => Math.Round(num, 2);
 
-
-        public void ResolveExcess(List<CounterStatistics> counterStats)
-        {
-            throw new NotImplementedException();
-        }
     }
 
 }
