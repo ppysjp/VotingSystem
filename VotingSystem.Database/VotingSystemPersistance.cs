@@ -20,6 +20,7 @@ namespace VotingSystem.Database
 
             return _ctx.VotingPolls
                 .Include(x => x.Counters)
+                .Where(x => EF.Property<int>(x, "Id") == pollId)
                 .Select(x => new VotingPoll { 
                     Title = x.Title,
                     Description = x.Description,
@@ -28,7 +29,7 @@ namespace VotingSystem.Database
                         Count = y.Votes.Count
                     }).ToList()
                 })
-                .FirstOrDefault(x => EF.Property<int>(x, "Id") == pollId);
+                .FirstOrDefault();
         }
 
         public void SaveVote(Vote vote)

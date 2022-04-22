@@ -224,3 +224,16 @@ complex Linq Query in GetPoll, Entity Framework will do the job of writing the n
 efficient sql query to retrieve the thing from the databasae for us. 
 
 gacp "Almost working query to get the test to pass"
+
+studyvideo
+
+So I think there is also an order to the order in which Linq queries are called so basically
+here we have to rejig what has already been created a bit. 
+
+So here the test just needed tidying up because in general it is doing what we want it to 
+do.
+
+gacp "Finally we have the test which implements business logic working for the GetPoll"
+
+
+

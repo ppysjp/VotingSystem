@@ -136,12 +136,12 @@ namespace VotingSystem.Database.Tests
                 Equal(poll.Counters.Count(), savedPoll.Counters.Count());
 
                 var counter1 = savedPoll.Counters[0];
-                Assert.Equal("One", counter1.Name);
-                Assert.Equal(2 , counter1.Count);
+                Equal("One", counter1.Name);
+                Equal(2 , counter1.Count);
     
-                var counter2 = savedPoll.Counters[0];
-                Assert.Equal("Two", counter2.Name);
-                Assert.Equal(1 , counter2.Count);
+                var counter2 = savedPoll.Counters[1];
+                Equal("Two", counter2.Name);
+                Equal(1 , counter2.Count);
 
             }
        }
