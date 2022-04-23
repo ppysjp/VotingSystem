@@ -1,0 +1,3 @@
+In this episode we take a lot of steps gain domain knowledge for what a WebApplication is actually doing. 
+
+gacp "Episode12 first commit"
