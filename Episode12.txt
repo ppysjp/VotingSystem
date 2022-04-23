@@ -1,3 +1,8 @@
 In this episode we take a lot of steps gain domain knowledge for what a WebApplication is actually doing. 
 
 gacp "Episode12 first commit"
+
+studyvideo
+
+We are going to build a webserver that is an ASP.Net Core WebApplication. So we add a project
+to our solution which is called VotiingSystem.UI.
