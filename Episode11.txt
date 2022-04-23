@@ -272,3 +272,9 @@ So now we go ahead and fix the compilation errors that have resulted in the chan
 made. The next step will be to fix the errors that are produced by the tests themselves.
 
 gacp "Finally we fix all the broken tests. Episode11 complete"
+
+We have linked up the persistance layer and then putting it through the business logic
+via the ICounterManager interface and then we are returning the newly processed data. 
+This processed data is called PollStatistics.
+
+gacp "Summary of what we did"
