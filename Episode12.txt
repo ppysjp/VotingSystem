@@ -6,3 +6,22 @@ studyvideo
 
 We are going to build a webserver that is an ASP.Net Core WebApplication. So we add a project
 to our solution which is called VotiingSystem.UI.
+
+gacp "Add ASP.Net Core WebApplication to Project"
+
+studyvideo
+
+So we now spend some time looking at hte differences between the VotingSystem.Appplication.csproj
+and the VotingSystem.UI.csproj. The main thing he point out is that the project tag are diffent.
+
+The Application has the following tag
+
+<Project Sdk="Microsoft.NET.Sdk">
+
+wheras the Web.UI has this tag
+
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+This enables the projec to have access to a load of tools that would otherwise be unavailable.
+
+gacp "Looking at the differences between csproj files"
