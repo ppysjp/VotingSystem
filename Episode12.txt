@@ -75,3 +75,14 @@ key thing that he trying to enforce.
 The thing he is getting across is that once the response is written to, IT IS IMMUTABLE!!!
 Your code will compile in C# but that doesn't mean that it's correct.
 
+gacp "Responses are immutable"
+
+studyvideo
+
+So now we are going to make a CustomMiddleWare. The interesting thing about this 
+object is that by convention it is designed for passiing around functional arguments 
+which is something that you learned in SICP and are very comfortable with the concept of :)
+
+
+
+

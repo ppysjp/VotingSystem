@@ -60,4 +60,13 @@ namespace VotingSystem.UI
             });
         }
     }
+
+    public class CustomMiddleware 
+    {
+        public CustomMiddleware(RequestDelegate request)
+        {
+    
+        }
+    }
+
 }
