@@ -52,6 +52,7 @@ namespace VotingSystem.UI
             {
                 endpoints.MapGet("/", async context =>
                 {
+                    context.Response.StatusCode = 201;
                     await context.Response.WriteAsync("Hello World");
                 });
 

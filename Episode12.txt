@@ -54,7 +54,11 @@ MapRazorPages being called.
 The key thing to notice is there is an app builder. So we have used 2 builders to build up 
 quite complex objects in this case! An application builder and a hostbuilder. Interesting.
 
-What is MapGet? 
+gacp "Learning about how the Configure function works within the Startup.cs"
+
+I think he basically is now explaining how request and responses work.
+So he is saying that the request comes in  within the Configure method and the response goes
+out. And he says that once the response has been made it is immutable. 
 
 
 
