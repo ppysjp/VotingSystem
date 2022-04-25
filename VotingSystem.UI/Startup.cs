@@ -46,6 +46,8 @@ namespace VotingSystem.UI
 
             app.UseRouting();
 
+            app.UseMiddleware<CustomMiddleware>(); 
+
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
@@ -53,7 +55,6 @@ namespace VotingSystem.UI
                 endpoints.MapGet("/", async context =>
                 {
                     await context.Response.WriteAsync("Hello World");
-                    context.Response.ContentType = "application/json";
                 });
 
                 //endpoints.MapRazorPages();
@@ -63,10 +64,29 @@ namespace VotingSystem.UI
 
     public class CustomMiddleware 
     {
+        private readonly RequestDelegate _request;
+
         public CustomMiddleware(RequestDelegate request)
         {
-    
+            _request = request;
         }
+
+        public Task Invoke(HttpContext context) 
+        {
+            // Request is coming in
+
+            context.Response.ContentType = "application/json";
+            return _request(context);
+
+            // request is going out.
+
+        }
+
     }
 
 }
+
+
+
+
+

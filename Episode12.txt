@@ -83,6 +83,24 @@ So now we are going to make a CustomMiddleWare. The interesting thing about this
 object is that by convention it is designed for passiing around functional arguments 
 which is something that you learned in SICP and are very comfortable with the concept of :)
 
+gacp "Begin creating a custom middleware"
+
+We then implement the constructor and the Invocation. And then we add the usage of the middleware
+to the Configure method. 
+
+We've also just got a technique for chaing a load of nested methods in an elegant way. 
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
