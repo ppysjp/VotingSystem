@@ -90,6 +90,10 @@ to the Configure method.
 
 We've also just got a technique for chaing a load of nested methods in an elegant way. 
 
+gacp "Implement the custom middleware"
+
+The buisness Logic will be registered as services and then injected into the project.
+
 
 
 
