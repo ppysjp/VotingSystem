@@ -25,3 +25,37 @@ wheras the Web.UI has this tag
 This enables the projec to have access to a load of tools that would otherwise be unavailable.
 
 gacp "Looking at the differences between csproj files"
+
+So it's at this stage that we start looking at the Main program file. 
+The first thing that stares you in the face is the CreateHostBuilder functon. 
+This is making use of the Builder pattern which I think may be worth a quick read so I'm 
+just going to do that.
+
+Builder patter is a compext object that allows you to make complicated objects.
+
+studyvideo
+
+Just spent some time studying how everything plugs together. So I think a
+Host is a pretty complex object which is why the method CreateHostBuilder is called for it. 
+
+He then explains how the application works. So a request goes into the application and then
+there is a middleware layer that the request has to get past first, before the requestt we 
+are making then interacts with the main logic of the application that we have been building.
+
+There are two very important functions. 
+
+There is the Configure function and the is the ConfigureServices function. 
+
+The Configure function manages the middleware. 
+
+Within the Configure method the app.UseEndpoints method is called with the action 
+MapRazorPages being called. 
+
+The key thing to notice is there is an app builder. So we have used 2 builders to build up 
+quite complex objects in this case! An application builder and a hostbuilder. Interesting.
+
+What is MapGet? 
+
+
+
+
