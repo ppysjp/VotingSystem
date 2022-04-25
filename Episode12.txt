@@ -60,6 +60,18 @@ I think he basically is now explaining how request and responses work.
 So he is saying that the request comes in  within the Configure method and the response goes
 out. And he says that once the response has been made it is immutable. 
 
+He shows that when you opoen the devtools and then look at the Network tab and refresh, if you
+place the 201 response before hello world then the Status is 201. 
 
+gacp "Place 201 response before helloworld"
 
+This time the response is 200 when we put the 201 resonse to be after the call. 
+
+gacp "Place 201 response after helloworld"
+
+So once we have Written to the repsonse we can no longer make changes to it, that is the 
+key thing that he trying to enforce. 
+
+The thing he is getting across is that once the response is written to, IT IS IMMUTABLE!!!
+Your code will compile in C# but that doesn't mean that it's correct.
 
