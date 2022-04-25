@@ -94,6 +94,12 @@ gacp "Implement the custom middleware"
 
 The buisness Logic will be registered as services and then injected into the project.
 
+gacp "Inject Service201 into the middleware"
+
+Implemented the Service201 but still needs injecting
+
+gacp "Injected Service201 into the CustomMiddleWare"
+
 
 
 

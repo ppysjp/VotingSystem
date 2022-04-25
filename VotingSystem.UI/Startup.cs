@@ -24,7 +24,7 @@ namespace VotingSystem.UI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddRazorPages();
+            services.AddSingleton<Service201>(); 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -62,6 +62,12 @@ namespace VotingSystem.UI
         }
     }
 
+
+    public class Service201 
+    {
+        public int GetCode() => 201;
+    }
+
     public class CustomMiddleware 
     {
         private readonly RequestDelegate _request;
@@ -71,10 +77,11 @@ namespace VotingSystem.UI
             _request = request;
         }
 
-        public Task Invoke(HttpContext context) 
+        public Task Invoke(HttpContext context, Service201 service) 
         {
             // Request is coming in
 
+            context.Response.StatusCode = service.GetCode();
             context.Response.ContentType = "application/json";
             return _request(context);
 
