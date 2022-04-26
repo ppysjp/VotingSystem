@@ -60,3 +60,20 @@ attributes. A demonstration of this ensues.
 
 By using this attribute it means that the following page can be retrieved by using the 
 following route https://localhost:44341/about-page
+
+gacp "Customizing the route using Http attributes"
+
+studyvideo
+
+So we also learn that we can ensure that the controller is still part of the route so that 
+the route looks like this again https://localhost:44341/home/about-page 
+This is done by using the route property. And if we want to override the route so that 
+the about page is still found at https://localhost:44341/about-page despite using the 
+the route, if we put a forward slash '/' at the start of the http get, the about page 
+is then placed at the route. 
+
+gacp "Use route property but place about-page at route"
+
+
+
+

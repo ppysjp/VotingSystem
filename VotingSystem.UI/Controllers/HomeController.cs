@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 namespace VotingSystem.UI.Controllers
 {
     // controller
+    [Route("home")]
     public class HomeController : Controller
     {
         // action
@@ -16,7 +17,7 @@ namespace VotingSystem.UI.Controllers
             return "Hello Index Page";
         }
 
-        [HttpGet("about-page")]
+        [HttpGet("/about-page")]
         public string About() 
         {
             return "About Page"; 
