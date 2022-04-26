@@ -7,8 +7,14 @@ using System.Threading.Tasks;
 
 namespace VotingSystem.UI.Controllers
 {
+    // controller
     public class HomeController : Controller
     {
+        // action
+        public string Index() 
+        {
+            return "Hello Index Page";
+        }
         
     }
 }
