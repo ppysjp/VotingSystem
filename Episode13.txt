@@ -35,3 +35,10 @@ is managed by the controller is done by the name of the controller so 'Home' in 
 and then the function so Index, so I think the route that is managed by the controller will
 be 'Home/Index' for the method that we have just created.
 He defines the method to be an 'Action' which makes sense. 
+
+gacp "Create first Action within the Home Controller"
+
+studyvideo
+
+https://localhost:44341/ and https://localhost:44341/Home/Index are mapped to the same 
+location by convention.
