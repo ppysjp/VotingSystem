@@ -42,3 +42,21 @@ studyvideo
 
 https://localhost:44341/ and https://localhost:44341/Home/Index are mapped to the same 
 location by convention.
+
+gacp "We just learned that when running the application /Home/Index is route"
+
+studyvideo
+
+We then add the next action which is About which will return the About page. He then 
+demonstrates that https://localhost:44341/About doesn't produce the About page but that
+you actually need to post https://localhost:44341/Index/About to retrieve the page. 
+This is just to demonstrate that the Home/Index is the convenction that we are used to 
+using most.  
+
+studyvideo
+
+He then shows us that we can override the route by using the HttpGet, HttpPost etc 
+attributes. A demonstration of this ensues. 
+
+By using this attribute it means that the following page can be retrieved by using the 
+following route https://localhost:44341/about-page

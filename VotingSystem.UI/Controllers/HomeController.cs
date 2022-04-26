@@ -15,6 +15,12 @@ namespace VotingSystem.UI.Controllers
         {
             return "Hello Index Page";
         }
+
+        [HttpGet("about-page")]
+        public string About() 
+        {
+            return "About Page"; 
+        }
         
     }
 }
