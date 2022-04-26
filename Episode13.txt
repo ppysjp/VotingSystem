@@ -6,4 +6,13 @@ make use of a controlle to manage the routing for us instead.
 
 So to do this we are going to make use of the MapDefaultControllerRoute Method. 
 
-gacp "Make the WebApplication make use of the Controller architecture.
+gacp "Make the WebApplication make use of the Controller architecture."
+
+studyvideo
+
+So we are now going to implement the controller. There are a set of conventions that are 
+required to make a controller. So to do the next step we are going to create a Controller
+folder within the Api project and the we are going to make a class with 'Controller' as 
+its suffix that inherits from Controller.
+
+So yeah that's cool we now have a Controller for the HomePage of the Website. 
