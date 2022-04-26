@@ -16,3 +16,12 @@ folder within the Api project and the we are going to make a class with 'Control
 its suffix that inherits from Controller.
 
 So yeah that's cool we now have a Controller for the HomePage of the Website. 
+
+gacp "Create HomeController"
+
+studyvideo
+
+So the next step is to essentially register the controller within the Startup.cs file 
+we do this by using the service object and register the controller through it. 
+The controllers are registered by the AddControllers method that belings to the services 
+object. This is done within hte ConfgiureServices metod.
