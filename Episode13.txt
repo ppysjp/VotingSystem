@@ -1,0 +1,9 @@
+studyvideo
+
+Instead of a having a code block for every single route for the webapplication that we are 
+making, we are going to make use of the MVC architecture. This means that we are going to 
+make use of a controlle to manage the routing for us instead.
+
+So to do this we are going to make use of the MapDefaultControllerRoute Method. 
+
+gacp "Make the WebApplication make use of the Controller architecture.
