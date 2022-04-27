@@ -89,5 +89,30 @@ if we want to pass a parameter to a page we use curly brackets.
 
 So if we place a breakpoint at the return statement of the About function
 and then type the following https://localhost:44341/Home/About/hello into the URL whilst 
-running the application we 
+running the application we then find that the word has the value "hello". 
+
+gacp "Intro to passing parameters into the Controller functions"
+
+He then goes on to explain that you have to be careful when defining the routes for your 
+web application, so for more info watch around the 11:00 minute mark.
+
+studyvideo
+
+So now e begin for real we are going to start register the services that we want to use.
+We start with the VotingPollFactory by creating a Singleton within the ConfgiureServices
+method of the website. So that is the first step. 
+
+So we have just added the reference to the VotingSystem to the VotingSystem.UI and then we 
+have 
+
+
+
+
+
+
+
+
+
+
+
 

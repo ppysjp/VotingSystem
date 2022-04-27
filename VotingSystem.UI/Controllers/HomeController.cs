@@ -11,17 +11,5 @@ namespace VotingSystem.UI.Controllers
     [Route("[controller]")]
     public class HomeController : Controller
     {
-        // action
-        public string Index() 
-        {
-            return "Hello Index Page";
-        }
-
-        [HttpGet("[action]/{word}")]
-        public string About(string word) 
-        {
-            return "About Page"; 
-        }
-        
     }
 }

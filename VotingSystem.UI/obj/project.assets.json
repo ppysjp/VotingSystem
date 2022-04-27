@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {}
+    ".NETCoreApp,Version=v3.1": {
+      "VotingSystem/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/VotingSystem.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/VotingSystem.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "VotingSystem/1.0.0": {
+      "type": "project",
+      "path": "../VotingSystem/VotingSystem.csproj",
+      "msbuildProject": "../VotingSystem/VotingSystem.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": []
+    ".NETCoreApp,Version=v3.1": [
+      "VotingSystem >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\samuel.palmer\\.nuget\\packages\\": {},
@@ -38,7 +57,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\samuel.palmer\\Source\\Repos\\Voting System\\VotingSystem\\VotingSystem.csproj": {
+              "projectPath": "C:\\Users\\samuel.palmer\\Source\\Repos\\Voting System\\VotingSystem\\VotingSystem.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
