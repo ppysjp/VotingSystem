@@ -17,8 +17,8 @@ namespace VotingSystem.UI.Controllers
             return "Hello Index Page";
         }
 
-        [HttpGet("[action]")]
-        public string About() 
+        [HttpGet("[action]/{word}")]
+        public string About(string word) 
         {
             return "About Page"; 
         }

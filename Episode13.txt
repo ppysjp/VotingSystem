@@ -74,8 +74,20 @@ is then placed at the route.
 
 gacp "Use route property but place about-page at route"
 
-7:48
+studyvideo
 
+We can also put within the string [controller] and [about] and this will give us then
+use the default Home/About as the route for the About Page 
 
+gacp "So that is how we organise pages"
 
+studyvideo
+
+So now we are learning about supplying paramaters to pages. The methods that we have 
+created so far do not have parameters that are being passed into the functions. However
+if we want to pass a parameter to a page we use curly brackets.
+
+So if we place a breakpoint at the return statement of the About function
+and then type the following https://localhost:44341/Home/About/hello into the URL whilst 
+running the application we 
 
