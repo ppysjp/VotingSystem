@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VotingSystem.Models;
 
 namespace VotingSystem.UI.Controllers
 {
@@ -18,9 +19,9 @@ namespace VotingSystem.UI.Controllers
             _pollFactory = pollFactory;
         }
 
-        public VotingPoll Create() 
+        public VotingPoll Create(VotingPollFactory.Request request) 
         {
-            return _pollFactory.Create();
+            return _pollFactory.Create(request);
         }
 
     }

@@ -114,10 +114,17 @@ So now we are going to inject the IVotingPollFactory in to the controller that w
 to be using. So let's do that. So now we have a filed where we can instantiate and use the 
 VotingPollFactory.
 
+So within our controller we also need to be able to instantiate VotingPolls etc so that is 
+what we are implementing now.
 
 
+gacp "Implementing the Home Controller so that it uses the VotingPoll"
 
+studyvideo
 
+So the key thing here to understand is that the MVC structure is Model View Controller.
+And in this case the Model is the Voting Poll, that is the thing that is being 'modeled' 
+for our system. 
 
 
 
