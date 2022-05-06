@@ -31,6 +31,7 @@
     ".NETCoreApp,Version=v3.1": {
       "VotingSystem.UI/1.0.0": {
         "dependencies": {
+          "VotingSystem": "1.0.0",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "3.1.0.0",
@@ -319,6 +320,14 @@
         },
         "compile": {
           "VotingSystem.UI.dll": {}
+        }
+      },
+      "VotingSystem/1.0.0": {
+        "runtime": {
+          "VotingSystem.dll": {}
+        },
+        "compile": {
+          "VotingSystem.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/3.1.0.0": {
@@ -2017,6 +2026,11 @@
   },
   "libraries": {
     "VotingSystem.UI/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "VotingSystem/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

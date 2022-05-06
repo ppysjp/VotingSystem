@@ -126,6 +126,25 @@ So the key thing here to understand is that the MVC structure is Model View Cont
 And in this case the Model is the Voting Poll, that is the thing that is being 'modeled' 
 for our system. 
 
+gacp "Short Explaination of MVC"
+
+studyvideo
+
+So we are now going to run the application so that the VotingPoll is created by the Controller
+We do this in postman because this application is very good for checking if things are linking
+up in the correct way. 
+
+studyvideo
+
+So when you use your controller and you are using postman you need to ensure that the request
+you are what you sending is the correct from the dropdown menu on the left. Because I have 
+tagged the Create method with HttpPost then in postman I need to use POST on the URL 
+https://localhost:44341/Home in this case. We are using postman as the client because we 
+don't have a webpage. At the moment we have a VC because the view side of the application that
+we are making doesn't have anything in it. 
+
+gacp "Using Postman for the first time to post"
+
 
 
 
