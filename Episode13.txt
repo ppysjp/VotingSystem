@@ -145,6 +145,39 @@ we are making doesn't have anything in it.
 
 gacp "Using Postman for the first time to post"
 
+studyvideo
+
+So learning some more about postman, because we are posting I think this would be 
+the equivalent of filing in some boxes on a webpage we can create the voting poll 
+with some of it's attributes by using postman, specifically we can do this by assigning 
+key value pairs where the key is one of the properties within the class. 
+So in the case of the voting poll I have used the Title property and assigned it to the word
+hello, when I debug this you can see that ti has a value of hello. See 18:40 within the video
+for more details. 
+
+studyvideo
+
+He then goes on to explain different ways of doing what he calls the Model Binding which 
+is where the Data is assigned to our objects. We can specify how the binding is done, so 
+in the example so far we only did it via the key values within postman. However we could 
+be more stringent and use properties to specify exactly how the binding should be done. 
+So for example we could ensure that it is only done in the Url or what have you. 
+
+The attribute for doing this is [FromQuery] and this attribue goes before the parameter 
+that is supplied to the Create Function. 
+
+The reason for specifying this because you only want one way of Model binding. 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
