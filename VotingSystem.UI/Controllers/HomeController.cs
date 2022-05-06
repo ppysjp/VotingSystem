@@ -11,5 +11,17 @@ namespace VotingSystem.UI.Controllers
     [Route("[controller]")]
     public class HomeController : Controller
     {
+        private readonly IVotingPollFactory _pollFactory;
+
+        public HomeController(IVotingPollFactory pollFactory)
+        {
+            _pollFactory = pollFactory;
+        }
+
+        public VotingPoll Create() 
+        {
+            return _pollFactory.Create();
+        }
+
     }
 }

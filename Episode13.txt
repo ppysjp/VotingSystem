@@ -103,9 +103,16 @@ We start with the VotingPollFactory by creating a Singleton within the Confgiure
 method of the website. So that is the first step. 
 
 So we have just added the reference to the VotingSystem to the VotingSystem.UI and then we 
-have 
+have ensured that the singleton is of type IVotingPollFactory because this means we will be 
+injecting the IVotingPollFactory into the the Controller we are using. 
 
+gacp "Register the IVotingPollFactory with the services of the VotingSystem.UI"
 
+studyvideo
+
+So now we are going to inject the IVotingPollFactory in to the controller that we are going 
+to be using. So let's do that. So now we have a filed where we can instantiate and use the 
+VotingPollFactory.
 
 
 
