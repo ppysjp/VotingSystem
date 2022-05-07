@@ -45,3 +45,14 @@ will only be called with the following URL
 https://localhost:44341/home/Create
 
 which is not what we want.
+
+gacp "Fix Multiple endpoints by adding actions to the route path"
+
+studyvideo
+
+So he the demonstrates how you can pass a object to the View() method, he clicks on F12
+to demonstrate this. The object that is being passed is basically a model. 
+Additional chagnes will be required in the cshtml so that the object is evaluated correctly. 
+
+
+

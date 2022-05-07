@@ -23,6 +23,7 @@ namespace VotingSystem.UI.Controllers
         [HttpGet]
         public IActionResult Index() 
         {
+            var info = new Info { Message = "Hello World" };
             return View(); 
         }
 
@@ -40,4 +41,10 @@ namespace VotingSystem.UI.Controllers
         }
 
     }
+
+    public class Info 
+    {
+        public string Message { get; set; }
+    }
+
 }
