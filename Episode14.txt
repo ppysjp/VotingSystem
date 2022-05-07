@@ -63,3 +63,21 @@ the cshtml file you have to use the @model tag and then you have to dig down int
 to find the model type. This then gives you the power to use the model type within the 
 cshtml file.
 
+gacp "how to access the model within the cshtml file"
+
+studyvideo
+
+So now we then retrieve the message from the Info @modle object that we have created 
+within the cshtml. We run the website with the following URL: 
+
+ https://localhost:44341/Home/Index
+
+
+
+
+ 
+
+
+
+
+

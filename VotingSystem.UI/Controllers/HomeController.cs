@@ -24,7 +24,7 @@ namespace VotingSystem.UI.Controllers
         public IActionResult Index() 
         {
             var info = new Info { Message = "Hello World" };
-            return View(); 
+            return View(info); 
         }
 
 
