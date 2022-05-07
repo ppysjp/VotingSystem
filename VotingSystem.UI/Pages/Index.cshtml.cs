@@ -9,9 +9,11 @@ namespace VotingSystem.UI.Pages
 {
     public class IndexModel : PageModel
     {
-        public IActionResult OnGet()
+        public int Id { get; set; }
+
+        public void OnGet(int id)
         {
-            return Page();
+            Id = id;
         }
     }
 }

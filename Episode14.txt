@@ -152,6 +152,13 @@ front end stuff.
 
 gacp "Tidy Up project in order to study razor pages"
 
+studyvideo
+
+So in a simliar vain to how we added an info model to the view we are going to add an Id 
+to our razor page. 
+
+
+
 
 
 
