@@ -155,7 +155,30 @@ gacp "Tidy Up project in order to study razor pages"
 studyvideo
 
 So in a simliar vain to how we added an info model to the view we are going to add an Id 
-to our razor page. 
+to our razor page. This is done by adding the property to the IndexModel class and the 
+referencing it within the cshtml file. 
+
+gacp "So we have now just passed a value to the Razor page"
+
+studyvideo
+
+By default the value of the id is 0 but we can set it from the URL with the following 
+pattern: 
+
+https://localhost:44341/?id=2
+
+studyvideo
+
+So if we want to change how the parameter is passed to the Model so that we can assign the 
+number, instead of passing a query string like above, we need to change how the @page 
+route works within the file. This means that we can use a URL that doesn't use a query 
+string but instead looks like: 
+
+https://localhost:44341/2
+
+And this will assign the number 2 to the value 2 in the page. 
+
+
 
 
 
