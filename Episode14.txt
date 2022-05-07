@@ -15,3 +15,13 @@ BuildAction property to 'Content' other wise when you make the request for the p
 not be found.  
 
 gacp "Making index page work"
+
+studyvideo
+
+He then tried to implement the next HttpGet request for the about page, but he makes the 
+View method return the Index page. However he runs into an error when doing this when he
+tries to get the page when running the website. When we type this URL in 
+https://localhost:44341/home we get the folowing error which says that the request 
+mached multiple endpoints.
+
+
