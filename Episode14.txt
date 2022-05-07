@@ -1,0 +1,6 @@
+studyvideo
+
+In this episode we are going to look at Views and then  Razor pages.
+Basically he opens by creating a Index.cshtml page. The 'cs' within the html page stands for 
+C Sharp html.	He puts this within the VotingSystemUI project under it's own folder which is 
+called views. 
