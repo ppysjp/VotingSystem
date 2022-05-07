@@ -56,3 +56,10 @@ Additional chagnes will be required in the cshtml so that the object is evaluate
 
 gacp "How to pass a model into the View() method part1"
 
+studyvideo
+
+He then explains how you would access the Info model from the cshtml page. Basically within
+the cshtml file you have to use the @model tag and then you have to dig down into the class
+to find the model type. This then gives you the power to use the model type within the 
+cshtml file.
+
