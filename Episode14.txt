@@ -24,4 +24,24 @@ tries to get the page when running the website. When we type this URL in
 https://localhost:44341/home we get the folowing error which says that the request 
 mached multiple endpoints.
 
+gacp "Multiple endpoints error"
 
+studyvideo
+
+So he then goes on to explain one method for fixing this multiple endponts error. This is to 
+add to the route attribute [action]. This will then allow the client to know which HttpGet
+to call when the Home website is called. This has the unintended consequence of extending 
+the URL however so the new URLS with this change would be 
+
+https://localhost:44341/home/Index
+
+or
+
+https://localhost:44341/home/About
+
+The problem with this is that it has the unintended consequence of meaning that the HttpPost
+will only be called with the following URL 
+
+https://localhost:44341/home/Create
+
+which is not what we want.

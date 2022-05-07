@@ -9,7 +9,7 @@ using VotingSystem.Models;
 namespace VotingSystem.UI.Controllers
 {
     // controller
-    [Route("[controller]")]
+    [Route("[controller]/[action]")]
     public class HomeController : Controller
     {
         private readonly IVotingPollFactory _pollFactory;
