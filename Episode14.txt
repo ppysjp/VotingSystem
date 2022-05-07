@@ -100,6 +100,22 @@ example.
 
 gacp "Playing around with the cs file of the Razor page and adding the first header to it"
 
+studyvideo
+
+So it is at this point that we need to be able to retrieve the razor page when we run the 
+website with the following URL. https://localhost:44341/index
+
+In order to get this to work we need to specify the endpoints again within the Startup.cs 
+file, so in this case we need the endpoints.MapRazorPages(); function to be instantiated.
+When using the controller we had a centralised place which would retrieve all of the pages 
+from the Home controller. In a way by using this new end ponit within hte middleware we are
+decentralising where how the pages are being retrieved, since each razor page has its own
+controller in a way which is the cshtml page. 
+
+We also now retrieve the razorpage with just the route url now: https://localhost:44341/ 
+
+gacp "set endpoints to map razor pages"
+
 
 
 
