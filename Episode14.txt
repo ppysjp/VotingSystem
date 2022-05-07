@@ -91,6 +91,25 @@ Ctrl-Shift-A which basically give us the power to add an item to the folder.
 
 gacp "Added First Razor page to the project"
 
+studyvideo
+
+So instead of using a controller, because we are using the Razor page it comes with its own
+cs file which in this case is the Index.cshtml.cs file. And so basically this file acts as 
+the controller. We can make the OnGet method have a return type of IAction result for 
+example.
+
+gacp "Playing around with the cs file of the Razor page and adding the first header to it"
+
+
+
+
+
+
+
+
+
+
+
 
 
 
