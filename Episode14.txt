@@ -54,5 +54,5 @@ So he the demonstrates how you can pass a object to the View() method, he clicks
 to demonstrate this. The object that is being passed is basically a model. 
 Additional chagnes will be required in the cshtml so that the object is evaluated correctly. 
 
-
+gacp "How to pass a model into the View() method part1"
 
