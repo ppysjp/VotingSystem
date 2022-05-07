@@ -124,6 +124,22 @@ he has added a Home folder to hte Pages folder. By doing this he has set up 2 ro
 point to different things. One route which has the same path goes via the Home controller 
 whilst the goes via the Razor page, and what we want to see is what happens! 
 
+gacp "Using 2 routes that are the same for both the home controller and for the razor page"
+
+studyvideo
+
+He basically explains how the routing works further with the razorpages.
+
+https://localhost:44341/home/index -> Returns the HomeController page.
+
+whilst the 
+
+https://localhost:44341/home/ -> Returns the Razor page. 
+
+The key take away from this is that the Index page is by default the route page for razor 
+pages, by route I mean you do not need to put anything else after home to retrieve it. 
+
+
 
 
 
