@@ -19,6 +19,13 @@ namespace VotingSystem.UI.Controllers
             _pollFactory = pollFactory;
         }
 
+
+        [HttpGet]
+        public IActionResult Index() 
+        {
+            return View(); 
+        }
+
         [HttpPost]
         public VotingPoll Create(VotingPollFactory.Request request) 
         {

@@ -4,3 +4,14 @@ In this episode we are going to look at Views and then  Razor pages.
 Basically he opens by creating a Index.cshtml page. The 'cs' within the html page stands for 
 C Sharp html.	He puts this within the VotingSystemUI project under it's own folder which is 
 called views. 
+
+gacp "Create first cshtml page which is the index page"
+
+studyvideo
+
+So now we are creating the first HttpGet request which will retrieve the Index page we have 
+created. Even though you may place the index page in the correct place you need to set its
+BuildAction property to 'Content' other wise when you make the request for the page it will
+not be found.  
+
+gacp "Making index page work"
