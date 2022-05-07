@@ -116,9 +116,13 @@ We also now retrieve the razorpage with just the route url now: https://localhos
 
 gacp "set endpoints to map razor pages"
 
+studyvideo
 
-
-
+He just done a quick explaination of how the routing works for razor pages and is about to 
+do a little experiment. The routing for razorpages is done by folder structure which is why 
+he has added a Home folder to hte Pages folder. By doing this he has set up 2 routes which 
+point to different things. One route which has the same path goes via the Home controller 
+whilst the goes via the Razor page, and what we want to see is what happens! 
 
 
 
