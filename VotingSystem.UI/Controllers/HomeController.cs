@@ -19,32 +19,10 @@ namespace VotingSystem.UI.Controllers
             _pollFactory = pollFactory;
         }
 
-
-        [HttpGet]
-        public IActionResult Index() 
-        {
-            var info = new Info { Message = "Hello World" };
-            return View(info); 
-        }
-
-
-        [HttpGet]
-        public IActionResult About() 
-        {
-            return View("Index"); 
-        }
-
         [HttpPost]
         public VotingPoll Create(VotingPollFactory.Request request) 
         {
             return _pollFactory.Create(request);
         }
-
     }
-
-    public class Info 
-    {
-        public string Message { get; set; }
-    }
-
 }

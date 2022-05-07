@@ -139,6 +139,18 @@ https://localhost:44341/home/ -> Returns the Razor page.
 The key take away from this is that the Index page is by default the route page for razor 
 pages, by route I mean you do not need to put anything else after home to retrieve it. 
 
+So the key take away here is that when you have controllers and razor pages the rotues will
+end up dancing around each other so you will need to be carefull. 
+
+gacp "Razor and Controller routes can become tangled so be careful"
+
+studyvideo
+
+So we have jsut removed all of the stuff that we were using to explain Views and we are now 
+transitioning to using just the controller for the back end stuff and razor pages for the 
+front end stuff. 
+
+gacp "Tidy Up project in order to study razor pages"
 
 
 
