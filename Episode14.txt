@@ -72,10 +72,17 @@ within the cshtml. We run the website with the following URL:
 
  https://localhost:44341/Home/Index
 
+gacp "retrieve the message from the info Model object within the cshtml file"
+
+studyvideo
+
+It's at this point that we stop using Views because this guy has the opinion that Razor 
+pages shoud be used for Website and Controller etc should be used for restful api's. 
 
 
 
- 
+
+
 
 
 
