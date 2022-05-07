@@ -168,6 +168,31 @@ that is supplied to the Create Function.
 
 The reason for specifying this because you only want one way of Model binding. 
 
+gacp "Learning a bit about model binding"
+
+studyvideo
+
+So he basically rounds up this section explaining about the From attribute for model binding 
+in C#. 
+
+https://docs.microsoft.com/en-us/aspnet/core/mvc/models/model-binding?view=aspnetcore-6.0
+
+gacp "Learning a bit more about model binding in C#."
+
+studyvideo
+
+We now look at how to post the request by ensuring that whatever is posted has three 
+array values as well. So the title and description are the keys for the first two fields
+but when it comes to array we need to put brackets on the end of the key like so 
+names[0], names[1], so that postman knows it is posting elements within the array.
+
+It's been a while but the Request is actually a class within the VotingPollFactoroy which 
+is used to instantiate the VotingPoll. It just means that instead of passing a series of 
+parameters to the Create method we can past the class and then that will assign the values 
+to the correct fields. If you remember the names array will instantiate a set of counters 
+whose name is the list of counters given. 
+
+gacp "Further understanding of model binding"
 
 
 
