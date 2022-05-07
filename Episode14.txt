@@ -79,9 +79,15 @@ studyvideo
 It's at this point that we stop using Views because this guy has the opinion that Razor 
 pages shoud be used for Website and Controller etc should be used for restful api's. 
 
+gacp "Begin learning about razorpages"
 
+11:00
 
+studyvideo
 
+So it's at this point that we create the first razor page, he puts the page within the 
+pages folder of the VotingSystem.UI. He also tells us of the useful keybinding which is 
+Ctrl-Shift-A which basically give us the power to add an item to the folder.
 
 
 
