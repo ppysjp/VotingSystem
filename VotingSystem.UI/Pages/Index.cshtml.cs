@@ -4,16 +4,25 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using VotingSystem.Models;
 
 namespace VotingSystem.UI.Pages
 {
     public class IndexModel : PageModel
     {
-        public int Id { get; set; }
+        public VotingPoll Poll { get; set; }
 
-        public void OnGet(int id)
+        public void OnGet([FromServices] IVotingPollFactory pollFactory)
         {
-            Id = id;
+            var request = new VotingPollFactory.Request
+            {
+                Title = "title",
+                Description = "desc",
+                Names = new[] { "one", "two" }
+            };
+
+            Poll = pollFactory.Create(request);
+
         }
     }
 }

@@ -195,8 +195,13 @@ both work.
 
 gacp "Optional parameter pass into a razor page"
 
+studyvideo
 
+So now we are going to make use of the VotingPoll factory within the controller. We perform dependency injection
+via the attribute [fromservice] within the method OnGet() which is a 'Handler' for our razorpage.This means we don't
+have to perform dependency injection.  
 
+gacp "When the Index page is retrieved the Voting poll is also retrieved"
 
 
 
