@@ -21,12 +21,15 @@ namespace DigitalCircuit.Sandbox
 
             inverter.Delay = 5;
 
-            inverter.InvertInput(); 
+            //inverter.InvertInput();
 
+            input.SetSignal(1);
+
+            theAgenda.Propogate();
 
             Console.WriteLine(
                 String.Format(
-                "input signal value = {0}", input.Signal, "after Inverting input."));
+                "output signal value = {0}", output.Signal, "after Inverting input."));
         }
     }
 
@@ -56,11 +59,126 @@ namespace DigitalCircuit.Sandbox
             return GetTimeSegments().Skip(1).ToList();
         }
 
-
-        internal void AddToAgenda(int delay, Action action)
+        public bool IsAgendaEmpty() 
         {
-            throw new NotImplementedException();
+            if (Segments == null) 
+            {
+                return true;
+            }
+            return !Segments.Any();
         }
+
+        public bool BelongsBefore(int time, TimeSegment segment)
+        {
+            return segment == null || time < segment.SegmentTime;
+        }
+
+        public TimeSegment MakeNewTimeSegment(int time, Action action) 
+        {
+            var q =  new Queue<Action>();
+            q.Enqueue(action);
+
+            return new TimeSegment() { 
+                SegmentTime = time, 
+                SegmentQueue = q
+            };
+        }
+
+        public void AddToSegments(int time, Action action) 
+        {
+            var segments = GetTimeSegments();
+            int index = 0;
+
+            if (segments.Count == 0)
+            {
+                segments.Add(MakeNewTimeSegment(time, action));
+            }
+
+            else
+            {
+                foreach (var segment in segments)
+                {
+                    if (segment.SegmentTime == time)
+                    {
+                       segment.SegmentQueue.Enqueue(action);
+                        break;
+                    }
+                    else if (BelongsBefore(time, segment))
+                    {
+                        segments.Insert(index, MakeNewTimeSegment(time, action));
+                        break;
+                    }
+                    else if (index == segments.Count)
+                    {
+                        segments.Add(MakeNewTimeSegment(time, action));
+                        break;
+                    }
+                    else
+                    {
+                        index += 1;
+                    }
+                }
+            }
+
+            Segments = segments;
+
+        }
+
+        public void AddToAgenda(int time, Action action)
+        {
+            AddToSegments(time, action);
+        }
+
+        public void RemoveFirstAgendaItem() 
+        {
+            var q = GetTimeSegments().First().SegmentQueue;
+            q.Dequeue();
+
+            if (IsEmpty(q))
+            {
+                Segments = RestOfSegments(); 
+            }
+
+        }
+
+        public bool IsEmpty(IEnumerable<Action> q)
+        {
+            if (q == null) 
+            {
+                return true;
+            }
+ 
+            return !q.Any();
+        }
+
+        public Action FirstAgendaItem() 
+        {
+            if (IsAgendaEmpty())
+            {
+                throw new Exception("Agenda is empty -- FIRST-AGENDA-ITEM");
+            }
+
+            var firstSeg = FirstSegment();
+            CurrentTime = firstSeg.SegmentTime;
+            return firstSeg.SegmentQueue.First();
+
+        }
+
+        public void Propogate() 
+        {
+            if (IsAgendaEmpty())
+            {
+                Console.WriteLine("Done!");
+            }
+            else
+            {
+                var firstItem = FirstAgendaItem();
+                firstItem();
+                RemoveFirstAgendaItem();
+                Propogate();
+            }
+        }
+
     }
 
     public class TimeSegment 

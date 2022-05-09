@@ -178,14 +178,22 @@ https://localhost:44341/2
 
 And this will assign the number 2 to the value 2 in the page. 
 
+gacp "Use the URL without query string to set the Id value of the model"
+
+studyvideo
+
+You can define an optional parameter using the question mark after its definition within the razor page.
 
 
+https://localhost:44341/?id=2
 
+and
 
+https://localhost:44341/2
 
+both work.
 
-
-
+gacp "Optional parameter pass into a razor page"
 
 
 
