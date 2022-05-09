@@ -203,7 +203,9 @@ have to perform dependency injection.
 
 gacp "When the Index page is retrieved the Voting poll is also retrieved"
 
+studyvideo
 
+gacp "Creating a Razor page that makes use of the VotingPoll created and displaying it's associated data"
 
 
 
