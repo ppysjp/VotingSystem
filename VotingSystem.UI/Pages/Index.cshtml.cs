@@ -17,13 +17,13 @@ namespace VotingSystem.UI.Pages
 
         public void OnGet([FromServices] IVotingPollFactory pollFactory)
         {
-            var request = new VotingPollFactory.Request
-            {
-                Title = "title",
-                Description = "desc",
-                Names = new[] { "one", "two" }
-            };
-            Poll = pollFactory.Create(request);
+            //var request = new VotingPollFactory.Request
+            //{
+            //    Title = "title",
+            //    Description = "desc",
+            //    Names = new[] { "one", "two" }
+            //};
+            //Poll = pollFactory.Create(request);
         }
 
         public void OnPost([FromServices] IVotingPollFactory pollFactory)

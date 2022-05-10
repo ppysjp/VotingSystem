@@ -248,3 +248,9 @@ when in the browser.
 <input type="text" id="Form_Title" name="Form.Title" value="">
 
 gacp "Understanding what the asp-for is and adding the other properties for the request."
+
+So we have finished the episode. We have the Razor page set up so that when we run the 
+OnPost by clicking the submit button, the same page is returned however this time round the
+Poll is no longer null because it was assigned a value during the submit.
+
+gacp "End of Episode 14"
