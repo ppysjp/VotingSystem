@@ -236,3 +236,15 @@ We rename the Request property to Form so that it doesn't collide with the Http.
 This means that we have to reference the Form rather than the  request in the input. 
 We also add addTagHelpers which gives us some intellisense when we are trying to code within
 our razor page.
+
+gacp "Add tagHelpers to razor page and change Index.cshtml.cs Request property to form"
+
+studyvideo
+
+So basically he explains that the asp-for is like a macro that will write out the html for you 
+more properly, if we view the razor page when running, the line where the asp-for is different 
+when in the browser. 
+
+<input type="text" id="Form_Title" name="Form.Title" value="">
+
+gacp "Understanding what the asp-for is and adding the other properties for the request."

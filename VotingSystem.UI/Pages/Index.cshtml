@@ -9,6 +9,10 @@
 <form method="post">
     @*@Html.AntiForgeryToken()*@
     <input asp-for="Form.Title" />
+    <input asp-for="Form.Description" />
+    <input asp-for="Form.Names[0]" />
+    <input asp-for="Form.Names[1]" />
+    <input asp-for="Form.Names[2]" />
     <button type="submit">Submit</button>
 </form>
 
