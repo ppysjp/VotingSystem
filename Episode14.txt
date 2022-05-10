@@ -213,3 +213,12 @@ So we are now creating our first post for our website. This is like the thing th
 be sent to the database when we have something like a button on our website.
 
 gacp "Created first input and submit button for razor page along with how the request is assigned"
+
+studyvideo
+
+29:56
+
+So we basiccally need the break point within the OnPost to be hit and in order to do this we need
+to add an antiforgery token to our page so that is the next thing to do. 
+
+gacp "Add antiforgery token to razor page so that we can hit hte debug of OnPost"
