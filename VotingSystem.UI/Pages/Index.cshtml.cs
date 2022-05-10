@@ -11,6 +11,8 @@ namespace VotingSystem.UI.Pages
     public class IndexModel : PageModel
     {
         public VotingPoll Poll { get; set; }
+
+        [BindProperty]
         public VotingPollFactory.Request Request { get; set; }
 
         public void OnGet([FromServices] IVotingPollFactory pollFactory)

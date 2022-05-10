@@ -222,3 +222,10 @@ So we basiccally need the break point within the OnPost to be hit and in order t
 to add an antiforgery token to our page so that is the next thing to do. 
 
 gacp "Add antiforgery token to razor page so that we can hit hte debug of OnPost"
+
+studyvideo
+
+At the moment when we hit the breakpoint the Reques is null and this is because we haven't used
+the bind property attribute. So we need to add this to the VotingPollFactory.Request.
+
+gacp "Add bind property to ensure that the Request actually returns a value"
