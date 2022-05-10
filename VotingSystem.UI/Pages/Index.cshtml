@@ -2,12 +2,13 @@
 @model VotingSystem.UI.Pages.IndexModel
 @{
 }
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 <h1>Razor index page</h1>
 
 <form method="post">
-    @Html.AntiForgeryToken()
-    <input name="Request.Title" />
+    @*@Html.AntiForgeryToken()*@
+    <input asp-for="Form.Title" />
     <button type="submit">Submit</button>
 </form>
 

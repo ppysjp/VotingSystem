@@ -13,7 +13,7 @@ namespace VotingSystem.UI.Pages
         public VotingPoll Poll { get; set; }
 
         [BindProperty]
-        public VotingPollFactory.Request Request { get; set; }
+        public VotingPollFactory.Request Form { get; set; }
 
         public void OnGet([FromServices] IVotingPollFactory pollFactory)
         {
@@ -28,7 +28,7 @@ namespace VotingSystem.UI.Pages
 
         public void OnPost([FromServices] IVotingPollFactory pollFactory)
         {
-            Poll = pollFactory.Create(Request);
+            Poll = pollFactory.Create(Form);
         }
 
     }

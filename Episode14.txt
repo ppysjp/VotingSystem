@@ -229,3 +229,10 @@ At the moment when we hit the breakpoint the Reques is null and this is because 
 the bind property attribute. So we need to add this to the VotingPollFactory.Request.
 
 gacp "Add bind property to ensure that the Request actually returns a value"
+
+studyvideo
+
+We rename the Request property to Form so that it doesn't collide with the Http.Request object.
+This means that we have to reference the Form rather than the  request in the input. 
+We also add addTagHelpers which gives us some intellisense when we are trying to code within
+our razor page.
