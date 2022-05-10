@@ -11,6 +11,7 @@ namespace VotingSystem.UI.Pages
     public class IndexModel : PageModel
     {
         public VotingPoll Poll { get; set; }
+        public VotingPollFactory.Request Request { get; set; }
 
         public void OnGet([FromServices] IVotingPollFactory pollFactory)
         {
@@ -20,9 +21,13 @@ namespace VotingSystem.UI.Pages
                 Description = "desc",
                 Names = new[] { "one", "two" }
             };
-
             Poll = pollFactory.Create(request);
-
         }
+
+        public void OnPost([FromServices] IVotingPollFactory pollFactory)
+        {
+            Poll = pollFactory.Create(Request);
+        }
+
     }
 }

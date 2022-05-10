@@ -5,11 +5,8 @@
 
 <h1>Razor index page</h1>
 
-<h2>@Model.Poll.Title</h2>
+<form method="post">
+    <input name="Request.Title" />
+    <button type="submit">Submit</button>
+</form>
 
-<h2>@Model.Poll.Description</h2>
-
-@foreach (var counter in Model.Poll.Counters)
-{
-    <p>@counter.Name - @counter.Count </p>
-}

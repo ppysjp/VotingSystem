@@ -207,5 +207,9 @@ studyvideo
 
 gacp "Creating a Razor page that makes use of the VotingPoll created and displaying it's associated data"
 
+studyvideo
 
+So we are now creating our first post for our website. This is like the thing that will 
+be sent to the database when we have something like a button on our website.
 
+gacp "Created first input and submit button for razor page along with how the request is assigned"
