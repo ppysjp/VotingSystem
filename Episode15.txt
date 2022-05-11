@@ -62,3 +62,7 @@ studyvideo
 gacp "Rearrange references so that scoped services work"
 
 gacp "Let's now just clean up the the startup.cs"
+
+studyvideo
+
+We also need to register the service that is the AppDbContext.

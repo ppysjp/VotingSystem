@@ -26,6 +26,9 @@ namespace VotingSystem.UI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.AddDbContext<AppDbContext>(); 
+
             services.AddSingleton<IVotingPollFactory, VotingPollFactory>();
             services.AddScoped<VotingPollInteractor>();
             services.AddScoped<IVotingSystemPersistance, VotingSystemPersistance>();
@@ -56,7 +59,6 @@ namespace VotingSystem.UI
             {
                 endpoints.MapRazorPages();
                 endpoints.MapDefaultControllerRoute();
-
             });
         }
     }
