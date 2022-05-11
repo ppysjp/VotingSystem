@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using VotingSystem.Application;
 using VotingSystem.Models;
 
 namespace VotingSystem.UI.Pages
@@ -17,18 +18,11 @@ namespace VotingSystem.UI.Pages
 
         public void OnGet([FromServices] IVotingPollFactory pollFactory)
         {
-            //var request = new VotingPollFactory.Request
-            //{
-            //    Title = "title",
-            //    Description = "desc",
-            //    Names = new[] { "one", "two" }
-            //};
-            //Poll = pollFactory.Create(request);
         }
 
-        public void OnPost([FromServices] IVotingPollFactory pollFactory)
+        public void OnPost([FromServices] VotingPollInteractor votingPollInteractor)
         {
-            Poll = pollFactory.Create(Form);
+            votingPollInteractor.CreateVotingPoll(Form);
         }
 
     }

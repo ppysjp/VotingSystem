@@ -18,6 +18,7 @@ namespace VotingSystem.Application.Tests
         [Fact] 
         public void DisplayPollStatistics() 
         {
+            //Arrange
             var pollId = 1;
 
             var counter1 = new Counter {Name = "One", Count = 2};
@@ -38,8 +39,12 @@ namespace VotingSystem.Application.Tests
             _mockCounterManager.Setup(x => x.GetStatistics(poll.Counters)).Returns(counterStats);
  
             var interactor = new StatisticsInteractor(_mockPersistance.Object, _mockCounterManager.Object);
+
+
+            //Act
             var pollStatistics = interactor.GetStatistics(pollId);
 
+            //Assert
             Assert.Equal(poll.Title, pollStatistics.Title);
             Assert.Equal(poll.Description, pollStatistics.Description);
 

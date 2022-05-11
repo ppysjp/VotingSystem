@@ -1,6 +1,7 @@
 C:\Users\samuel.palmer\Source\Repos\Voting System\VotingSystem\bin\Debug\netcoreapp3.1\VotingSystem.deps.json
 C:\Users\samuel.palmer\Source\Repos\Voting System\VotingSystem\bin\Debug\netcoreapp3.1\VotingSystem.dll
 C:\Users\samuel.palmer\Source\Repos\Voting System\VotingSystem\bin\Debug\netcoreapp3.1\VotingSystem.pdb
+C:\Users\samuel.palmer\Source\Repos\Voting System\VotingSystem\obj\Debug\netcoreapp3.1\VotingSystem.csproj.AssemblyReference.cache
 C:\Users\samuel.palmer\Source\Repos\Voting System\VotingSystem\obj\Debug\netcoreapp3.1\VotingSystem.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\samuel.palmer\Source\Repos\Voting System\VotingSystem\obj\Debug\netcoreapp3.1\VotingSystem.AssemblyInfoInputs.cache
 C:\Users\samuel.palmer\Source\Repos\Voting System\VotingSystem\obj\Debug\netcoreapp3.1\VotingSystem.AssemblyInfo.cs

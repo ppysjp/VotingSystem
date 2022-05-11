@@ -78,6 +78,11 @@ the in memory database again for now but it would normally be at this stage that
 use an SQL provider. You can see how this is implemented in the DbContextFactory. 
 However for the UI we can call the function that will mkae use of the InMemoryDatabase. 
 He then explains the functional paradigm of C#.
-10:10: 10:10: 10:10: 10:10: 10:10: 10:10: 10:10: 10:10: 10:10: 10:10: Let's see if we can undertand this at another stage.
+
+10:10 Let's see if we can undertand this at another stage.
+
+gacp "Register the InMemory database"
+
+The next step is to inject the votingPollInteractor into the Index.cshtml.cs file. 
 
 

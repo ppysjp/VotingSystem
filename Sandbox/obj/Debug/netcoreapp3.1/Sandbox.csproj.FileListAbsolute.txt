@@ -4,6 +4,7 @@ C:\Users\samuel.palmer\Source\Repos\Voting System\Sandbox\bin\Debug\netcoreapp3.
 C:\Users\samuel.palmer\Source\Repos\Voting System\Sandbox\bin\Debug\netcoreapp3.1\Sandbox.runtimeconfig.dev.json
 C:\Users\samuel.palmer\Source\Repos\Voting System\Sandbox\bin\Debug\netcoreapp3.1\Sandbox.dll
 C:\Users\samuel.palmer\Source\Repos\Voting System\Sandbox\bin\Debug\netcoreapp3.1\Sandbox.pdb
+C:\Users\samuel.palmer\Source\Repos\Voting System\Sandbox\obj\Debug\netcoreapp3.1\Sandbox.csproj.AssemblyReference.cache
 C:\Users\samuel.palmer\Source\Repos\Voting System\Sandbox\obj\Debug\netcoreapp3.1\Sandbox.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\samuel.palmer\Source\Repos\Voting System\Sandbox\obj\Debug\netcoreapp3.1\Sandbox.AssemblyInfoInputs.cache
 C:\Users\samuel.palmer\Source\Repos\Voting System\Sandbox\obj\Debug\netcoreapp3.1\Sandbox.AssemblyInfo.cs
