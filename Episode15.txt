@@ -1,3 +1,48 @@
 studyvideo
 
 So we begin adding some more services that our VotingSystem.UI is going to use.
+
+gacp "Begin Episode 15, partially add new services to the VotingSystemUI startup"
+
+studyvideo
+
+We are using AddScoped. Add scoped is the lifetime of the service, a singleton is created
+once and then is the same every time it is called. A description of the different services 
+is given if you search Stack Overflow for the following: 
+
+AddTransient, AddScoped and AddSingleton Services Differences
+
+- Singleton which creates a single instance throughout the application. 
+		It creates the instance for the first time and reuses the same object in the all calls.
+
+- Scoped lifetime services are created once per request within the scope. 
+		It is equivalent to a singleton in the current scope. For example, 
+		in MVC it creates one instance for each HTTP request, 
+		but it uses the same instance in the other calls within the same web request.
+
+- Transient lifetime services are created each time they are requested. 
+		This lifetime works best for lightweight, stateless services.
+
+When to use:
+
+Transient
+---------
+
+since they are created every time they will use more memory & Resources and can have the negative impact on performance
+use this for the lightweight service with little or no state.
+
+Scoped
+------
+
+better option when you want to maintain state within a request.
+
+Singleton
+---------
+
+memory leaks in these services will build up over time.
+also memory efficient as they are created once reused everywhere.
+
+KudenVenkat has an excellent video on this
+
+gacp "Studying Transient, Scoped and Singleton"
+
