@@ -26,4 +26,3 @@ C:\Users\samuel.palmer\Source\Repos\Voting System\Sandbox.EfCore\obj\Debug\net5.
 C:\Users\samuel.palmer\Source\Repos\Voting System\Sandbox.EfCore\obj\Debug\net5.0\ref\Sandbox.EfCore.dll
 C:\Users\samuel.palmer\Source\Repos\Voting System\Sandbox.EfCore\obj\Debug\net5.0\Sandbox.EfCore.pdb
 C:\Users\samuel.palmer\Source\Repos\Voting System\Sandbox.EfCore\obj\Debug\net5.0\Sandbox.EfCore.genruntimeconfig.cache
-C:\Users\samuel.palmer\Source\Repos\Voting System\Sandbox.EfCore\obj\Debug\net5.0\Sandbox.EfCore.csproj.AssemblyReference.cache

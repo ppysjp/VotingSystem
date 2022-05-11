@@ -26,7 +26,6 @@ namespace VotingSystem.UI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddSingleton<Service201>(); 
             services.AddSingleton<IVotingPollFactory, VotingPollFactory>();
             services.AddScoped<VotingPollInteractor>();
             services.AddScoped<IVotingSystemPersistance, VotingSystemPersistance>();
@@ -53,51 +52,13 @@ namespace VotingSystem.UI
 
             app.UseRouting();
 
-            //app.UseMiddleware<CustomMiddleware>(); 
-
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
                 endpoints.MapDefaultControllerRoute();
 
-                //endpoints.MapGet("/", async context =>
-                //{
-                //    await context.Response.WriteAsync("Hello World");
-                //});
-
-                //endpoints.MapRazorPages();
             });
         }
-    }
-
-
-    public class Service201 
-    {
-        public int GetCode() => 201;
-    }
-
-    public class CustomMiddleware 
-    {
-        private readonly RequestDelegate _request;
-
-        public CustomMiddleware(RequestDelegate request)
-        {
-            _request = request;
-        }
-
-        public Task Invoke(HttpContext context, Service201 service) 
-        {
-            // Request is coming in
-
-            context.Response.StatusCode = service.GetCode();
-            context.Response.ContentType = "application/json";
-            return _request(context);
-
-            // request is going out.
-
-        }
-
     }
 
 }

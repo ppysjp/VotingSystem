@@ -55,3 +55,10 @@ at some point. So we have now said that the VotingSystemDatabase is dependant on
 the VotingSystem project which has now caused the project references to have errors.
 
 gacp "Move the IvotingSystemPersitance to the VotingSystem project"
+
+studyvideo
+
+
+gacp "Rearrange references so that scoped services work"
+
+gacp "Let's now just clean up the the startup.cs"
