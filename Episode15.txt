@@ -65,4 +65,19 @@ gacp "Let's now just clean up the the startup.cs"
 
 studyvideo
 
-We also need to register the service that is the AppDbContext.
+We also need to register the service that is the AppDbContext. This will be injected
+into the VotingSystemPersistance as the VotingSystemPersistance is depedendent upon 
+this. 
+
+gacp "Register the AppDbContext"
+
+studyvideo
+
+We need to specify where we are gonig to store the data, this time round we will use 
+the in memory database again for now but it would normally be at this stage that you 
+use an SQL provider. You can see how this is implemented in the DbContextFactory. 
+However for the UI we can call the function that will mkae use of the InMemoryDatabase. 
+He then explains the functional paradigm of C#.
+10:10: 10:10: 10:10: 10:10: 10:10: 10:10: 10:10: 10:10: 10:10: 10:10: Let's see if we can undertand this at another stage.
+
+

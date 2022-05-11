@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -27,8 +28,7 @@ namespace VotingSystem.UI
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddDbContext<AppDbContext>(); 
-
+            services.AddDbContext<AppDbContext>(options => options.UseInMemoryDatabase("Database")); 
             services.AddSingleton<IVotingPollFactory, VotingPollFactory>();
             services.AddScoped<VotingPollInteractor>();
             services.AddScoped<IVotingSystemPersistance, VotingSystemPersistance>();
