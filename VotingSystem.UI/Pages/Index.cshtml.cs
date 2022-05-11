@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 using VotingSystem.Application;
 using VotingSystem.Database;
 using VotingSystem.Models;
@@ -19,11 +20,22 @@ namespace VotingSystem.UI.Pages
 
         public void OnGet([FromServices] AppDbContext ctx)
         {
+            ctx.VotingPolls
+                .Select(x => new VotingPollVM {
+                Id = EF.Property<int>(x, "Id"),
+                Title = x.Title})
+                .ToList();
         }
 
         public void OnPost([FromServices] VotingPollInteractor votingPollInteractor)
         {
             votingPollInteractor.CreateVotingPoll(Form);
+        }
+
+        public class VotingPollVM
+        {
+            public int Id { get; set; }
+            public string Title { get; set; }
         }
 
     }
