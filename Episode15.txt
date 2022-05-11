@@ -99,5 +99,18 @@ thing to do because this is a small application.
 
 gacp "Tightly couple the UI OnGet to the AppDbContext"
 
+studyvideo
 
+So now we are going to create the VotingPollViewModel class so that we can display 
+the voting poll from the database. 
+And we also implement how the context is going to take the data from each of the 
+VotingPolls that are in the database and create a VotingPollVM from each of them.
 
+gacp "Create a set of VotingPollVMs from the VotingPolls that are in the database"
+
+studyvideo
+
+Ok so we need to add the VotingPolls as a property wihtin the IndexModel so that 
+they are accessable from the razorpage. So that is the next step
+We then go into the razor page and use a c# block to create a forloop that will 
+display each of the voting polls. 

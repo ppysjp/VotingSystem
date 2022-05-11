@@ -14,13 +14,14 @@ namespace VotingSystem.UI.Pages
     public class IndexModel : PageModel
     {
         public VotingPoll Poll { get; set; }
+        public ICollection<VotingPollVM> VotingPolls { get; set; }
 
         [BindProperty]
         public VotingPollFactory.Request Form { get; set; }
 
         public void OnGet([FromServices] AppDbContext ctx)
         {
-            ctx.VotingPolls
+            VotingPolls = ctx.VotingPolls
                 .Select(x => new VotingPollVM {
                 Id = EF.Property<int>(x, "Id"),
                 Title = x.Title})
