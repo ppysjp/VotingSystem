@@ -1976,25 +1976,12 @@
           "bin/placeholder/VotingSystem.dll": {}
         }
       },
-      "VotingSystem.Application/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "dependencies": {
-          "VotingSystem": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/VotingSystem.Application.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/VotingSystem.Application.dll": {}
-        }
-      },
       "VotingSystem.Database/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "5.0.15",
-          "VotingSystem.Application": "1.0.0"
+          "VotingSystem": "1.0.0"
         },
         "compile": {
           "bin/placeholder/VotingSystem.Database.dll": {}
@@ -6643,11 +6630,6 @@
       "type": "project",
       "path": "../VotingSystem/VotingSystem.csproj",
       "msbuildProject": "../VotingSystem/VotingSystem.csproj"
-    },
-    "VotingSystem.Application/1.0.0": {
-      "type": "project",
-      "path": "../VotingSystem.Application/VotingSystem.Application.csproj",
-      "msbuildProject": "../VotingSystem.Application/VotingSystem.Application.csproj"
     },
     "VotingSystem.Database/1.0.0": {
       "type": "project",

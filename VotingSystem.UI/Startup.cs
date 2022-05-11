@@ -26,8 +26,8 @@ namespace VotingSystem.UI
         {
             //services.AddSingleton<Service201>(); 
             services.AddSingleton<IVotingPollFactory, VotingPollFactory>();
-            services.AddScoped<VotingPollInteractor>();
-            services.AddScoped<IVotingSystemPersistance, >();
+            //services.AddScoped<VotingPollInteractor>();
+            //services.AddScoped<IVotingSystemPersistance, VotingSystemPersistence>();
             services.AddControllersWithViews();
             services.AddRazorPages();
         }

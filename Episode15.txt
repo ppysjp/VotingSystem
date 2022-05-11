@@ -46,3 +46,12 @@ KudenVenkat has an excellent video on this
 
 gacp "Studying Transient, Scoped and Singleton"
 
+studyvideo
+
+We need to move the IVotingSystemPersistance out of the Application section of our
+project and move it into the VotingSystem itself. This helps maintain the modularity
+of our system, but will mean that we need to inject the Interface into the Application
+at some point. So we have now said that the VotingSystemDatabase is dependant on the
+the VotingSystem project which has now caused the project references to have errors.
+
+gacp "Move the IvotingSystemPersitance to the VotingSystem project"
