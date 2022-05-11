@@ -9,6 +9,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using VotingSystem.Application;
+using VotingSystem.Database;
 
 namespace VotingSystem.UI
 {
@@ -26,8 +28,8 @@ namespace VotingSystem.UI
         {
             //services.AddSingleton<Service201>(); 
             services.AddSingleton<IVotingPollFactory, VotingPollFactory>();
-            //services.AddScoped<VotingPollInteractor>();
-            //services.AddScoped<IVotingSystemPersistance, VotingSystemPersistence>();
+            services.AddScoped<VotingPollInteractor>();
+            services.AddScoped<IVotingSystemPersistance, VotingSystemPersistance>();
             services.AddControllersWithViews();
             services.AddRazorPages();
         }

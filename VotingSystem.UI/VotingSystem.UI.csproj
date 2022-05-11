@@ -5,7 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\VotingSystem\VotingSystem.csproj" />
+    <ProjectReference Include="..\VotingSystem.Application\VotingSystem.Application.csproj" />
+    <ProjectReference Include="..\VotingSystem.Database\VotingSystem.Database.csproj" />
   </ItemGroup>
 
 </Project>
