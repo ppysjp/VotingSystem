@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using VotingSystem.Application;
+using VotingSystem.Database;
 using VotingSystem.Models;
 
 namespace VotingSystem.UI.Pages
@@ -16,7 +17,7 @@ namespace VotingSystem.UI.Pages
         [BindProperty]
         public VotingPollFactory.Request Form { get; set; }
 
-        public void OnGet([FromServices] IVotingPollFactory pollFactory)
+        public void OnGet([FromServices] AppDbContext ctx)
         {
         }
 

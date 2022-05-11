@@ -85,4 +85,19 @@ gacp "Register the InMemory database"
 
 The next step is to inject the votingPollInteractor into the Index.cshtml.cs file. 
 
+gacp "Register the VotingPollInteractor"
+
+studyvideo
+
+For this application because it is small we are going to tightly couple the database 
+with the Database. This is just a shortcut and shouldn't be done normally. 
+If we want to do things properly we should use the persistence layer that we have
+created and go down the formal road. But for now this will do.
+This technically has broken our architecture.
+If we are just displaying straight from the database one thing then this is a fine 
+thing to do because this is a small application. 
+
+gacp "Tightly couple the UI OnGet to the AppDbContext"
+
+
 
