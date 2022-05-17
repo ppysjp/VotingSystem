@@ -123,3 +123,10 @@ studyvideo
 
 We begin by creating a new page that is going to make use of the Interactors that we have made
 earlier on in the project.  
+
+gacp "We have now created a Poll razor page that will retrieve statistics when an id is supplied"
+
+studyvideo
+
+So we add the Statistics as a property to the Poll razor page. we then use it to retrieve some
+data about said Poll. 

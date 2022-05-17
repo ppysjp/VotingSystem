@@ -10,9 +10,11 @@ namespace VotingSystem.UI.Pages
 {
     public class PollModel : PageModel
     {
+        public PollStatistics Statistics { get; set; }
+
         public void OnGet(int id, [FromServices] StatisticsInteractor interactor)
         {
-            var statistics = interactor.GetStatistics(id); 
+            Statistics = interactor.GetStatistics(id); 
         }
     }
 }

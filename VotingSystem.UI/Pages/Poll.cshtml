@@ -2,3 +2,14 @@
 @model VotingSystem.UI.Pages.PollModel
 @{
 }
+
+<div>
+    <h1>@Model.Statistics.Title</h1>
+    <h2>@Model.Statistics.Description</h2>
+
+    @foreach (var counter in Model.Statistics.Counters)
+    {
+        <p>@counter.Name = @counter.Count - @counter.Percentage</p>
+    }
+
+</div>
