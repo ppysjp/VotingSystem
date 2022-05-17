@@ -140,6 +140,13 @@ So there was an error to do with fact that we hadn't implemented the ICounterMan
 
 gacp "Implement ICounterManager service."
 
+studyvideo
+
+Here we are getting some tutorial on how to use the Locals section when debugging. 
+Ok so the OnGet function is calling twice when we post. 
+So we put a break point in the OnPost as well. 
+Some really good advice that this guy has given is that you should follow what the 
+Request is doing when you perform a debug. 
 
 
 

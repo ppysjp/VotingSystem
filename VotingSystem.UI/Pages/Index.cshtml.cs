@@ -28,9 +28,11 @@ namespace VotingSystem.UI.Pages
                 .ToList();
         }
 
-        public void OnPost([FromServices] VotingPollInteractor votingPollInteractor)
+        public IActionResult OnPost([FromServices] VotingPollInteractor votingPollInteractor)
         {
             votingPollInteractor.CreateVotingPoll(Form);
+
+            return RedirectToPage("/Index");
         }
 
         public class VotingPollVM
