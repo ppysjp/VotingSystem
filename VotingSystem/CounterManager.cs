@@ -16,7 +16,7 @@ namespace VotingSystem
             {
                 Name = x.Name,
                 Count = x.Count,
-                Percentage = RoundUp(x.Count * 100.0 / totalCount)
+                Percentage = totalCount > 0 ? RoundUp(x.Count * 100.0 / totalCount) : 0 
             }).ToList();
         }
 

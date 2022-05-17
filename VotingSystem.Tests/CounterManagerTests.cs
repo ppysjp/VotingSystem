@@ -32,6 +32,8 @@ namespace VotingSystem.Tests
         [InlineData(5, 10, 50)]
         [InlineData(1, 3, 33.33)]
         [InlineData(2, 3, 66.67)]
+        [InlineData(2, 8, 25)]
+        [InlineData(0, 0, 0)]
         public void GetStatistics_ShowsPercentageUpToTwoDecimalsBasedOnTotalCount(int count, int total, double expected) 
         {
             _counter.Count = count;
@@ -42,19 +44,21 @@ namespace VotingSystem.Tests
         }
 
 
-        [Fact]
-        public void ResolveExcess_DoesntAddExcesswhenAllCountersAreEqual() 
+        [Theory]
+        [InlineData(0)]
+        [InlineData(33.33)]
+        public void ResolveExcess_DoesntAddExcesswhenAllCountersAreEqual(double percent) 
         { 
-            var counter1 = new CounterStatistics { Count = 1, Percentage = 33.33 };
-            var counter2 = new CounterStatistics { Count = 1, Percentage = 33.33 };
-            var counter3 = new CounterStatistics { Count = 1, Percentage = 33.33 };
+            var counter1 = new CounterStatistics { Count = 1, Percentage = percent };
+            var counter2 = new CounterStatistics { Count = 1, Percentage = percent };
+            var counter3 = new CounterStatistics { Count = 1, Percentage = percent };
             var counters = new List<CounterStatistics> { counter1, counter2, counter3 };
 
             new CounterManager().ResolveExcess(counters);
 
-            Equal(33.33, counter1.Percentage);
-            Equal(33.33, counter2.Percentage);
-            Equal(33.33, counter3.Percentage);
+            Equal(percent, counter1.Percentage);
+            Equal(percent, counter2.Percentage);
+            Equal(percent, counter3.Percentage);
         }
 
         [Theory]

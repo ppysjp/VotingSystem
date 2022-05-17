@@ -53,6 +53,7 @@ namespace VotingSystem.UI
             }
 
             app.UseHttpsRedirection();
+
             app.UseStaticFiles();
 
             app.UseRouting();

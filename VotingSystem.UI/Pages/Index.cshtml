@@ -8,7 +8,7 @@
 
 @foreach (var poll in Model.VotingPolls)
 {
-    <a>@poll.Title</a>
+    <a asp-page="/Poll" asp-route-id="@poll.Id">@poll.Title</a>
 }
 
 

@@ -148,5 +148,9 @@ So we put a break point in the OnPost as well.
 Some really good advice that this guy has given is that you should follow what the 
 Request is doing when you perform a debug. 
 
+gacp "Turns out that upon posting we needed an IActionResult that would return a page"
 
+So now we are ready to access the Poll page that we have created. 
+When we click on the page we encounter an exception wihtin the CounterManager. 
+So we need to fix this by adding another condition to the sweet of tests that we have. 
 
