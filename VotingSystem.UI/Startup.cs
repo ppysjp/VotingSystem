@@ -30,6 +30,7 @@ namespace VotingSystem.UI
 
             services.AddDbContext<AppDbContext>(options => options.UseInMemoryDatabase("Database")); 
             services.AddSingleton<IVotingPollFactory, VotingPollFactory>();
+            services.AddScoped<ICounterManager, CounterManager>();
             services.AddScoped<StatisticsInteractor>();
             services.AddScoped<VotingPollInteractor>();
             services.AddScoped<IVotingSystemPersistance, VotingSystemPersistance>();

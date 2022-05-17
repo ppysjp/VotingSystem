@@ -50,3 +50,4 @@ C:\Users\samuel.palmer\Source\Repos\Voting System\VotingSystem.UI\obj\Debug\netc
 C:\Users\samuel.palmer\Source\Repos\Voting System\VotingSystem.UI\obj\Debug\netcoreapp3.1\VotingSystem.UI.dll
 C:\Users\samuel.palmer\Source\Repos\Voting System\VotingSystem.UI\obj\Debug\netcoreapp3.1\VotingSystem.UI.pdb
 C:\Users\samuel.palmer\Source\Repos\Voting System\VotingSystem.UI\obj\Debug\netcoreapp3.1\VotingSystem.UI.genruntimeconfig.cache
+C:\Users\samuel.palmer\Source\Repos\Voting System\VotingSystem.UI\obj\Debug\netcoreapp3.1\Razor\Pages\Poll.cshtml.g.cs

@@ -129,4 +129,17 @@ gacp "We have now created a Poll razor page that will retrieve statistics when a
 studyvideo
 
 So we add the Statistics as a property to the Poll razor page. we then use it to retrieve some
-data about said Poll. 
+data about said Poll. We also need to add the StatisticsInteractor as a service that is scoped 
+to our system.
+
+gacp "Statistics Property is added to razor page and StatisticsInteractor is added as service"
+
+studyvideo
+
+So there was an error to do with fact that we hadn't implemented the ICounterManager Service.
+
+gacp "Implement ICounterManager service."
+
+
+
+
