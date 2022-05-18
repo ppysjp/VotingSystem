@@ -38,3 +38,12 @@ gacp "Make test pass that retrieves the poll from the database"
 So the voting works on the page pretty well except that it only works once in a way.
 As in the button click is only working once at a time and this isn't good. So how do we 
 change that? 
+
+gacp "Clicking Vote Button now partially works"
+
+One task that we could do to fix the system is create a test that allows us to vote more 
+that once on each counter within the poll. 
+
+We now focus on the user experience.
+
+13:28
