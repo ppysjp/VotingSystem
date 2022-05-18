@@ -10,14 +10,15 @@ namespace VotingSystem.Tests
     public class CounterManagerTests
     {
         public const string CounterName = "Counter Name";
-        public Counter _counter = new Counter() { Name = CounterName, Count = 5};
+        public const int CounterId = 1; 
+        public Counter _counter = new Counter() { Id = CounterId, Name = CounterName, Count = 5};
 
         [Fact]
         public void GetCounterStatistics_IncludesCounterName() 
         {
             var statistics = new CounterManager().GetStatistics(new[] {_counter }).First();
 
-            Equal(CounterName, statistics.Name);
+            Equal(CounterId, statistics.Id);
         }
 
         [Fact]

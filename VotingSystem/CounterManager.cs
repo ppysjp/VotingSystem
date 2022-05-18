@@ -14,6 +14,7 @@ namespace VotingSystem
 
             return counters.Select(x => new CounterStatistics
             {
+                Id = x.Id,
                 Name = x.Name,
                 Count = x.Count,
                 Percentage = totalCount > 0 ? RoundUp(x.Count * 100.0 / totalCount) : 0 

@@ -7,3 +7,5 @@ So what we need to do is ad an Id and to do this we are going to change some of 
 we have created for the Counter Manager. 
 
 gacp "Begin Test that ensure Counter has an Id"
+
+studyvideo
