@@ -153,4 +153,6 @@ gacp "Turns out that upon posting we needed an IActionResult that would return a
 So now we are ready to access the Poll page that we have created. 
 When we click on the page we encounter an exception wihtin the CounterManager. 
 So we need to fix this by adding another condition to the sweet of tests that we have. 
+So we add in some code to ensure that this condition is taken into account.
 
+gacp "End of episode 14"

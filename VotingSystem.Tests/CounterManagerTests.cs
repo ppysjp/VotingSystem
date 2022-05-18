@@ -21,6 +21,14 @@ namespace VotingSystem.Tests
         }
 
         [Fact]
+        public void GetCounterStatistics_IncludesCounterId() 
+        { 
+            var statistics = new CounterManager().GetStatistics(new[] {_counter }).First();
+
+            Equal(5, statistics.Count);
+        }
+
+        [Fact]
         public void GetCounterStatistics_IncludesCounterCount() 
         { 
             var statistics = new CounterManager().GetStatistics(new[] {_counter }).First();

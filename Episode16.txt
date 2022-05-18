@@ -1,0 +1,9 @@
+studyvideo
+
+In this episode we are going to plg in the final interactor.
+So we need to be able to identify the specific counter that we are going to vote for.
+At the moment there is no real Id for the counter and a Name is not a good identifier.
+So what we need to do is ad an Id and to do this we are going to change some of the tests
+we have created for the Counter Manager. 
+
+gacp "Begin Test that ensure Counter has an Id"
