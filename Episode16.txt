@@ -26,3 +26,7 @@ This is just done at this stage because we don't have a concept of a Vote in our
 quite yet. We also ensure that the form is instantiated with the form method post.  
 
 gacp "Create OnPost that makes use of the VotingInteractor that we have created."
+
+So at the momemnt the button for OnPost doesn't do anything and we are trying to fix that. 
+To do that we are going to change the Method GetPoll that retrieves the Poll from the 
+database. 

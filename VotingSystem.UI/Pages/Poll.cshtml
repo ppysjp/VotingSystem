@@ -12,6 +12,7 @@
         <p>@counter.Name = @counter.Count - @counter.Percentage</p>
 
         <form method="post"> 
+            @Html.AntiForgeryToken()
             <input type="hidden" name="counterId" value="@counter.Id" />
         </form>
 

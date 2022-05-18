@@ -104,7 +104,7 @@ namespace VotingSystem.Database.Tests
        }
 
        [Fact] 
-       public void GetPoll_RetrievesAPollWithCountersFromDatabase_AndVotesAsCount() 
+       public void GetPoll_ReturnsSavedPollWithCounters_AndVotesAsCount() 
        {
             var poll = new VotingPoll
             {
@@ -117,7 +117,7 @@ namespace VotingSystem.Database.Tests
                 }
             };
 
-            using (var ctx = DbContextFactory.Create(nameof(GetPoll_RetrievesAPollWithCountersFromDatabase_AndVotesAsCount)))
+            using (var ctx = DbContextFactory.Create(nameof(GetPoll_ReturnsSavedPollWithCounters_AndVotesAsCount)))
             {
                 ctx.VotingPolls.Add(poll);
                 ctx.Votes.Add(new Vote {UserId = "a", CounterId = 1 });
@@ -126,7 +126,7 @@ namespace VotingSystem.Database.Tests
                 ctx.SaveChanges();
             }
 
-            using (var ctx = DbContextFactory.Create(nameof(GetPoll_RetrievesAPollWithCountersFromDatabase_AndVotesAsCount)))
+            using (var ctx = DbContextFactory.Create(nameof(GetPoll_ReturnsSavedPollWithCounters_AndVotesAsCount)))
             {
                 var savedPoll =  new VotingSystemPersistance(ctx).GetPoll(1);
 
@@ -135,10 +135,12 @@ namespace VotingSystem.Database.Tests
                 Equal(poll.Counters.Count(), savedPoll.Counters.Count());
 
                 var counter1 = savedPoll.Counters[0];
+                Equal(1, counter1.Id);
                 Equal("One", counter1.Name);
                 Equal(2 , counter1.Count);
     
                 var counter2 = savedPoll.Counters[1];
+                Equal(2, counter2.Id);
                 Equal("Two", counter2.Name);
                 Equal(1 , counter2.Count);
 
