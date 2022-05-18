@@ -18,13 +18,15 @@ namespace VotingSystem.UI.Pages
             Statistics = interactor.GetStatistics(id); 
         }
 
-        public void OnPost(int counterId, [FromServices] VotingInteractor interactor) 
+        public IActionResult OnPost(int counterId, [FromServices] VotingInteractor interactor) 
         {
             interactor.Vote(
                 new Vote 
                 {
                     CounterId = counterId 
                 });
+
+            return Redirect(Request.Path.Value);
         }
 
     }

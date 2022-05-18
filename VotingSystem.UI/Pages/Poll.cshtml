@@ -14,9 +14,9 @@
         <form method="post"> 
             @Html.AntiForgeryToken()
             <input type="hidden" name="counterId" value="@counter.Id" />
+            <button type="submit">Vote</button>
         </form>
 
-        <button type="submit">Vote</button>
     }
 
 </div>

@@ -32,3 +32,9 @@ To do that we are going to change the Method GetPoll that retrieves the Poll fro
 database. 
 
 gacp "Make test fail that retrieves the poll from the database"
+
+gacp "Make test pass that retrieves the poll from the database"
+
+So the voting works on the page pretty well except that it only works once in a way.
+As in the button click is only working once at a time and this isn't good. So how do we 
+change that? 

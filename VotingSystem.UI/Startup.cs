@@ -33,6 +33,7 @@ namespace VotingSystem.UI
             services.AddScoped<ICounterManager, CounterManager>();
             services.AddScoped<StatisticsInteractor>();
             services.AddScoped<VotingPollInteractor>();
+            services.AddScoped<VotingInteractor>();
             services.AddScoped<IVotingSystemPersistance, VotingSystemPersistance>();
             services.AddControllersWithViews();
             services.AddRazorPages();
