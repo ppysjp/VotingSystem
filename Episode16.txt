@@ -30,3 +30,5 @@ gacp "Create OnPost that makes use of the VotingInteractor that we have created.
 So at the momemnt the button for OnPost doesn't do anything and we are trying to fix that. 
 To do that we are going to change the Method GetPoll that retrieves the Poll from the 
 database. 
+
+gacp "Make test fail that retrieves the poll from the database"
