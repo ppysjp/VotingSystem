@@ -9,3 +9,10 @@ we have created for the Counter Manager.
 gacp "Begin Test that ensure Counter has an Id"
 
 studyvideo
+
+gacp "Implement changes to ensure that the Id works as we want for the CounterStatistics"
+
+studyvideo
+
+So we have added to the Razor page a way of displaying the counter and a way of inputting 
+via a form and we are going to add a button to our CounterManager. 

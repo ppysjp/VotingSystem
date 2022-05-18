@@ -10,6 +10,12 @@
     @foreach (var counter in Model.Statistics.Counters)
     {
         <p>@counter.Name = @counter.Count - @counter.Percentage</p>
+
+        <form> 
+            <input type="hidden" name="counterId" value="@counter.Id" />
+        </form>
+
+        <button></button>
     }
 
 </div>
