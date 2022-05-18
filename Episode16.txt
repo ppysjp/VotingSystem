@@ -16,3 +16,13 @@ studyvideo
 
 So we have added to the Razor page a way of displaying the counter and a way of inputting 
 via a form and we are going to add a button to our CounterManager. 
+
+gacp "Begin making Poll page make use of the different properties of the counter statistics"
+
+Like we have already done we need to implement an OnPost for sending data to the database.
+This is done via the VotingInteractor and an OnPost method. We are going to just "Mock" some
+data and use debug to make sure that a Vote is supplied to the interactor.Vote. 
+This is just done at this stage because we don't have a concept of a Vote in our system 
+quite yet. We also ensure that the form is instantiated with the form method post.  
+
+gacp "Create OnPost that makes use of the VotingInteractor that we have created."

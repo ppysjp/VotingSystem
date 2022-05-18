@@ -11,11 +11,11 @@
     {
         <p>@counter.Name = @counter.Count - @counter.Percentage</p>
 
-        <form> 
+        <form method="post"> 
             <input type="hidden" name="counterId" value="@counter.Id" />
         </form>
 
-        <button></button>
+        <button type="submit">Vote</button>
     }
 
 </div>

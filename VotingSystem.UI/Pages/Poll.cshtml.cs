@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using VotingSystem.Application;
+using VotingSystem.Models;
 
 namespace VotingSystem.UI.Pages
 {
@@ -16,5 +17,15 @@ namespace VotingSystem.UI.Pages
         {
             Statistics = interactor.GetStatistics(id); 
         }
+
+        public void OnPost(int counterId, [FromServices] VotingInteractor interactor) 
+        {
+            interactor.Vote(
+                new Vote 
+                {
+                    CounterId = counterId 
+                });
+        }
+
     }
 }
