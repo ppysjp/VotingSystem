@@ -1,0 +1,6 @@
+As I've stated for a while now I would like to create my own countdown solver. 
+It will follow the rules that are given on the wiki.
+
+https://en.wikipedia.org/wiki/Countdown_(game_show)#Numbers_round
+
+What I want to do create a solver that will use the tiles to generate solutions. 

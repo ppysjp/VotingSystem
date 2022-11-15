@@ -27,6 +27,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VotingSystem.Database", "Vo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VotingSystem.UI", "VotingSystem.UI\VotingSystem.UI.csproj", "{C20CC3C0-D757-45D6-9BAB-4A432326D6F9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CountdownSolver.Tests", "CountdownSolver.Tests\CountdownSolver.Tests.csproj", "{04FCA3CB-9DAC-4918-9088-FDC46FDD915A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,6 +75,10 @@ Global
 		{C20CC3C0-D757-45D6-9BAB-4A432326D6F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C20CC3C0-D757-45D6-9BAB-4A432326D6F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C20CC3C0-D757-45D6-9BAB-4A432326D6F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04FCA3CB-9DAC-4918-9088-FDC46FDD915A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04FCA3CB-9DAC-4918-9088-FDC46FDD915A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04FCA3CB-9DAC-4918-9088-FDC46FDD915A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04FCA3CB-9DAC-4918-9088-FDC46FDD915A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
