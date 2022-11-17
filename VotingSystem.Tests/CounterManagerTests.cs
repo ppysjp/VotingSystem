@@ -18,7 +18,7 @@ namespace VotingSystem.Tests
         {
             var statistics = new CounterManager().GetStatistics(new[] {_counter }).First();
 
-            Equal(CounterId, statistics.Id);
+            Equal(CounterName, statistics.Name);
         }
 
         [Fact]
